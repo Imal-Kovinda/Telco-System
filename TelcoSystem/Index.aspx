@@ -103,7 +103,7 @@
                   </g>
                 </svg>
 
-                <span class="brand-name text-truncate">Sleek Dashboard</span>
+                <span class="brand-name text-truncate">Sleek Dashboard</span><a href="Index.aspx">Index.aspx</a>
               </a>
             </div>
 
