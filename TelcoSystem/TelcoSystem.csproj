@@ -833,6 +833,7 @@
     <Content Include="BasicInputs.aspx" />
     <Content Include="BatchReceiptUpload.aspx" />
     <Content Include="BranchReceipt.aspx" />
+    <Content Include="ChequePayments.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -932,6 +933,12 @@
     </Compile>
     <Compile Include="BranchReceipt.aspx.designer.cs">
       <DependentUpon>BranchReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChequePayments.aspx.cs">
+      <DependentUpon>ChequePayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChequePayments.aspx.designer.cs">
+      <DependentUpon>ChequePayments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
