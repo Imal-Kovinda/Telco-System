@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
   
-    <title>Form Advance - Sleek Admin Dashboard Template</title>
+    <title>Modal - Sleek Admin Dashboard Template</title>
     
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
@@ -20,7 +20,7 @@
     <!-- No Extra plugin used -->
     
     
-    <link href='assets/plugins/select2/css/select2.min.css' rel='stylesheet'>
+    
     
     
     
@@ -169,14 +169,14 @@
                   UI Elements
                 </li> -->
 
-                <li class="has-sub ">
+                <li class="has-sub active expand">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components"
                     aria-expanded="false" aria-controls="components">
                     <i class="mdi mdi-folder-multiple-outline"></i>
                     <span class="nav-text">Components</span> <b class="caret"></b>
                   </a>
 
-                  <ul class="collapse " id="components" data-parent="#sidebar-menu">
+                  <ul class="collapse show" id="components" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
                         <a class="sidenav-item-link" href="alert.html">
@@ -252,7 +252,7 @@
                         </a>
                       </li>
 
-                      <li class="">
+                      <li class="active">
                         <a class="sidenav-item-link" href="modal.html">
                           <span class="nav-text">Modal</span>
                         </a>
@@ -321,14 +321,14 @@
                   </ul>
                 </li>
 
-                <li class="has-sub active expand">
+                <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
                     aria-expanded="false" aria-controls="forms">
                     <i class="mdi mdi-email-mark-as-unread"></i>
                     <span class="nav-text">Forms</span> <b class="caret"></b>
                   </a>
 
-                  <ul class="collapse show" id="forms" data-parent="#sidebar-menu">
+                  <ul class="collapse " id="forms" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
                         <a class="sidenav-item-link" href="basic-input.html">
@@ -354,7 +354,7 @@
                         </a>
                       </li>
 
-                      <li class="active">
+                      <li class="">
                         <a class="sidenav-item-link" href="form-advance.html">
                           <span class="nav-text">Form Advance</span>
                         </a>
@@ -1202,118 +1202,369 @@
 
 
 
+<div class="breadcrumb-wrapper">
+	<h1>Modal</h1>
+	
+	
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb p-0">
+            <li class="breadcrumb-item">
+              <a href="index.html">
+                <span class="mdi mdi-home"></span>                
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              components
+            </li>
+            <li class="breadcrumb-item" aria-current="page">modal</li>
+          </ol>
+        </nav>
+
+</div>
+
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-6 col-xl-4">
 		<div class="card card-default">
 			<div class="card-header card-header-border-bottom">
-				<h2>Masked Input</h2>
+				<h2>Default Modal </h2>
 			</div>
 
 			<div class="card-body">
-				<label class="text-dark font-weight-medium" for="">Date input</label>
+				<p class="mb-5">Use Bootstrap’s JavaScript modal plugin to add dialogs to your site. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#modal-components" target="_blank"> more details.</a></p>
 
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="mdi mdi-calendar-range"></i>
-						</span>
-					</div>
-
-					<input type="text" class="form-control" data-mask="00/00/0000" placeholder="" aria-label="">
-				</div>
-
-				<p style="font-size: 90%">ex. 99/99/9999</p>
-
-				<label class="text-dark mt-4 font-weight-medium" for="">Phone input</label>
-
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="mdi mdi-phone"></i>
-						</span>
-					</div>
-
-					<input type="text" class="form-control" data-mask="(999) 999-9999" placeholder="" aria-label="">
-				</div>
-
-				<p style="font-size: 90%">ex. (999) 999-9999</p>
-
-				<label class="text-dark mt-4 font-weight-medium" for="">Taxpayer Identification Numbers</label>
-
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="mdi mdi-currency-usd"></i>
-						</span>
-					</div>
-
-					<input type="text" class="form-control" data-mask="99-9999999" placeholder="" aria-label="">
-				</div>
-
-				<p style="font-size: 90%">ex. 99-9999999</p>
-
-				<label class="text-dark mt-4 font-weight-medium" for="">Social Security Number</label>
-
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="mdi mdi-lock"></i>
-						</span>
-					</div>
-
-					<input type="text" class="form-control" data-mask="999-99-9999" placeholder="" aria-label="">
-				</div>
-
-				<p style="font-size: 90%">ex. 999-99-9999</p>
-
-				<label class="text-dark mt-4 font-weight-medium" for="">Eye Script</label>
-
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="mdi mdi-eye"></i>
-						</span>
-					</div>
-
-					<input type="text" class="form-control" data-mask="~9.99 ~9.99 999" placeholder="" aria-label="">
-				</div>
-
-				<p style="font-size: 90%">ex. ~9.99 ~9.99 999</p>
-
-				<label class="text-dark mt-4 font-weight-medium" for="">Credit Card Number</label>
-
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="mdi mdi-credit-card"></i>
-						</span>
-					</div>
-
-					<input type="text" class="form-control" data-mask="9999 9999 9999 9999" placeholder="" aria-label="">
-				</div>
-
-				<p style="font-size: 90%">ex. 9999 9999 9999 9999</p>
+				<button type="button" class="btn btn-primary btn-pill" data-toggle="modal" data-target="#exampleModal">
+					Launch Demo Modal
+				</button>
 			</div>
 		</div>
 	</div>
 
-	<div class="col-lg-6">
+	<div class="col-lg-6 col-xl-4">
 		<div class="card card-default">
 			<div class="card-header card-header-border-bottom">
-				<h2>Multiple Select </h2>
+				<h2>Scrolling Long Content</h2>
 			</div>
 
 			<div class="card-body">
-				<div class="form-group">
-					<select class="js-example-basic-multiple form-control" name="states[]" multiple="multiple">
-						<option value="AL">Alabana</option>
-						<option value="NY">New York</option>
-						<option value="VR">Virginia</option>
-						<option value="WA">Washington</option>
-						<option value="CA">California</option>
-						<option value="WY">Wyoming</option>
-					</select>
+				<p class="mb-5">When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#scrolling-long-content" target="_blank"> more details.</a></p>
+
+				<button type="button" class="btn btn-success btn-pill" data-toggle="modal" data-target="#exampleModalLong">
+					Launch Demo Modal
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-xl-4">
+		<div class="card card-default">
+			<div class="card-header card-header-border-bottom">
+				<h2>Tooltips and Popovers</h2>
+			</div>
+
+			<div class="card-body">
+				<p class="mb-5">Tooltips and popovers can be placed within modals as needed. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#tooltips-and-popovers" target="_blank">
+					more details.</a></p>
+
+				<button type="button" class="btn btn-warning btn-pill" data-toggle="modal" data-target="#exampleModalTooltip">
+					Launch Demo Modal
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-xl-4">
+		<div class="card card-default">
+			<div class="card-header card-header-border-bottom">
+				<h2>Using the Grid</h2>
+			</div>
+
+			<div class="card-body">
+				<p class="mb-5">Utilize the Bootstrap grid system within a modal. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#using-the-grid" target="_blank">
+					more details.</a></p>
+
+				<button type="button" class="btn btn-danger btn-pill" data-toggle="modal" data-target="#exampleModalGrid">
+					Launch Demo Modal
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-xl-4">
+		<div class="card card-default">
+			<div class="card-header card-header-border-bottom">
+				<h2>Form Modal Content</h2>
+			</div>
+
+			<div class="card-body">
+				<p class="mb-5">You can use form structure in your modal. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#varying-modal-content" target="_blank"> more details. </a></p>
+
+				<button type="button" class="btn btn-info btn-pill" data-toggle="modal" data-target="#exampleModalForm">
+					Launch Demo Modal
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-xl-4">
+		<div class="card card-default">
+			<div class="card-header card-header-border-bottom">
+				<h2>Optional Sizes</h2>
+			</div>
+
+			<div class="card-body">
+				<p class="mb-5">Modals have two optional sizes, available via modifier classes. Read bootstrap documentaion for <a href="https://getbootstrap.com/docs/4.6/components/modal/#optional-sizes" target="_blank">
+					more details.</a></p>
+
+				<button type="button" class="btn bg-primary text-white btn-pill mb-3 mb-md-0" data-toggle="modal" data-target="#exampleModallarge">
+					Large Modal
+				</button>
+
+				<button type="button" class="btn bg-primary text-white btn-pill mb-3 mb-md-0" data-toggle="modal" data-target="#exampleModalsmall">
+					Small Modal
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				Modal body text goes here.
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Long Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
+				risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
+				et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.
+				Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+				metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+				egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
+				scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
+				bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.
+				Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+				dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
+				cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+				Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec
+				sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
+				Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+				eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
+				faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+				nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur
+				purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur
+				ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
+				augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna,
+				vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis
+				consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus,
+				porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+				sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent
+				commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor
+				fringilla.
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Tooltip Modal -->
+<div class="modal fade" id="exampleModalTooltip" tabindex="-1" role="dialog" aria-labelledby="exampleModalTooltip" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle2">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<h5>Popover in a modal</h5>
+				<p>This
+					<a href="#" role="button" class="btn btn-secondary popover-test" data-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
+				<hr>
+				<h5>Tooltips in a modal</h5>
+				<p>
+					<a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and
+					<a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Grid Modal -->
+<div class="modal fade" id="exampleModalGrid" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalGridTitle">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-4">.col-md-4</div>
+							<div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+							<div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-9">
+								Level 1: .col-sm-9
+								<div class="row">
+									<div class="col-8 col-sm-6">
+										Level 2: .col-8 .col-sm-6
+									</div>
+									<div class="col-4 col-sm-6">
+										Level 2: .col-4 .col-sm-6
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Form Modal -->
+<div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalFormTitle">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					</div>
+
+					<div class="form-check pl-0">
+						<label class="control control-checkbox">Check me out
+							<input type="checkbox" checked="checked" />
+							<div class="control-indicator"></div>
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Large Modal -->
+<div class="modal fade" id="exampleModallarge" tabindex="-1" role="dialog" aria-labelledby="exampleModalLarge" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLarge">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				Modal body text goes here.
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Small Modal -->
+<div class="modal fade" id="exampleModalsmall" tabindex="-1" role="dialog" aria-labelledby="exampleModalSmallTitle" aria-hidden="true">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalSmallTitle">Modal Title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				Modal body text goes here.
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
 			</div>
 		</div>
 	</div>
@@ -1321,7 +1572,7 @@
 
 
 
-
+			
 
       </div> <!-- End Content -->
     </div> <!-- End Content Wrapper -->
@@ -1371,12 +1622,12 @@
     
     
 
-    <script src='assets/plugins/select2/js/select2.min.js'></script>
+    
 
     
     
     
-    <script src='assets/plugins/jquery-mask-input/jquery.mask.min.js'></script>
+    
 
     
 
