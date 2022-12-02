@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BranchReceipt.aspx.cs" Inherits="TelcoSystem.BranchReceipt" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreditCard.aspx.cs" Inherits="TelcoSystem.CreditCard" %>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
   
-    <title>Table - Sleek Admin Dashboard Template</title>
+    <title>Inputs - Sleek Admin Dashboard Template</title>
     
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
@@ -21,9 +21,16 @@
   
     <!-- No Extra plugin used -->
     
-    <link href='assets/plugins/daterangepicker/daterangepicker.css' rel='stylesheet'>
     
-  
+    
+    
+    
+    
+    
+<%--    0712496450--%>
+    
+    
+    
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="assets/css/sleek.css" />
@@ -124,24 +131,40 @@
                   </ul>
                 </li>
 
-                 <li class="has-sub ">
-                  <a class="sidenav-item-link" href="BranchReceipt.aspx">
+                <li class="has-sub ">
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#app"
+                    aria-expanded="false" aria-controls="app">
                     <i class="mdi mdi-pencil-box-multiple"></i>
-                    <span class="nav-text">Branch Receipt</span>
+                    <span class="nav-text">App</span> <b class="caret"></b>
                   </a>
 
-                </li>
-                <li class="has-sub ">
-                  <a class="sidenav-item-link" href="BatchReceiptUpload.aspx">
-                    <i class="mdi mdi-pencil-box-multiple"></i>
-                    <span class="nav-text">Batch Receipt</span>
-                  </a>
-                </li>
-                <li class="has-sub ">
-                  <a class="sidenav-item-link" href="Validate.aspx">
-                    <i class="mdi mdi-pencil-box-multiple"></i>
-                    <span class="nav-text">Validate</span>
-                  </a>
+                  <ul class="collapse " id="app" data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                      <li class="">
+                        <a class="sidenav-item-link" href="chat.html">
+                          <span class="nav-text">Chat</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a class="sidenav-item-link" href="contacts.html">
+                          <span class="nav-text">Contacts</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a class="sidenav-item-link" href="team.html">
+                          <span class="nav-text">Team</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a class="sidenav-item-link" href="calendar.html">
+                          <span class="nav-text">Calendar</span>
+                        </a>
+                      </li>
+                    </div>
+                  </ul>
                 </li>
 
                 <!-- <li class="section-title">
@@ -300,16 +323,16 @@
                   </ul>
                 </li>
 
-                <li class="has-sub ">
+                <li class="has-sub active expand">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
                     aria-expanded="false" aria-controls="forms">
                     <i class="mdi mdi-email-mark-as-unread"></i>
                     <span class="nav-text">Forms</span> <b class="caret"></b>
                   </a>
 
-                  <ul class="collapse " id="forms" data-parent="#sidebar-menu">
+                  <ul class="collapse show" id="forms" data-parent="#sidebar-menu">
                     <div class="sub-menu">
-                      <li class="">
+                      <li class="active">
                         <a class="sidenav-item-link" href="basic-input.html">
                           <span class="nav-text">Basic Input</span>
                         </a>
@@ -342,16 +365,16 @@
                   </ul>
                 </li>
 
-                <li class="has-sub active expand">
+                <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
                     aria-expanded="false" aria-controls="tables">
                     <i class="mdi mdi-table"></i>
                     <span class="nav-text">Tables</span> <b class="caret"></b>
                   </a>
 
-                  <ul class="collapse show" id="tables" data-parent="#sidebar-menu">
+                  <ul class="collapse " id="tables" data-parent="#sidebar-menu">
                     <div class="sub-menu">
-                      <li class="active">
+                      <li class="">
                         <a class="sidenav-item-link" href="basic-tables.html">
                           <span class="nav-text">Basic Tables</span>
                         </a>
@@ -1177,347 +1200,24 @@
           <div class="content-wrapper">
             <div class="content">
 
-            <div class="card card-default">
-                 <div class="row" style="padding: 1rem;color: black;">
-                  <div class="col-md-8" style="border-right: 2px solid black;">
-                      <div class="row1" style=" border: 2px solid black;">
-                          <div class="col1 ml-2" style="display:flex; gap:50px;margin-top:10px;">
-                              <h4 >Payment Mode</h4>
-                              <%--<div class="radio" style="width:450px;height:30px; background-color:lightgray;font-size:18px;">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline1">Cash</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline2">Cheque</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline3">Credit Card</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline4" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline4">QR</label>
-                                </div>
-                              </div>--%>
-                          </div>  
 
+               <div class="col-lg-6 col-xl-4">
+		        <div class="card card-default">
+			        <div class="card-header card-header-border-bottom">
+				        <h2>Form Modal Content</h2>
+			        </div>
 
-                          <!-- Extended default form grid -->
-                                <form style="margin-top:20px;">
-                                    <!-- Grid row -->
-                                    <div class="form-row">
-                                    <!-- Default input -->
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Category</label>
-                                        <input type="text" class="form-control" id="Category" placeholder="CATEGORY">
-                                    </div>
-                                    <!-- Default input -->
-                                    <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Receipt Date</label>
-                                        <input type="text" class="form-control" id="Receipt_Date" placeholder="RECEIPT_DATE">
-                                    </div>
-                                    </div>
-                                    <!-- Grid row -->
+			        <div class="card-body">
+				        <p class="mb-5">You can use form structure in your modal. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#varying-modal-content" target="_blank"> more details. </a></p>
 
-                                     <!-- Grid row -->
-                                    <div class="form-row">
-                                    <!-- Default input -->
-                                    <div class="form-group col-md-6">
-                                        <label for="inputCity">Receipt No</label>
-                                        <input type="text" class="form-control" id="Receipt_No" placeholder="RECEIPT_NUMBER">
-                                    </div>
-                                    <!-- Default input -->
-                                    <div class="form-group col-md-6">
-                                        <label for="inputZip">Provisionary Receipt No</label>
-                                        <input type="text" class="form-control" id="Pro_Receipt_No" placeholder="PROVISIONARY_RECEIPT_NUMBER">
-                                    </div>
-                                    </div>
-                                    <!-- Grid row -->
+				        <button type="button" class="btn btn-info btn-pill" data-toggle="modal" data-target="#exampleModalForm">
+					        Launch Demo Modal
+				        </button>
+			        </div>
+		        </div>
+	        </div>
 
-                                    <!-- Default input -->
-                                    <div class="form-group">
-                                    <label for="inputAddress">Narration</label>
-                                    <input type="text" class="form-control" id="Narration" placeholder="NARRATION">
-                                    </div>  
-
-                                    <div class="form-group col-md-6" style="display:flex;">
-                                        <label style="width:200px;margin-top:10px;" for="inputCity">Receipt Total</label>
-                                        <input type="text" class="form-control" id="Receipt_Total" placeholder="RECEIPT_TOTAL">
-                                    </div>
-
-                                   <div class="row ml-2">
-                                        <div>
-                                         <button type="button" class="btn ml-2 mb-2 btn-primary" data-toggle="modal" data-target="#exampleModalForm">
-					                        Credit Card
-				                        </button>
-                                    </div>
-                                    
-                                    <div>
-                                         <button type="button" class="btn ml-2 mb-2 btn-primary" data-toggle="modal" data-target="#chequeModalForm">
-					                        Cheque Payment
-				                        </button>
-                                    </div>
-                                   </div>
-
-                                </form>
-                                <!-- Extended default form grid -->
-
-                      </div>
-
-                       <div class="row2" style=" border: 2px solid black;">
-                          <div class="col2" style="margin-top:10px;">
-                            <div class="row">
-					
-						<div class="col-sm-6">
-                            <div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">Account Code</label>
-										<input type="text" class="form-control" placeholder="S_LEDGER_ACCOUNT">
-									</div>
-								</div>
-
-								<div class="col-6">
-									<div class="form-group">
-										<label for="zip">DN</label>
-										<input type="text" class="form-control" placeholder="S_SUB_NO">
-									</div>
-								</div>
-							</div>
-                            
-						</div>
-
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">NIC.No</label>
-										<input type="text" class="form-control" placeholder="S_NIC_NO">
-									</div>
-								</div>
-                      <div class="form-group">
-						<label for="exampleFormControlSelect12">Payment Type</label>
-						<select style="width:187%;" class="form-control" id="exampleFormControlSelect12">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					 </div>
-
-							</div>
-						</div>
-                        <div class="col-sm-6">
-                             <div class="form-group">
-								<input style="margin-top:-10px;" type="text" class="form-control" placeholder="S_SUB_NAME">
-							</div>
-                           </div>
-
-                        <div class="btn" style="margin-top:-20px;">
-                            <button type="button" class="btn btn-primary" style="width:183px; height50px;">Outstandings</button>
-                            <button type="button" class="btn btn-primary" style="margin-left:16px; width:183px; height50px;">Global Inq</button>
-                          
-                        </div>   
-
-					</div>
-                              
-
-                            <div class="row">
-					
-						<div class="col-sm-6">
-                            <div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">Narration</label>
-										<input style="width:218%;" type="text" class="form-control" placeholder="NARRATION">
-									</div>
-								</div>
-
-							</div>
-                            
-						</div>
-
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">Amount</label>
-										<input type="text" class="form-control" placeholder="AMOUNT">
-									</div>
-								</div>
-							</div>
-						</div>
-                          
-
-					</div>
-
-
-
-
-
-                              
-                             
-                          </div>
-
-                      </div>
-
-
-                       <div class="row3" style=" border: 2px solid black;">
-                          <div class="col3">
-
-                               <table  class="table table-bordered">
-                                  <thead>
-                                    <tr>
-                                      <th style="width: 130px;" scope="col">Account Code</th>
-                                      <th style="width: 100px;" scope="col">Type</th>
-                                      <th style="width: 446px;" scope="col">Narration</th>
-                                      <th style="" scope="col">Amount</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row"></th>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                    </tr>
-                                    <tr>
-                                       <th scope="row"></th>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                    </tr>
-                                    <tr>
-                                       <th scope="row"></th>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                    </tr>
-                                       <tr>
-                                       <th scope="row"></th>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-
-
-                          </div>
-                      </div>
-
-
-                       <div class="row4" style=" border: 2px solid black;">
-                          <div class="col4">
-                              
-                            <div class="btn" style="display:flex;">
-                                <button type="button" class="btn btn-primary" style="width:100px; height50px;">Query</button>
-                                <button type="button" class="btn btn-primary" style="margin-left:5px; width:100px; height50px;">Exit</button>
-                                <button type="button" class="btn btn-primary"   style="margin-left:5px; width:100px; height50px;">Clear</button>
-
-                                <nav style="margin-left:5px;" aria-label="Page navigation example">
-					<ul class="pagination pagination-seperated">
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Previous"><<
-								<span aria-hidden="true" class="mdi mdi-chevron-left mr-1"></span>
-								
-							</a>
-						</li>
-
-						<li class="page-item">
-							<a class="page-link" href="#"><</a>
-						</li>
-
-						<li class="page-item">
-							<a class="page-link" href="#">></a>
-						</li>
-
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Next">
-								>>
-								<span aria-hidden="true" class="mdi mdi-chevron-right ml-1"></span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-                               
-                                <button type="button" class="btn btn-primary"   style="margin-left:150px; width:100px; height50px;">Save</button>
-                            </div>
-
-                          </div>
-                      </div>
-                  </div>
-                  <div style=" border: 2px solid black;" class="col-md-4">
-                      <div class="col-sm-6">
-							<div class="form-group">
-								<label for="fname">Rating</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-						</div>
-                      <div class="col-sm-6">
-							<div class="form-group">
-								<label for="fname">Type</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-						</div>
-                      <div class="col-sm-6">
-							<div class="form-group">
-								<label for="fname">Status</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-						</div>
-                      <div class="col-sm-6">
-							<div class="form-group">
-								<label for="fname">Outstanding</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-						</div>
-                      <div class="col-sm-6">
-							<div class="form-group">
-								<label for="fname">Credit limit</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-						</div>
-                      
-                  </div>
-           </div>
-            </div>
-           
-
-
-
-      </div> <!-- End Content -->
-    </div> <!-- End Content Wrapper -->
-    
-    
-    <!-- Footer -->
-    <footer class="footer mt-auto">
-      <div class="copyright bg-white">
-        <p>
-          Copyright &copy; <span id="copy-year"></span> a template by <a class="text-primary" href="https://themefisher.com" target="_blank">Themefisher</a>.
-        </p>
-      </div>
-      <script>
-        var d = new Date();
-        var year = d.getFullYear();
-        document.getElementById("copy-year").innerHTML = year;
-      </script>
-    </footer>
-
-    </div> <!-- End Page Wrapper -->
-  </div> <!-- End Wrapper -->
-
-
-    <!-- <script type="module">
-      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-      const el = document.createElement('pwa-update');
-      document.body.appendChild(el);
-    </script> -->
-                     <!-- Form Modal -->
+                          <!-- Form Modal -->
             <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
 	            <div class="modal-dialog" role="document">
 		            <div class="modal-content">
@@ -1578,82 +1278,61 @@
 		            </div>
 	            </div>
             </div>
+    
+    <!-- Footer -->
 
-              <!-- Cheque Modal -->
-        <div class="modal fade" id="chequeModalForm" tabindex="-1" role="dialog" aria-labelledby="chequeModalFormTitle" aria-hidden="true">
-	        <div class="modal-dialog" role="document">
-		        <div class="modal-content">
-			        <div class="modal-header">
-				        <h5 class="modal-title" id="chequeModalFormTitle">Cheque Details</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					        <span aria-hidden="true">&times;</span>
-				        </button>
-			        </div>
 
-			        <div class="modal-body">
-				        <form>
-					        <div class="form-group">
-						        <label for="chequeFormControlInput1">Cheque Number</label>
-						        <input type="text" class="form-control" id="chequeFormControlInput1" placeholder="Ceque_number">
-					
-					        </div>
 
-					          <div class="row">
-							        <div class="col-sm-6">
-								        <div class="form-group">
-									        <label for="fname">Bank</label>
-									        <input type="text" class="form-control" placeholder="Bank">
-								        </div>
-							        </div>
+    <!-- <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
-							        <div class="col-sm-6">
-								        <div class="form-group">
-									        <label for="lname">Bank Name</label>
-									        <input type="text" class="form-control" placeholder="Bank_Name">
-								        </div>
-							        </div>
-						        </div>
-
-					            <div class="form-group">
-						            <label for="exampleFormControlPassword">Branch Name</label>
-						            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Branch_Name">
-					            </div>
-
-                                <div class="form-group">
-						            <label for="exampleFormControlPassword">Cheque Date</label>
-						            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Cheque_date">
-					            </div>
-
-                        
-				        </form>
-			        </div>
-
-			        <div class="modal-footer">
-				        <button type="submit" class="btn btn-secondary btn-default">Cancel</button>
-				        <button type="submit" class="btn btn-primary btn-default ml-3">Submit</button>
-			        </div>
-		        </div>
-	        </div>
-        </div>
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script> -->
 
     <!-- Javascript -->
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/simplebar/simplebar.min.js"></script>
  
- 
-    <script src='assets/plugins/daterangepicker/moment.min.js'></script>
-    <script src='assets/plugins/daterangepicker/daterangepicker.js'></script>
-    <script src='assets/js/date-range.js'></script>
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    
 
     
 
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
 
     <script src="assets/js/sleek.js"></script>
   <link href="assets/options/optionswitch.css" rel="stylesheet">
 <script src="assets/options/optionswitcher.js"></script>
 </body>
 </html>
-
 
 

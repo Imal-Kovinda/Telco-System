@@ -1202,63 +1202,137 @@
 
 
 
+              
+
+<%--        <div class="row  d-flex justify-content-around">
+	        <div class="col-lg-6">
+		        <div class="card card-default">
+			        <div class="card-header card-header-border-bottom">
+				        <h2>Cheque Details</h2>
+			        </div>
+
+			        <div class="card-body">
+				        <form>
+					        <div class="form-group">
+						        <label for="exampleFormControlInput1">Cheque Number</label>
+						        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ceque_number">
+						        <span class="mt-2 d-block">We'll never share your email with anyone else.</span>
+					        </div>
+
+                            <div class="row">
+						        <div class="col-sm-6">
+							        <div class="form-group">
+								        <label for="fname">Bank</label>
+								        <input type="text" class="form-control" placeholder="Bank">
+							        </div>
+						        </div>
+
+						        <div class="col-sm-6">
+							        <div class="form-group">
+								        <label for="lname">Bank Name</label>
+								        <input type="text" class="form-control" placeholder="Bank_Name">
+							        </div>
+						        </div>
+                            </div>
+
+					        <div class="form-group">
+						        <label for="exampleFormControlPassword">Branch Name</label>
+						        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Branch_Name">
+					        </div>
+
+                            <div class="form-group">
+						        <label for="exampleFormControlPassword">Cheque Date</label>
+						        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Cheque_date">
+					        </div>
+
+                            <div class="form-footer pt-4 pt-5 mt-4 border-top  d-flex justify-content-around">
+                                <button type="submit" class="btn btn-secondary btn-default">Cancel</button>
+						        <button type="submit" class="btn btn-primary btn-default ml-3">Submit</button>
+						
+					        </div>
+
+	
+				        </form>
+			        </div>
+		        </div>
 
 
-<div class="row">
-	<div class="col-lg-6">
+            </div> <!-- End Content -->
+        </div> <!-- End Content Wrapper -->--%>
+        	<div class="col-lg-6 col-xl-4">
 		<div class="card card-default">
 			<div class="card-header card-header-border-bottom">
-				<h2>Basic Form Controls</h2>
+				<h2>Form Modal Content</h2>
 			</div>
 
 			<div class="card-body">
-				<form>
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Cheque Number</label>
-						<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ceque_number">
-						<span class="mt-2 d-block">We'll never share your email with anyone else.</span>
-					</div>
+				<p class="mb-5">You can use form structure in your modal. Read bootstrap documentaion for<a href="https://getbootstrap.com/docs/4.6/components/modal/#varying-modal-content" target="_blank"> more details. </a></p>
 
-                    <div class="row">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="fname">Bank</label>
-								<input type="text" class="form-control" placeholder="Bank">
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="lname">Bank Name</label>
-								<input type="text" class="form-control" placeholder="Bank_Name">
-							</div>
-						</div>
-                    </div>
-
-					<div class="form-group">
-						<label for="exampleFormControlPassword">Branch Name</label>
-						<input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Branch_Name">
-					</div>
-
-                    <div class="form-group">
-						<label for="exampleFormControlPassword">Cheque Date</label>
-						<input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Cheque_date">
-					</div>
-
-                    <div class="form-footer pt-4 pt-5 mt-4 border-top">
-                        <button type="submit" class="btn btn-secondary btn-default">Cancel</button>
-						<button type="submit" class="btn btn-primary btn-default ml-3">Submit</button>
-						
-					</div>
-
-	
-				</form>
+				<button type="button" class="btn btn-info btn-pill" data-toggle="modal" data-target="#exampleModalForm">
+					Launch Demo Modal
+				</button>
 			</div>
 		</div>
+	</div>
+                <!-- Form Modal -->
+        <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+	        <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+			        <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalFormTitle">Cheque Details</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					        <span aria-hidden="true">&times;</span>
+				        </button>
+			        </div>
+
+			        <div class="modal-body">
+				        <form>
+					        <div class="form-group">
+						        <label for="exampleFormControlInput1">Cheque Number</label>
+						        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ceque_number">
+					
+					        </div>
+
+					          <div class="row">
+							        <div class="col-sm-6">
+								        <div class="form-group">
+									        <label for="fname">Bank</label>
+									        <input type="text" class="form-control" placeholder="Bank">
+								        </div>
+							        </div>
+
+							        <div class="col-sm-6">
+								        <div class="form-group">
+									        <label for="lname">Bank Name</label>
+									        <input type="text" class="form-control" placeholder="Bank_Name">
+								        </div>
+							        </div>
+						        </div>
+
+					            <div class="form-group">
+						            <label for="exampleFormControlPassword">Branch Name</label>
+						            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Branch_Name">
+					            </div>
+
+                                <div class="form-group">
+						            <label for="exampleFormControlPassword">Cheque Date</label>
+						            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Cheque_date">
+					            </div>
+
+                        
+				        </form>
+			        </div>
+
+			        <div class="modal-footer">
+				        <button type="submit" class="btn btn-secondary btn-default">Cancel</button>
+				        <button type="submit" class="btn btn-primary btn-default ml-3">Submit</button>
+			        </div>
+		        </div>
+	        </div>
+        </div>
 
 
-    </div> <!-- End Content -->
-</div> <!-- End Content Wrapper -->
+
     
     
     <!-- Footer -->
