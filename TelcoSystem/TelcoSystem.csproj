@@ -831,6 +831,8 @@
     <Content Include="assets\plugins\toastr\toastr.min.css" />
     <Content Include="assets\plugins\toastr\toastr.min.js" />
     <Content Include="BasicInputs.aspx" />
+    <Content Include="BatchReceiptUpload.aspx" />
+    <Content Include="BranchReceipt.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -862,6 +864,7 @@
     <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="assets\plugins\toastr\toastr.js.map" />
     <Content Include="test.aspx" />
+    <Content Include="Validate.aspx" />
     <Content Include="WebForm3.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Index.aspx" />
@@ -916,6 +919,20 @@
     <Compile Include="BasicInputs.aspx.designer.cs">
       <DependentUpon>BasicInputs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BatchReceiptUpload.aspx.cs">
+      <DependentUpon>BatchReceiptUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BatchReceiptUpload.aspx.designer.cs">
+      <DependentUpon>BatchReceiptUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchReceipt.aspx.cs">
+      <DependentUpon>BranchReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchReceipt.aspx.designer.cs">
+      <DependentUpon>BranchReceipt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -961,6 +978,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
