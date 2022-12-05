@@ -46,6 +46,7 @@
     <Compile Include="Common\DataAccessObject.cs" />
     <Compile Include="Common\DbConnection.cs" />
     <Compile Include="Common\DBFieldAttribute.cs" />
+    <Compile Include="Domain\BankMaster.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Infrastructure\CustomerDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
