@@ -8,16 +8,12 @@ namespace TelcoSystemCore.Common
 {
     public class ControllerFactory
     {
-        public static StudentController CreateStudentController()
-        {
-            StudentController studentController = new StudentControllerImpl();
-            return (StudentController)studentController;
-        }
+        //public static StudentController CreateStudentController()
+        //{
+        //    StudentController studentController = new StudentControllerImpl();
+        //    return (StudentController)studentController;
+        //}
 
-        public static CountryController CreateCountryController()
-        {
-            CountryController countryController = new CountryControllerImpl();
-            return (CountryController)countryController;
-        }
+
     }
 }
