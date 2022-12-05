@@ -151,6 +151,12 @@
                     <span class="nav-text">Validate</span>
                   </a>
                 </li>
+                   <li class="has-sub ">
+                  <a class="sidenav-item-link" href="Complain.aspx">
+                    <i class="mdi mdi-pencil-box-multiple"></i>
+                    <span class="nav-text">Complain</span>
+                  </a>
+                </li>
 
                 <!-- <li class="section-title">
                   UI Elements
@@ -1183,22 +1189,25 @@
           ——— CONTENT WRAPPER
           ===================================== -->
           <div class="content-wrapper">
-            <div class="content">
+            <div class="content" style="padding:0rem 0rem;">
 
 
 <div class="row">
+	<div class="col-12">
+                  <div class="card card-default">
+                  <div class="card-header justify-content-between" style="padding-top:0rem;">
+                      <h2>Batch Receipt Upload</h2>
+                      <div class="date-range-report ">
+                          <img src="assets/img/LankaBell.jpg" style="width:200px; height:100px;">
+                      </div>
+                    </div>
 
-	<div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-header card-header-border-bottom">
-                <div class="form-group" style="display:flex;gap:20px;">
+			<div class="card-body" style="padding-top:0rem;margin-top:10px;">
+                 <div class="form-group" style="display:flex;gap:20px;">
 						<label style="width:250px;font-size:17px;" for="exampleFormControlFile1">Batch Receipt Upload</label>
 						<input type="file" class="form-control-file" id="exampleFormControlFile1">
 				</div>
-			</div>
-
-			<div class="card-body">
-                <div class="dropdown" style="display:flex;gap:20px; margin-top:-25px;margin-bottom:20px;">
+                <div class="dropdown" style="display:flex;gap:20px; margin-top:-12px;margin-bottom:20px;">
                     <label style="font-size:17px;color:black;" for="exampleFormControlSelect12">Bank Batch</label>
                     <select class="form-control" style="width:25%; margin-bottom:10px;" id="exampleFormControlSelect12">
 							<option>BOC</option>
@@ -1213,10 +1222,8 @@
 						<input type="text" style="width:50px;border-radius:0.25em;" class="form-control-file" id="dupl">
 				</div>
                 </div>
-                
-
                 <div style="height:300px; display:block; overflow-y:auto;">
-                    <table class="table table-hover">
+                   <table class="table table-hover">
 					<thead style=" position: sticky;top: 0px; background: gainsboro;">
 						<tr>
 							<th scope="col">Payment Date</th>
@@ -1331,11 +1338,9 @@
 					</tbody>
 
 				</table>
-
-
                 </div>
-	
-               <div class="form-group" style="display:flex; gap:30px; margin-top:20px;">
+
+                 <div class="form-group" style="display:flex; gap:30px; margin-top:20px;">
 					<label for="total" style="font:x-large; margin-top:10px;">Total Amount</label>
 					<input type="text" class="form-control"  style="width:20%;" placeholder="Total">
 			   </div>
@@ -1345,15 +1350,18 @@
                 <button type="button" class="btn btn-primary" style="margin-left:20px; width:100px; height50px;">Upload</button>
                 <button type="button" class="btn btn-primary"   style="margin-left:20px; width:100px; height50px;">Exit</button>
             </div>
-		</div>
+
+		
+			</div>
+           
+		</div>  
+
 	</div>
 
-</div>
 
 
-
-      </div> <!-- End Content -->
-    </div> <!-- End Content Wrapper -->
+</div> <!-- End Content -->
+</div> <!-- End Content Wrapper -->
     
     
     <!-- Footer -->

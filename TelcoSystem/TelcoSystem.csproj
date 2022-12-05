@@ -147,6 +147,7 @@
     <Content Include="assets\img\github\safari.png" />
     <Content Include="assets\img\github\sleek.gif" />
     <Content Include="assets\img\github\team.png" />
+    <Content Include="assets\img\LankaBell.jpg" />
     <Content Include="assets\img\lightenning.png" />
     <Content Include="assets\img\products\p1.jpg" />
     <Content Include="assets\img\products\p2.jpg" />
@@ -867,7 +868,7 @@
     <Content Include="assets\plugins\toastr\toastr.js.map" />
     <Content Include="test.aspx" />
     <Content Include="Validate.aspx" />
-    <Content Include="WebForm3.aspx" />
+    <Content Include="Complain.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Index.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1009,12 +1010,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="Complain.aspx.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="Complain.aspx.designer.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

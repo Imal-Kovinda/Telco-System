@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm3.aspx.cs" Inherits="TelcoSystem.WebForm3" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Complain.aspx.cs" Inherits="TelcoSystem.WebForm3" %>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -135,40 +135,31 @@
                   </ul>
                 </li>
 
-                <li class="has-sub ">
-                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#app"
-                    aria-expanded="false" aria-controls="app">
+                
+                 <li class="has-sub ">
+                  <a class="sidenav-item-link" href="BranchReceipt.aspx">
                     <i class="mdi mdi-pencil-box-multiple"></i>
-                    <span class="nav-text">App</span> <b class="caret"></b>
+                    <span class="nav-text">Branch Receipt</span>
                   </a>
 
-                  <ul class="collapse " id="app" data-parent="#sidebar-menu">
-                    <div class="sub-menu">
-                      <li class="">
-                        <a class="sidenav-item-link" href="chat.html">
-                          <span class="nav-text">Chat</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="contacts.html">
-                          <span class="nav-text">Contacts</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="team.html">
-                          <span class="nav-text">Team</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="calendar.html">
-                          <span class="nav-text">Calendar</span>
-                        </a>
-                      </li>
-                    </div>
-                  </ul>
+                </li>
+                <li class="has-sub ">
+                  <a class="sidenav-item-link" href="BatchReceiptUpload.aspx">
+                    <i class="mdi mdi-pencil-box-multiple"></i>
+                    <span class="nav-text">Batch Receipt</span>
+                  </a>
+                </li>
+                <li class="has-sub ">
+                  <a class="sidenav-item-link" href="Validate.aspx">
+                    <i class="mdi mdi-pencil-box-multiple"></i>
+                    <span class="nav-text">Validate</span>
+                  </a>
+                </li>
+                <li class="has-sub ">
+                  <a class="sidenav-item-link" href="Complain.aspx">
+                    <i class="mdi mdi-pencil-box-multiple"></i>
+                    <span class="nav-text">Complain</span>
+                  </a>
                 </li>
 
                 <!-- <li class="section-title">
@@ -1211,9 +1202,12 @@
 <div class="row">
 
     <div class="card col-12 card-default">
-			<div class="card-header card-header-border-bottom">
-				<h2>Complain Entry</h2>
-			</div>
+			 <div class="card-header justify-content-between" style="padding-top:0rem;">
+                      <h2>Complain Entry</h2>
+                      <div class="date-range-report ">
+                          <img src="assets/img/LankaBell.jpg" style="width:200px; height:100px;">
+                      </div>
+                    </div>
 
 			<div class="card-body">
 				<form >

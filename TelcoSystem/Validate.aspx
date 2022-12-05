@@ -151,6 +151,12 @@
                     <span class="nav-text">Validate</span>
                   </a>
                 </li>
+                   <li class="has-sub ">
+                  <a class="sidenav-item-link" href="Complain.aspx">
+                    <i class="mdi mdi-pencil-box-multiple"></i>
+                    <span class="nav-text">Complain</span>
+                  </a>
+                </li>
 
                 <!-- <li class="section-title">
                   UI Elements
@@ -1183,15 +1189,20 @@
           ——— CONTENT WRAPPER
           ===================================== -->
           <div class="content-wrapper">
-            <div class="content">
+            <div class="content" style="padding:0rem 0rem;">
 
 
-<div class="row">
+    <div class="row">
+	<div class="col-12">
+                  <div class="card card-default">
+                  <div class="card-header justify-content-between" style="padding-top:0rem;">
+                      <h2>Validate Form</h2>
+                      <div class="date-range-report ">
+                          <img src="assets/img/LankaBell.jpg" style="width:200px; height:100px;">
+                      </div>
+                    </div>
 
-	<div class="col-lg-6">
-		<div class="card card-default">
-
-			<div class="card-body">
+			<div class="card-body" style="padding-top:0rem;">
                 <div style="height:300px; display:block; overflow-y:auto;">
                     <table class="table table-hover">
 					<thead style=" position: sticky;top: 0px; background: gainsboro;">
@@ -1370,13 +1381,13 @@
             <div class="btn" style="display:flex; margin-left:30px; margin-top:-23px;margin-bottom:10px;">
                 <button type="button" class="btn btn-primary" style="width:110px; height50px;">Query</button>
                 <button type="button" class="btn btn-primary" style="margin-left:20px; width:110px; height50px;">Validate</button>
-                <button type="button" class="btn btn-primary"   style="margin-left:20px; width:110px; height50px;">Check Error</button>
-                <button type="button" class="btn btn-primary"   style="margin-left:20px; width:110px; height50px;">Post</button>
-                <button type="button" class="btn btn-primary"   style="margin-left:20px; width:110px; height50px;">Exit</button>
+                <button type="button" class="btn btn-primary" style="margin-left:20px; width:110px; height50px;">Check Error</button>
+                <button type="button" class="btn btn-primary" style="margin-left:20px; width:110px; height50px;">Post</button>
+                <button type="button" class="btn btn-primary" style="margin-left:20px; width:110px; height50px;">Exit</button>
             </div>
-		</div>
-	</div>
+		</div>  
 
+	</div>
 </div>
 
 

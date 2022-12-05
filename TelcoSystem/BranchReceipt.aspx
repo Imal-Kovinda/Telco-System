@@ -143,6 +143,12 @@
                     <span class="nav-text">Validate</span>
                   </a>
                 </li>
+                   <li class="has-sub ">
+                  <a class="sidenav-item-link" href="Complain.aspx">
+                    <i class="mdi mdi-pencil-box-multiple"></i>
+                    <span class="nav-text">Complain</span>
+                  </a>
+                </li>
 
                 <!-- <li class="section-title">
                   UI Elements
@@ -1175,32 +1181,20 @@
           ——— CONTENT WRAPPER
           ===================================== -->
           <div class="content-wrapper">
-            <div class="content">
+            <div class="content" style="padding:0rem 0rem;">
 
             <div class="card card-default">
-                 <div class="row" style="padding: 1rem;color: black;">
-                  <div class="col-md-8" style="border-right: 2px solid black;">
-                      <div class="row1" style=" border: 2px solid black;">
+                 <div class="card-header justify-content-between" style="padding-top:0rem;">
+                      <h2>Branch Receipt</h2>
+                      <div class="date-range-report ">
+                          <img src="assets/img/LankaBell.jpg" style="width:200px; height:100px;">
+                      </div>
+                    </div>
+                 <div class="row" style="color: black;margin-right:0px;">
+                  <div class="col-md-8" style="margin-left:10px;">
+                      <div class="row1" style="padding: 0.5rem; border: 1px solid black;border-color: #cfd2d5;">
                           <div class="col1 ml-2" style="display:flex; gap:50px;margin-top:10px;">
-                              <h4 >Payment Mode</h4>
-                              <%--<div class="radio" style="width:450px;height:30px; background-color:lightgray;font-size:18px;">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline1">Cash</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline2">Cheque</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline3">Credit Card</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline4" name="inlineDefaultRadiosExample">
-                                    <label class="custom-control-label" for="defaultInline4">QR</label>
-                                </div>
-                              </div>--%>
+                              <h4 >Payment Mode - Cash</h4>                             
                           </div>  
 
 
@@ -1266,7 +1260,7 @@
 
                       </div>
 
-                       <div class="row2" style=" border: 2px solid black;">
+                       <div class="row2" style="padding: 0.5rem; border: 1px solid black;border-color: #cfd2d5;">
                           <div class="col2" style="margin-top:10px;">
                             <div class="row">
 					
@@ -1299,7 +1293,7 @@
 								</div>
                       <div class="form-group">
 						<label for="exampleFormControlSelect12">Payment Type</label>
-						<select style="width:187%;" class="form-control" id="exampleFormControlSelect12">
+						<select style="width:151%;" class="form-control" id="exampleFormControlSelect12">
 							<option>1</option>
 							<option>2</option>
 							<option>3</option>
@@ -1310,22 +1304,24 @@
 
 							</div>
 						</div>
-                        <div class="col-sm-6">
+
+                       
+
+
+                        <div class="col-sm-6" style="">
                              <div class="form-group">
-								<input style="margin-top:-10px;" type="text" class="form-control" placeholder="S_SUB_NAME">
+								<input style="margin-top:-10px;" type="text" class="form-control" placeholder="s_sub_name">
 							</div>
-                           </div>
-
-                        <div class="btn" style="margin-top:-20px;">
-                            <button type="button" class="btn btn-primary" style="width:183px; height50px;">Outstandings</button>
-                            <button type="button" class="btn btn-primary" style="margin-left:16px; width:183px; height50px;">Global Inq</button>
+                         
+                                <button type="button" class="btn btn-primary" style="width: 152px;margin-left: 360px;margin-top: -106px;">outstandings</button>
+                                <button type="button" class="btn btn-primary" style="margin-left: 528px;width: 148px;margin-top: -148px;">global inq</button>                        
                           
-                        </div>   
 
+                         </div>
 					</div>
                               
 
-                            <div class="row">
+                     <div class="row" style="margin-top:-45px;">
 					
 						<div class="col-sm-6">
                             <div class="row">
@@ -1365,7 +1361,7 @@
                       </div>
 
 
-                       <div class="row3" style=" border: 2px solid black;">
+                       <div class="row3" style=" border: 1px solid black;border-color: #cfd2d5;">
                           <div class="col3">
 
                                <table  class="table table-bordered">
@@ -1410,10 +1406,10 @@
                       </div>
 
 
-                       <div class="row4" style=" border: 2px solid black;">
-                          <div class="col4">
+                       <div class="row4" style=" border: 1px solid black;border-color: #cfd2d5;">
+                          <div class="col4" style="margin-bottom:20px;">
                               
-                            <div class="btn" style="display:flex;">
+                            <div class="btn" style="display:flex;height:58px;">
                                 <button type="button" class="btn btn-primary" style="width:100px; height50px;">Query</button>
                                 <button type="button" class="btn btn-primary" style="margin-left:5px; width:100px; height50px;">Exit</button>
                                 <button type="button" class="btn btn-primary"   style="margin-left:5px; width:100px; height50px;">Clear</button>
@@ -1422,7 +1418,7 @@
 					<ul class="pagination pagination-seperated">
 						<li class="page-item">
 							<a class="page-link" href="#" aria-label="Previous"><<
-								<span aria-hidden="true" class="mdi mdi-chevron-left mr-1"></span>
+								
 								
 							</a>
 						</li>
@@ -1438,19 +1434,19 @@
 						<li class="page-item">
 							<a class="page-link" href="#" aria-label="Next">
 								>>
-								<span aria-hidden="true" class="mdi mdi-chevron-right ml-1"></span>
+								
 							</a>
 						</li>
 					</ul>
 				</nav>
                                
-                                <button type="button" class="btn btn-primary"   style="margin-left:150px; width:100px; height50px;">Save</button>
+                                <button type="button" class="btn btn-primary"   style="margin-left:95px; width:100px; height50px;">Save</button>
                             </div>
 
                           </div>
                       </div>
                   </div>
-                  <div style=" border: 2px solid black;" class="col-md-4">
+                  <div style=" border: 1px solid black;border-color: #cfd2d5;padding: 1rem; margin-left:-15px;" class="col-md-4">
                       <div class="col-sm-6">
 							<div class="form-group">
 								<label for="fname">Rating</label>
