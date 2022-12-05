@@ -65,7 +65,7 @@
     <div class="wrapper">
 
       <!-- Github Link -->
-      <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
+     <%-- <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
         <svg width="70" height="70" viewBox="0 0 250 250" aria-hidden="true">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="75%" x2="100%" y2="0%">
@@ -76,7 +76,9 @@
           <path d="M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z" fill="url(#grad1)"></path>
         </svg>
         <i class="mdi mdi-github-circle"></i>
-      </a>
+      </a>--%>
+        <img src="~/assets/logo/bell.jpeg" runat="server" Width="60" Height="20" />
+
 
 
 
@@ -701,14 +703,15 @@
               <!-- search form -->
               <div class="search-form d-none d-lg-inline-block">
                 <div class="input-group">
-                  <button type="button" name="search" id="search-btn" class="btn btn-flat">
+                  <%--<button type="button" name="search" id="search-btn" class="btn btn-flat">
                     <i class="mdi mdi-magnify"></i>
                   </button>
                   <input type="text" name="query" id="search-input" class="form-control" placeholder="'button', 'chart' etc."
-                    autofocus autocomplete="off" />
+                    autofocus autocomplete="off" />--%>
+                    <h2>Complain Entry</h2>
                 </div>
                 <div id="search-results-container">
-                  <ul id="search-results"></ul>
+                 <%-- <ul id="search-results"></ul>--%>
                 </div>
               </div>
 
@@ -1152,9 +1155,9 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="right-sidebar-in right-sidebar-2-menu">
+               <%--   <li class="right-sidebar-in right-sidebar-2-menu">
                     <i class="mdi mdi-settings mdi-spin"></i>
-                  </li>
+                  </li>--%>
                   <!-- User Account -->
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
