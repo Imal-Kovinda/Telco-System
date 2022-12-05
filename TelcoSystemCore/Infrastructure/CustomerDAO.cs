@@ -34,13 +34,13 @@ namespace TelcoSystemCore.Infrastructure
                                            "values (@ID,@Name,@Email,@Address,@City,@Contact_No,@NIC) SELECT SCOPE_IDENTITY() ";
 
 
-            dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerID);
-            dbConnection.cmd.Parameters.AddWithValue("@Name", customer.CustomerName);
-            dbConnection.cmd.Parameters.AddWithValue("@Email", customer.CusEmail);
-            dbConnection.cmd.Parameters.AddWithValue("@Address", customer.AccAddress);
-            dbConnection.cmd.Parameters.AddWithValue("@City", customer.City);
-            dbConnection.cmd.Parameters.AddWithValue("@Contact_No", customer.ContactNo);
-            dbConnection.cmd.Parameters.AddWithValue("@NIC", customer.CusNIC);
+            //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerId);
+            //dbConnection.cmd.Parameters.AddWithValue("@Name", customer.CustomerName);
+            //dbConnection.cmd.Parameters.AddWithValue("@Email", customer.CusEmail);
+            //dbConnection.cmd.Parameters.AddWithValue("@Address", customer.AccAddress);
+            //dbConnection.cmd.Parameters.AddWithValue("@City", customer.City);
+            //dbConnection.cmd.Parameters.AddWithValue("@Contact_No", customer.ContactNo);
+            //dbConnection.cmd.Parameters.AddWithValue("@NIC", customer.CusNIC);
 
             output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
 
@@ -56,13 +56,13 @@ namespace TelcoSystemCore.Infrastructure
             dbConnection.cmd.CommandType = System.Data.CommandType.Text;
             dbConnection.cmd.CommandText = "Update Student set Country_ID = @ID ,Name = @Name,Email = @Email,Address  =@Address ,City = @City WHERE ID = @ID ";
 
-            dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerID);
-            dbConnection.cmd.Parameters.AddWithValue("@Name", customer.CustomerName);
-            dbConnection.cmd.Parameters.AddWithValue("@Email", customer.CusEmail);
-            dbConnection.cmd.Parameters.AddWithValue("@Address", customer.AccAddress);
-            dbConnection.cmd.Parameters.AddWithValue("@City", customer.City);
-            dbConnection.cmd.Parameters.AddWithValue("@Contact_No", customer.ContactNo);
-            dbConnection.cmd.Parameters.AddWithValue("@NIC", customer.CusNIC);
+            //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerID);
+            //dbConnection.cmd.Parameters.AddWithValue("@Name", customer.CustomerName);
+            //dbConnection.cmd.Parameters.AddWithValue("@Email", customer.CusEmail);
+            //dbConnection.cmd.Parameters.AddWithValue("@Address", customer.AccAddress);
+            //dbConnection.cmd.Parameters.AddWithValue("@City", customer.City);
+            //dbConnection.cmd.Parameters.AddWithValue("@Contact_No", customer.ContactNo);
+            //dbConnection.cmd.Parameters.AddWithValue("@NIC", customer.CusNIC);
 
             output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
 

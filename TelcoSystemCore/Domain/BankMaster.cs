@@ -11,7 +11,7 @@ namespace TelcoSystemCore.Domain
     public class BankMaster
     {
         [DBField("BANK_CODE")]
-        public String Bankode { get; set; }
+        public String BankCode { get; set; }
 
         [DBField("BANK_NAME")]
         public String BankName { get; set; }

@@ -11,93 +11,93 @@ namespace TelcoSystemCore.Domain
     public class Customer
     {
         [DBField("CUSTOMER_ID")]
-        public int CUSTOMER_ID { get; set; }
+        public int CustomerId { get; set; }
 
         [DBField("CUSTOMER_NAME")]
-        public string CUSTOMER_NAME { get; set; }
+        public string CustomerName { get; set; }
 
         [DBField("CUSTOMER_TYPE_ID")]
-        public string CUSTOMER_TYPE_ID { get; set; }
+        public string CustomerTypeId { get; set; }
 
         [DBField("TITLE")]
-        public string TITLE { get; set; }
+        public string Title { get; set; }
 
         [DBField("ACTIVATED_ON")]
-        public string ACTIVATED_ON { get; set; }
+        public string ActivatedOn { get; set; }
 
         [DBField("ACTIVATED_BY")]
-        public string ACTIVATED_BY { get; set; }
+        public string ActivatedBy { get; set; }
 
         [DBField("ADDRESS_LINE_1")]
-        public int ADDRESS_LINE_1 { get; set; }
+        public int AddressLine1 { get; set; }
 
         [DBField("ADDRESS_LINE_2")]
-        public int ADDRESS_LINE_2 { get; set; }
+        public int AddressLine2 { get; set; }
 
         [DBField("ADDRESS_LINE_3")]
-        public int ADDRESS_LINE_3 { get; set; }
+        public int AddressLine3 { get; set; }
 
         [DBField("CITY")]
-        public string CITY { get; set; }
+        public string City { get; set; }
 
         [DBField("POSTAL_CODE")]
-        public string POSTAL_CODE { get; set; }
+        public string PostalCode { get; set; }
 
         [DBField("MODIFIED_BY")]
-        public string MODIFIED_BY { get; set; }
+        public string ModifiedBy { get; set; }
 
         [DBField("MODIFIED_ON")]
-        public string MODIFIED_ON { get; set; }
+        public string ModifiedOn { get; set; }
 
         [DBField("PROFILE_STATUS")]
-        public string PROFILE_STATUS { get; set; }
+        public string ProfileStatus { get; set; }
 
         [DBField("CP_REMARKS")]
-        public string CP_REMARKS { get; set; }
+        public string CpRemarks { get; set; }
 
         [DBField("DISTRICT")]
-        public string DISTRICT { get; set; }
+        public string District { get; set; }
 
         [DBField("PROVINCE")]
-        public string PROVINCE { get; set; }
+        public string Province { get; set; }
 
         [DBField("CUST_GROUP")]
-        public string CUST_GROUP { get; set; }
+        public string CustGroup { get; set; }
 
         [DBField("CUST_RATING")]
-        public string CUST_RATING { get; set; }
+        public string CustRating { get; set; }
 
         [DBField("TOP_CUSTOMER_STAT")]
-        public string TOP_CUSTOMER_STAT { get; set; }
+        public string TopCustomerStat { get; set; }
 
         [DBField("CONFIDENTIAL")]
-        public string CONFIDENTIAL { get; set; }
+        public string Confidential { get; set; }
 
         [DBField("PREFERRED_LANGUAGE")]
-        public string PREFERRED_LANGUAGE { get; set; }
+        public string PreferredLanguage { get; set; }
 
         [DBField("PROFESSION_DESIGNATION")]
-        public string PROFESSION_DESIGNATION { get; set; }
+        public string ProfessionDesignation { get; set; }
 
         [DBField("DATE_OF_BIRTH")]
-        public string DATE_OF_BIRTH { get; set; }
+        public string DateOfBirth { get; set; }
 
         [DBField("CONTACT_PHONE_NO")]
-        public string CONTACT_PHONE_NO { get; set; }
+        public string ContactPhoneNumber { get; set; }
 
         [DBField("MANAGER_1")]
-        public string MANAGER_1 { get; set; }
+        public string Manager1 { get; set; }
 
         [DBField("MANAGER_2")]
-        public string MANAGER_2 { get; set; }
+        public string Manager2 { get; set; }
 
         [DBField("SALES_PERSON")]
-        public string SALES_PERSON { get; set; }
+        public string SalesPerson { get; set; }
 
         [DBField("NEW_ID_NUMBER ")]
-        public string NEW_ID_NUMBER { get; set; }
+        public string NewIdNumber { get; set; }
 
-       
+
 
 
     }
