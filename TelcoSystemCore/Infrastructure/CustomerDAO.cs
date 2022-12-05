@@ -10,14 +10,14 @@ using DbConnection = TelcoSystemCore.Common.DbConnection;
 
 namespace TelcoSystemCore.Infrastructure
 {
-    public interface CustomerDAO
+    public interface ICustomerDAO
     {
         int Save(Customer customer, DbConnection dbConnection);
         int Update(Customer customer, DbConnection dbConnection);
         List<Customer> GetCustomerList(DbConnection dbConnection);
     }
 
-    public class CustomerSqlDAOImpl : CustomerDAO
+    public class CustomerSqlDAOImpl : ICustomerDAO
     {
         public List<Customer> GetCustomerList(DbConnection dbConnection)
         {
