@@ -15,10 +15,5 @@ namespace TelcoSystemCore.Common
             return (ICustomerDAO)customerDAO;
         }
 
-        public static CountryDAO CreateCountryDAO()
-        {
-            CountryDAO countryDAO = new CountryDAOImpl();
-            return (CountryDAO)countryDAO;
-        }
     }
 }
