@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TelcoSystemCore.Infrastructure;
 
 namespace TelcoSystemCore.Common
 {
     public class DAOFactory
     {
-        public static StudentDAO CreateStudentDAO()
+        public static ICustomerDAO CreateCustomerDAO()
         {
-            StudentDAO studentDAO = new StudentSqlDAOImpl();
-            return (StudentDAO)studentDAO;
+            ICustomerDAO customerDAO = new CustomerSqlDAOImpl();
+            return (ICustomerDAO)customerDAO;
         }
 
         public static CountryDAO CreateCountryDAO()
