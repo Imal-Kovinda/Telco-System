@@ -1214,14 +1214,14 @@
 <div class="row">
       <div class="col-12">
 		<div class="card ">
-			<div class="card-body">
+			<div class="card-body row">
 			
-					<div class="card col-6">
+					<div class="col-6">
                         <h2>Complain Entry</h2>
                         
 
                     </div>
-                    <div class="card col-6">
+                    <div class="col-6 d-flex flex-row-reverse">
                         <img src="~/assets/logo/bell.jpeg" runat="server" Width="120" Height="50" />
                         
 
@@ -1240,11 +1240,11 @@
 				<form >
 					<div class="row">
 						
-						<div class="col-sm-6">
+						<%--<div class="col-sm-6">--%>
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<h3>STATUS_DESC</h3>
+										<h2>STATUS_DESC</h2>
 									</div>
 								</div>
 
@@ -1255,7 +1255,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						<%--</div>--%>
 
 						<div class="col-sm-6">
 							<div class="row">
@@ -1718,7 +1718,7 @@
                             <button type="button" class="mr-2 btn  btn-secondary">GLOBAL INQUIRY</button>
 					     </div>
 
-                         <div class="col-6">
+                         <div class="col-6 d-flex flex-row-reverse">
 						    <button type="button" class="mr-2 btn  btn-success">SAVE</button>
                         </div>
 
