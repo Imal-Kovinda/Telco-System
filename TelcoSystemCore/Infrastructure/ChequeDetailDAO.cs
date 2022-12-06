@@ -1,30 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TelcoSystemCore.Common;
 using TelcoSystemCore.Domain;
-using DbConnection = TelcoSystemCore.Common.DbConnection;
 
 namespace TelcoSystemCore.Infrastructure
 {
-    public interface ICustomerDAO
+    public interface IChequeDetailDAO
     {
-        int Save(Customer customer, DbConnection dbConnection);
-        int Update(Customer customer, DbConnection dbConnection);
-        List<Customer> GetCustomerList(DbConnection dbConnection, String CustomQuery = null);
+        int Save(ChequeDetail cheque, DbConnection dbConnection);
+        int Update(ChequeDetail cheque, DbConnection dbConnection);
+        List<ChequeDetail> GetChequeDetailList(DbConnection dbConnection);
     }
 
-    public class CustomerSqlDAOImpl : ICustomerDAO
+    public class ChequeDetailSqlDAOImpl : IChequeDetailDAO
     {
-        public List<Customer> GetCustomerList(DbConnection dbConnection, String CustomQuery = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Save(Customer customer, DbConnection dbConnection)
+        public int Save(ChequeDetail chequeDetail, DbConnection dbConnection)
         {
             int output = 0;
 
@@ -48,7 +41,7 @@ namespace TelcoSystemCore.Infrastructure
             return output;
         }
 
-        public int Update(Customer customer, DbConnection dbConnection)
+        public int Update(ChequeDetail chequeDetail, DbConnection dbConnection)
         {
             int output = 0;
 
@@ -71,19 +64,19 @@ namespace TelcoSystemCore.Infrastructure
 
         }
 
-        public List<Customer> GetCustomerList(DbConnection dbConnection)
+        public List<ChequeDetail> GetChequeDetailList(DbConnection dbConnection)
         {
-            List<Customer> customerList = new List<Customer>();
+            List<ChequeDetail> chequeDetail = new List<ChequeDetail>();
             dbConnection = new DbConnection();
-            dbConnection.cmd.CommandText = "select * from customer";
+            dbConnection.cmd.CommandText = "select * from ChequeDetail";
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
             DataAccessObject dataAccessObject = new DataAccessObject();
-            customerList = dataAccessObject.ReadCollection<Customer>(dbConnection.dr);
+            chequeDetail = dataAccessObject.ReadCollection<ChequeDetail>(dbConnection.dr);
             dbConnection.dr.Close();
 
 
-            return customerList;
+            return chequeDetail;
         }
     }
 }
