@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TelcoSystemCore.Common;
 using TelcoSystemCore.Domain;
 using TelcoSystemCore.Infrastructure;
+using DbConnection = TelcoSystemCore.Common.DbConnection;
 
 namespace TelcoSystemCore.Controller
 {
@@ -19,7 +20,7 @@ namespace TelcoSystemCore.Controller
 
     public class ChequeDetailControllerImpl : IChequeDetailController
     {
-        IChequeDetailController chequeDetailDAO = DAOFactory.CreateChequeDetailDAO();
+        IChequeDetailDAO chequeDetailDAO = DAOFactory.CreateChequeDetailDAO();
         public int Save(ChequeDetail chequeDetail)
         {
             DbConnection dbConnection = null;
@@ -48,7 +49,7 @@ namespace TelcoSystemCore.Controller
             try
             {
                 dbConnection = new DbConnection();
-                return customerDAO.Update(customer, dbConnection);
+                return chequeDetailDAO.Update(chequeDetail, dbConnection);
             }
             catch (Exception)
             {
@@ -66,7 +67,40 @@ namespace TelcoSystemCore.Controller
 
         public List<ChequeDetail> GetChequeDetailList(string ChequeDetailQuery = null)
         {
-            throw new NotImplementedException();
+            DbConnection dbConnection = null;
+            List<ChequeDetail> listChequeDetail = new List<ChequeDetail>();
+            try
+            {
+
+                dbConnection = new DbConnection();
+                listChequeDetail = chequeDetailDAO.GetChequeDetailList(dbConnection);
+
+                if (ChequeDetailQuery != null)
+                {
+
+                    return chequeDetailDAO.GetChequeDetailList(dbConnection, ChequeDetailQuery);
+                }
+                else
+                {
+                    //check
+                    return chequeDetailDAO.GetChequeDetailList(dbConnection);
+
+                }
+
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+            return listChequeDetail;
         }
     }
 }

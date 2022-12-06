@@ -12,7 +12,7 @@ namespace TelcoSystemCore.Infrastructure
     {
         int Save(ChequeDetail cheque, DbConnection dbConnection);
         int Update(ChequeDetail cheque, DbConnection dbConnection);
-        List<ChequeDetail> GetChequeDetailList(DbConnection dbConnection);
+        List<ChequeDetail> GetChequeDetailList(DbConnection dbConnection, string ChequeQuery = null);
     }
 
     public class ChequeDetailSqlDAOImpl : IChequeDetailDAO
@@ -77,6 +77,11 @@ namespace TelcoSystemCore.Infrastructure
 
 
             return chequeDetail;
+        }
+
+        public List<ChequeDetail> GetChequeDetailList(DbConnection dbConnection, string ChequeQuery = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }

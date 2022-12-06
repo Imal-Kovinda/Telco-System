@@ -14,12 +14,12 @@ namespace TelcoSystemCore.Infrastructure
     {
         int Save(Customer customer, DbConnection dbConnection);
         int Update(Customer customer, DbConnection dbConnection);
-        List<Customer> GetCustomerList(DbConnection dbConnection, String CustomQuery = null);
+        List<Customer> GetCustomerList(DbConnection dbConnection, string CustomQuery = null);
     }
 
     public class CustomerSqlDAOImpl : ICustomerDAO
     {
-        public List<Customer> GetCustomerList(DbConnection dbConnection, String CustomQuery = null)
+        public List<Customer> GetCustomerList(DbConnection dbConnection, string CustomQuery = null)
         {
             throw new NotImplementedException();
         }
