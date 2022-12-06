@@ -15,5 +15,11 @@ namespace TelcoSystemCore.Common
             return (ICustomerDAO)customerDAO;
         }
 
+        public static ILteLoginDAO CreateLteLoginDAO()
+        {
+            ILteLoginDAO lteLoginDAO = new LteloginPgSqlDAOImpl();
+            return (ILteLoginDAO)lteLoginDAO;
+        }
+
     }
 }
