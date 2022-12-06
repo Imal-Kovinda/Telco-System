@@ -1212,29 +1212,29 @@
 
 
 <div class="row">
-      <div class="col-12">
+     <%-- <div class="col-12 ">
 		<div class="card ">
-			<div class="card-body row">
+			<div class="card-body row bg-white">
 			
-					<div class="col-6">
+					
+            
+            </div>
+        </div>
+    </div>--%>
+
+    <div class="card col-12 card-default">
+			<div class="card-header card-header-border-bottom">
+				<div class="col-6">
                         <h2>Complain Entry</h2>
                         
 
                     </div>
                     <div class="col-6 d-flex flex-row-reverse">
-                        <img src="~/assets/logo/bell.jpeg" runat="server" Width="120" Height="50" />
+                        <img src="~/assets/logo/bell.jpeg" runat="server" Width="120" Height="60" />
                         
 
                     </div>
-            
-            </div>
-        </div>
-    </div>
-
-    <div class="card col-12 card-default">
-			<%--<div class="card-header card-header-border-bottom">
-				<h2>Complain Entry</h2>
-			</div>--%>
+			</div>
 
 			<div class="card-body">
 				<form >
@@ -1244,7 +1244,7 @@
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<h2>STATUS_DESC</h2>
+										<h4>STATUS_DESC</h4>
 									</div>
 								</div>
 
