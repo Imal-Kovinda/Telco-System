@@ -48,6 +48,7 @@
     <Compile Include="Common\DBFieldAttribute.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\LteLoginController.cs" />
+    <Compile Include="Domain\BankBillPayment.cs" />
     <Compile Include="Domain\BankMaster.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\LteLogin.cs" />

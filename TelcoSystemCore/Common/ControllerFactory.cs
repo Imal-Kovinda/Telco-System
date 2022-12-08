@@ -11,10 +11,14 @@ namespace TelcoSystemCore.Common
     {
         public static ILteLoginController CreateLteLoginController()
         {
-            ILteLoginController lteLoginController = new LteLoginControllerImpl();
+            ILteLoginController lteLoginController = new LteLoginControllerPgSqlImpl();
             return (ILteLoginController)lteLoginController;
         }
 
-
+        public static IBankBillPaymentController CreateBankBillPaymentController()
+        {
+            IBankBillPaymentController bankBillPaymentController = new BankBillPaymentControllerPgSqlImpl();
+            return (IBankBillPaymentController)bankBillPaymentController;
+        }
     }
 }

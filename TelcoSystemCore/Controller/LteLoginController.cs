@@ -16,7 +16,7 @@ namespace TelcoSystemCore.Controller
         LteLogin GetLteLogin(string Id);
     }
 
-    public class LteLoginControllerImpl : ILteLoginController
+    public class LteLoginControllerPgSqlImpl : ILteLoginController
     {
         ILteLoginDAO lteLoginDAO = DAOFactory.CreateLteLoginDAO();
 
