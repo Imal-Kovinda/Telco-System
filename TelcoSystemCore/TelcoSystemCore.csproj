@@ -46,12 +46,14 @@
     <Compile Include="Common\DataAccessObject.cs" />
     <Compile Include="Common\DbConnection.cs" />
     <Compile Include="Common\DBFieldAttribute.cs" />
+    <Compile Include="Controller\BankBillPaymentController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\LteLoginController.cs" />
     <Compile Include="Domain\BankBillPayment.cs" />
     <Compile Include="Domain\BankMaster.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\LteLogin.cs" />
+    <Compile Include="Infrastructure\BankBillPaymentsDAO.cs" />
     <Compile Include="Infrastructure\CustomerDAO.cs" />
     <Compile Include="Infrastructure\LteLoginDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
