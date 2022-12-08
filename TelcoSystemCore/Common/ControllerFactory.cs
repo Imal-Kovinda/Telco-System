@@ -9,12 +9,16 @@ namespace TelcoSystemCore.Common
 {
     public class ControllerFactory
     {
-        public static ICustomerController CreateCustomerController()
+        public static ILteLoginController CreateLteLoginController()
         {
-            ICustomerController customerController = new CustomerControllerImpl();
-            return (ICustomerController)customerController;
+            ILteLoginController lteLoginController = new LteLoginControllerPgSqlImpl();
+            return (ILteLoginController)lteLoginController;
         }
 
-
+        public static IBankBillPaymentController CreateBankBillPaymentController()
+        {
+            IBankBillPaymentController bankBillPaymentController = new BankBillPaymentControllerPgSqlImpl();
+            return (IBankBillPaymentController)bankBillPaymentController;
+        }
     }
 }

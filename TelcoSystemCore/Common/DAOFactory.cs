@@ -21,5 +21,17 @@ namespace TelcoSystemCore.Common
             return (IChequeDetailDAO)chequeDetailDAO;
         }
 
+        public static ILteLoginDAO CreateLteLoginDAO()
+        {
+            ILteLoginDAO lteLoginDAO = new LteloginPgSqlDAOImpl();
+            return (ILteLoginDAO)lteLoginDAO;
+        }
+
+        public static IBankBillPaymentsDAO CreateBankBillPaymentsDAO()
+        {
+            IBankBillPaymentsDAO bankBillPaymentsDAO = new BankBillPaymentsDAOPgSqlImpl();
+            return (IBankBillPaymentsDAO)bankBillPaymentsDAO;
+        }
+
     }
 }
