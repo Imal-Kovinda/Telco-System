@@ -13,5 +13,12 @@ namespace TelcoSystem
         {
 
         }
+        protected void FilledUp(object sender, EventArgs e)
+        {
+            //var pNumber = validationServerUsername.Text;
+            //CustomerController customerController = ContollerFactory.CreateCustomerDetailController();
+            //cusDetail.DataSource = customerController.GetCustomerDetailList();
+
+        }
     }
 }

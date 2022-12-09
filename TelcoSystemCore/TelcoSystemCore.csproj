@@ -51,8 +51,10 @@
     <Compile Include="Domain\BankMaster.cs" />
     <Compile Include="Domain\ChequeDetail.cs" />
     <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\ReceiptDetail.cs" />
     <Compile Include="Infrastructure\ChequeDetailDAO.cs" />
     <Compile Include="Infrastructure\CustomerDAO.cs" />
+    <Compile Include="Infrastructure\ReceiptDetailDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -14,6 +14,17 @@ namespace TelcoSystemCore.Common
             ICustomerController customerController = new CustomerControllerImpl();
             return (ICustomerController)customerController;
         }
+        public static ICustomerController CreateCustomerDetailController()
+        {
+            ICustomerController customerDetailController = new CustomerControllerImpl();
+            return (ICustomerController)customerDetailController;
+        }
+
+        public static IChequeDetailController CreateChequeDetailController()
+        {
+            IChequeDetailController chequeDetailController = new ChequeDetailControllerImpl();
+            return (IChequeDetailController)chequeDetailController;
+        }
 
 
     }
