@@ -65,7 +65,7 @@
     <div class="wrapper">
 
       <!-- Github Link -->
-     <%-- <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
+      <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
         <svg width="70" height="70" viewBox="0 0 250 250" aria-hidden="true">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="75%" x2="100%" y2="0%">
@@ -76,8 +76,8 @@
           <path d="M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z" fill="url(#grad1)"></path>
         </svg>
         <i class="mdi mdi-github-circle"></i>
-      </a>--%>
-        <img src="~/assets/logo/bell.jpeg" runat="server" Width="60" Height="20" />
+      </a>
+        
 
 
 
@@ -703,15 +703,15 @@
               <!-- search form -->
               <div class="search-form d-none d-lg-inline-block">
                 <div class="input-group">
-                  <%--<button type="button" name="search" id="search-btn" class="btn btn-flat">
+                  <button type="button" name="search" id="search-btn" class="btn btn-flat">
                     <i class="mdi mdi-magnify"></i>
                   </button>
                   <input type="text" name="query" id="search-input" class="form-control" placeholder="'button', 'chart' etc."
-                    autofocus autocomplete="off" />--%>
-                    <h2>Complain Entry</h2>
+                    autofocus autocomplete="off" />
+                    <%--<h2>Complain Entry</h2>--%>
                 </div>
                 <div id="search-results-container">
-                 <%-- <ul id="search-results"></ul>--%>
+                  <ul id="search-results"></ul>
                 </div>
               </div>
 
@@ -1155,9 +1155,9 @@
                       </li>
                     </ul>
                   </li>
-               <%--   <li class="right-sidebar-in right-sidebar-2-menu">
+                  <li class="right-sidebar-in right-sidebar-2-menu">
                     <i class="mdi mdi-settings mdi-spin"></i>
-                  </li>--%>
+                  </li>
                   <!-- User Account -->
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -1212,21 +1212,39 @@
 
 
 <div class="row">
+     <%-- <div class="col-12 ">
+		<div class="card ">
+			<div class="card-body row bg-white">
+			
+					
+            
+            </div>
+        </div>
+    </div>--%>
 
     <div class="card col-12 card-default">
 			<div class="card-header card-header-border-bottom">
-				<h2>Complain Entry</h2>
+				<div class="col-6">
+                        <h2>Complain Entry</h2>
+                        
+
+                    </div>
+                    <div class="col-6 d-flex flex-row-reverse">
+                        <img src="~/assets/logo/bell.jpeg" runat="server" Width="120" Height="60" />
+                        
+
+                    </div>
 			</div>
 
 			<div class="card-body">
 				<form >
 					<div class="row">
 						
-						<div class="col-sm-6">
+						<%--<div class="col-sm-6">--%>
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<h3>STATUS_DESC</h3>
+										<h4>STATUS_DESC</h4>
 									</div>
 								</div>
 
@@ -1237,7 +1255,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						<%--</div>--%>
 
 						<div class="col-sm-6">
 							<div class="row">
@@ -1271,10 +1289,14 @@
 
 						<div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
-							<input type="text" class="form-control" id="validationServerUsername" placeholder="Service Number" aria-describedby="inputGroupPrepend3" required>
+							<input type="text" class="form-control" ID="validationServerUsername" placeholder="Service Number" aria-describedby="inputGroupPrepend3" required runat="server">
 							<div class="invalid-feedback">
 								Please enter the service number.
 							</div>
+						</div>
+
+                        <div class="col-md-12 mb-3">
+							<button type="button" class="mr-2 btn btn-sm btn-success" onclick="FilledUp">CHECK</button>
 						</div>
 
                         <div class="col-md-12 mb-3">
@@ -1304,7 +1326,7 @@
 						    </select>
 			            </div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Online</label>
 							<input type="text" class="form-control" id="validationServerUsername12" placeholder="Online" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
@@ -1313,7 +1335,7 @@
 						</div>
 
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
                             <label class="text-dark font-weight-medium" for="validationServerUsername">Online Bill Date</label>
 				            <div class="input-group mb-2">
 					            <div class="input-group-prepend">
@@ -1389,7 +1411,7 @@
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Total Amt</label>
 							<input type="number" class="form-control" id="validationServerUsername9" placeholder="V_TOT" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
@@ -1397,7 +1419,7 @@
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
 						    <label class="text-dark font-weight-medium" for="validationServerUsername">Login Name</label>
 						    <select class="form-control" id="exampleFormControlSelect5">
 							    <option>Kamal</option>
@@ -1700,7 +1722,7 @@
                             <button type="button" class="mr-2 btn  btn-secondary">GLOBAL INQUIRY</button>
 					     </div>
 
-                         <div class="col-6">
+                         <div class="col-6 d-flex flex-row-reverse">
 						    <button type="button" class="mr-2 btn  btn-success">SAVE</button>
                         </div>
 

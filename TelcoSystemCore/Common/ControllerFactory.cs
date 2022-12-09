@@ -3,21 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TelcoSystemCore.Controller;
 
 namespace TelcoSystemCore.Common
 {
     public class ControllerFactory
     {
-        public static StudentController CreateStudentController()
+        public static ILteLoginController CreateLteLoginController()
         {
-            StudentController studentController = new StudentControllerImpl();
-            return (StudentController)studentController;
+            ILteLoginController lteLoginController = new LteLoginControllerPgSqlImpl();
+            return (ILteLoginController)lteLoginController;
+        }
+        public static ICustomerController CreateCustomerDetailController()
+        {
+            ICustomerController customerDetailController = new CustomerControllerImpl();
+            return (ICustomerController)customerDetailController;
         }
 
-        public static CountryController CreateCountryController()
+        public static IChequeDetailController CreateChequeDetailController()
         {
-            CountryController countryController = new CountryControllerImpl();
-            return (CountryController)countryController;
+            IChequeDetailController chequeDetailController = new ChequeDetailControllerImpl();
+            return (IChequeDetailController)chequeDetailController;
+        }
+
+        public static IBankBillPaymentController CreateBankBillPaymentController()
+        {
+            IBankBillPaymentController bankBillPaymentController = new BankBillPaymentControllerPgSqlImpl();
+            return (IBankBillPaymentController)bankBillPaymentController;
         }
     }
 }

@@ -3,21 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TelcoSystemCore.Infrastructure;
 
 namespace TelcoSystemCore.Common
 {
     public class DAOFactory
     {
-        public static StudentDAO CreateStudentDAO()
+        public static ICustomerDAO CreateCustomerDAO()
         {
-            StudentDAO studentDAO = new StudentSqlDAOImpl();
-            return (StudentDAO)studentDAO;
+            ICustomerDAO customerDAO = new CustomerSqlDAOImpl();
+            return (ICustomerDAO)customerDAO;
         }
 
-        public static CountryDAO CreateCountryDAO()
+        public static IChequeDetailDAO CreateChequeDetailDAO()
         {
-            CountryDAO countryDAO = new CountryDAOImpl();
-            return (CountryDAO)countryDAO;
+            IChequeDetailDAO chequeDetailDAO = new ChequeDetailSqlDAOImpl();
+            return (IChequeDetailDAO)chequeDetailDAO;
         }
+
+        public static ILteLoginDAO CreateLteLoginDAO()
+        {
+            ILteLoginDAO lteLoginDAO = new LteloginPgSqlDAOImpl();
+            return (ILteLoginDAO)lteLoginDAO;
+        }
+
+        public static IBankBillPaymentsDAO CreateBankBillPaymentsDAO()
+        {
+            IBankBillPaymentsDAO bankBillPaymentsDAO = new BankBillPaymentsDAOPgSqlImpl();
+            return (IBankBillPaymentsDAO)bankBillPaymentsDAO;
+        }
+
     }
 }
