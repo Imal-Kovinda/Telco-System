@@ -14,6 +14,8 @@ namespace TelcoSystemCore.Controller
         int Save(Customer customer);
         int Update(Customer customer);
         List<Customer> GetCustomerList(string CustomQuery = null);
+
+        List<Customer> GetCustomerDetailList(string phoneNumber);
     }
 
     public class CustomerControllerImpl : ICustomerController
@@ -101,6 +103,11 @@ namespace TelcoSystemCore.Controller
                 }
             }
             return listCustomer;
+        }
+
+        public List<Customer> GetCustomerDetailList(string phoneNumber)
+        {
+            throw new NotImplementedException();
         }
     }
 }

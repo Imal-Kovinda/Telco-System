@@ -94,7 +94,7 @@ namespace TelcoSystemCore.Domain
         [DBField("SALES_PERSON")]
         public string SalesPerson { get; set; }
 
-        [DBField("NEW_ID_NUMBER ")]
+        [DBField("NEW_ID_NUMBER")]
         public string NewIdNumber { get; set; }
 
 

@@ -23,17 +23,18 @@ namespace TelcoSystemCore.Infrastructure
 
             dbConnection.cmd.Parameters.Clear();
             dbConnection.cmd.CommandType = System.Data.CommandType.Text;
-            dbConnection.cmd.CommandText = "Insert into Customer (ID, Name, Email, Address,City, Contact_No, NIC) " +
-                                           "values (@ID,@Name,@Email,@Address,@City,@Contact_No,@NIC) SELECT SCOPE_IDENTITY() ";
+            dbConnection.cmd.CommandText = "Insert into Customer (TRANSACTION_ID, RECEIPT_ID, CHEQUE_NO, CHEQUE_DATE,BANK_CD, BRANCH_NAME, RECEIVED_DOC_CATEG, RECEIVED_DOC_NO) " +
+                                           "values (@TRANSACTION_ID,@RECEIPT_ID,@CHEQUE_NO,@CHEQUE_DATE,@BANK_CD,@BRANCH_NAME,@RECEIVED_DOC_CATEG, @RECEIVED_DOC_NO) SELECT SCOPE_IDENTITY() ";
 
 
-            //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerId);
-            //dbConnection.cmd.Parameters.AddWithValue("@Name", customer.CustomerName);
-            //dbConnection.cmd.Parameters.AddWithValue("@Email", customer.CusEmail);
-            //dbConnection.cmd.Parameters.AddWithValue("@Address", customer.AccAddress);
-            //dbConnection.cmd.Parameters.AddWithValue("@City", customer.City);
-            //dbConnection.cmd.Parameters.AddWithValue("@Contact_No", customer.ContactNo);
-            //dbConnection.cmd.Parameters.AddWithValue("@NIC", customer.CusNIC);
+            dbConnection.cmd.Parameters.AddWithValue("@TRANSACTION_ID", chequeDetail.TransactionId);
+            dbConnection.cmd.Parameters.AddWithValue("@RECEIPT_ID", chequeDetail.ReceiptId);
+            dbConnection.cmd.Parameters.AddWithValue("@CHEQUE_NO", chequeDetail.ChequeNo);
+            dbConnection.cmd.Parameters.AddWithValue("@CHEQUE_DATE", chequeDetail.ChequeDate);
+            dbConnection.cmd.Parameters.AddWithValue("@BANK_CD", chequeDetail.BankCd);
+            dbConnection.cmd.Parameters.AddWithValue("@BRANCH_NAME", chequeDetail.BranchName);
+            dbConnection.cmd.Parameters.AddWithValue("@RECEIVED_DOC_CATEG", chequeDetail.ReceivedDocCateg);
+            dbConnection.cmd.Parameters.AddWithValue("@RECEIVED_DOC_NO", chequeDetail.ReceivedDocNo);
 
             output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
 
@@ -47,15 +48,16 @@ namespace TelcoSystemCore.Infrastructure
 
             dbConnection.cmd.Parameters.Clear();
             dbConnection.cmd.CommandType = System.Data.CommandType.Text;
-            dbConnection.cmd.CommandText = "Update Student set Country_ID = @ID ,Name = @Name,Email = @Email,Address  =@Address ,City = @City WHERE ID = @ID ";
+            dbConnection.cmd.CommandText = "Update Student set TRANSACTION_ID = @TRANSACTION_ID ,RECEIPT_ID = @RECEIPT_ID,CHEQUE_NO = @CHEQUE_NO,CHEQUE_DATE  = @CHEQUE_DATE ,BANK_CD = @BANK_CD, BRANCH_, NAME = @BRANCH_NAME, RECEIVED_DOC_CATEG = @RECEIVED_DOC_CATEG, RECEIVED_DOC_NO = @RECEIVED_DOC_NO WHERE TRANSACTION_ID = @TRANSACTION_ID ";
 
-            //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerID);
-            //dbConnection.cmd.Parameters.AddWithValue("@Name", customer.CustomerName);
-            //dbConnection.cmd.Parameters.AddWithValue("@Email", customer.CusEmail);
-            //dbConnection.cmd.Parameters.AddWithValue("@Address", customer.AccAddress);
-            //dbConnection.cmd.Parameters.AddWithValue("@City", customer.City);
-            //dbConnection.cmd.Parameters.AddWithValue("@Contact_No", customer.ContactNo);
-            //dbConnection.cmd.Parameters.AddWithValue("@NIC", customer.CusNIC);
+            dbConnection.cmd.Parameters.AddWithValue("@TRANSACTION_ID", chequeDetail.TransactionId);
+            dbConnection.cmd.Parameters.AddWithValue("@RECEIPT_ID", chequeDetail.ReceiptId);
+            dbConnection.cmd.Parameters.AddWithValue("@CHEQUE_NO", chequeDetail.ChequeNo);
+            dbConnection.cmd.Parameters.AddWithValue("@CHEQUE_DATE", chequeDetail.ChequeDate);
+            dbConnection.cmd.Parameters.AddWithValue("@BANK_CD", chequeDetail.BankCd);
+            dbConnection.cmd.Parameters.AddWithValue("@BRANCH_NAME", chequeDetail.BranchName);
+            dbConnection.cmd.Parameters.AddWithValue("@RECEIVED_DOC_CATEG", chequeDetail.ReceivedDocCateg);
+            dbConnection.cmd.Parameters.AddWithValue("@RECEIVED_DOC_NO", chequeDetail.ReceivedDocNo);
 
             output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
 

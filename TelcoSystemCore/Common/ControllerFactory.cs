@@ -14,6 +14,17 @@ namespace TelcoSystemCore.Common
             ILteLoginController lteLoginController = new LteLoginControllerPgSqlImpl();
             return (ILteLoginController)lteLoginController;
         }
+        public static ICustomerController CreateCustomerDetailController()
+        {
+            ICustomerController customerDetailController = new CustomerControllerImpl();
+            return (ICustomerController)customerDetailController;
+        }
+
+        public static IChequeDetailController CreateChequeDetailController()
+        {
+            IChequeDetailController chequeDetailController = new ChequeDetailControllerImpl();
+            return (IChequeDetailController)chequeDetailController;
+        }
 
         public static IBankBillPaymentController CreateBankBillPaymentController()
         {
