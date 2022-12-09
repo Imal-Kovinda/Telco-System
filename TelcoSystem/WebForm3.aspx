@@ -1289,10 +1289,14 @@
 
 						<div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
-							<input type="text" class="form-control" id="validationServerUsername" placeholder="Service Number" aria-describedby="inputGroupPrepend3" required>
+							<input type="text" class="form-control" ID="validationServerUsername" placeholder="Service Number" aria-describedby="inputGroupPrepend3" required runat="server">
 							<div class="invalid-feedback">
 								Please enter the service number.
 							</div>
+						</div>
+
+                        <div class="col-md-12 mb-3">
+							<button type="button" class="mr-2 btn btn-sm btn-success" onclick="FilledUp">CHECK</button>
 						</div>
 
                         <div class="col-md-12 mb-3">
@@ -1322,7 +1326,7 @@
 						    </select>
 			            </div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Online</label>
 							<input type="text" class="form-control" id="validationServerUsername12" placeholder="Online" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
@@ -1331,7 +1335,7 @@
 						</div>
 
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
                             <label class="text-dark font-weight-medium" for="validationServerUsername">Online Bill Date</label>
 				            <div class="input-group mb-2">
 					            <div class="input-group-prepend">
@@ -1407,7 +1411,7 @@
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Total Amt</label>
 							<input type="number" class="form-control" id="validationServerUsername9" placeholder="V_TOT" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
@@ -1415,7 +1419,7 @@
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" style="display:none;">
 						    <label class="text-dark font-weight-medium" for="validationServerUsername">Login Name</label>
 						    <select class="form-control" id="exampleFormControlSelect5">
 							    <option>Kamal</option>

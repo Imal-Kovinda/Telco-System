@@ -865,6 +865,7 @@
     <Content Include="assets\plugins\bootstrap\js\bootstrap.js.map" />
     <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="assets\plugins\toastr\toastr.js.map" />
+    <Content Include="Login.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Validate.aspx" />
     <Content Include="WebForm3.aspx" />
@@ -972,6 +973,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

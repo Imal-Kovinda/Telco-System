@@ -11,7 +11,7 @@ using DbConnection = TelcoSystemCore.Common.DbConnection;
 
 namespace TelcoSystemCore.Controller
 {
-    internal interface IChequeDetailController
+    public interface IChequeDetailController
     {
         int Save(ChequeDetail chequeDetail);
         int Update(ChequeDetail chequeDetail);
@@ -100,7 +100,6 @@ namespace TelcoSystemCore.Controller
                     dbConnection.Commit();
                 }
             }
-            return listChequeDetail;
         }
     }
 }
