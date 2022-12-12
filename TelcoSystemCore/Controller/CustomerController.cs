@@ -107,7 +107,41 @@ namespace TelcoSystemCore.Controller
 
         public List<Customer> GetCustomerDetailList(string phoneNumber)
         {
-            throw new NotImplementedException();
+            DbConnection dbConnection = null;
+            List<Customer> listDetail = new List<Customer>();
+
+            try
+            {
+
+                dbConnection = new DbConnection();
+                listDetail = customerDAO.GetCustomerList(dbConnection);
+
+                if (phoneNumber != null)
+                {
+
+                    return customerDAO.GetCustomerList(dbConnection, phoneNumber);
+                }
+                else
+                {
+                    //check
+                    return customerDAO.GetCustomerList(dbConnection);
+
+                }
+
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+            return listDetail;
         }
     }
 }
