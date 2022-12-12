@@ -15,6 +15,8 @@ namespace TelcoSystemCore.Infrastructure
         int Save(Customer customer, DbConnection dbConnection);
         int Update(Customer customer, DbConnection dbConnection);
         List<Customer> GetCustomerList(DbConnection dbConnection, string CustomQuery = null);
+
+        List<Customer> GetCustomerDetailList(DbConnection dbConnection, string phoneNumber);
     }
 
     public class CustomerSqlDAOImpl : ICustomerDAO
@@ -129,6 +131,28 @@ namespace TelcoSystemCore.Infrastructure
 
 
             return customerList;
+        }
+
+        public List<Customer> GetCustomerDetailList(DbConnection dbConnection, string phoneNumber)
+        {
+            List<Customer> customerDetailList = new List<Customer>();
+            dbConnection = new DbConnection();
+
+            //query....
+            dbConnection.cmd.CommandText = 
+                "SELECT * FROM " +
+                "CUSTOMER " +
+                "INNER JOIN CUSTOMER_ACCOUNT ON CUSTOMER_ACCOUNT.CUSTOMER_ID = CUSTOMER.CUSTOMER_ID" +
+                "INNER JOIN ACCOUNT_LOCATION ON CUSTOMER_ACCOUNT.ACCOUNT_ID = ACCOUNT_LOCATION.ACCOUNT_ID" +
+                "INNER JOIN CUSTOMER_ACCOUNT_DN ON ACCOUNT_LOCATION.ACCOUNT_LOCATION_ID = CUSTOMER_ACCOUNT_DN.ACCOUNT_LOCATION_ID" +
+                "WHERE CUSTOMER_ACCOUNT_DN.ACCOUNT_DN = phoneNumber";
+
+            dbConnection.dr = dbConnection.cmd.ExecuteReader();
+            DataAccessObject dataAccessObject = new DataAccessObject();
+            customerDetailList = dataAccessObject.ReadCollection<Customer>(dbConnection.dr);
+            dbConnection.dr.Close();
+
+            return customerDetailList;
         }
     }
 }
