@@ -20,7 +20,7 @@ namespace TelcoSystem
         protected void FilledUp(object sender, EventArgs e)
         {
             var pNumber = service_number.Text;
-            user_code.Text = "Hello";
+            //user_code.Text = "Hello";
 
             ICustomerController customerController = ControllerFactory.CreateCustomerDetailController();
             listCustomer = customerController.GetCustomerDetailList(pNumber);
@@ -36,6 +36,11 @@ namespace TelcoSystem
             customer_name.Text = listCustomer[0].CustomerName;
             nic.Text = listCustomer[0].NewIdNumber;
 
+        }
+
+        protected void Save_btn(object sender, EventArgs e)
+        {
+            user_code.Text = "Hello";
         }
     }
 }

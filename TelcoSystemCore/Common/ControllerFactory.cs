@@ -31,5 +31,12 @@ namespace TelcoSystemCore.Common
             IBankBillPaymentController bankBillPaymentController = new BankBillPaymentControllerPgSqlImpl();
             return (IBankBillPaymentController)bankBillPaymentController;
         }
+
+        //PnbsUsers
+        public static IPnbsUsersController CreatePnbsUsersController()
+        {
+            IPnbsUsersController PnbsUsersController = new PnbsUsersControllerSqlImpl();
+            return (IPnbsUsersController)PnbsUsersController;
+        }
     }
 }
