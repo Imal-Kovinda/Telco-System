@@ -154,5 +154,22 @@ namespace TelcoSystemCore.Infrastructure
 
             return customerDetailList;
         }
+
+        //public List<CustomerAccountDN> GetCustomerAccCode(DbConnection dbConnection, string phoneNumber)
+        //{
+        //    List<CustomerAccountDN> customerAccDNDetailList = new List<CustomerAccountDN>();
+        //    dbConnection = new DbConnection();
+
+        //    //    //query....
+        //    dbConnection.cmd.CommandText =
+        //        "SELECT ACCOUNT_ID FROM CUSTOMER_ACCOUNT_DN WHERE ACCOUNT_DN = phoneNumber "
+
+        //    dbConnection.dr = dbConnection.cmd.ExecuteReader();
+        //    DataAccessObject dataAccessObject = new DataAccessObject();
+        //    customerAccDNDetailList = dataAccessObject.ReadCollection<CustomerAccountDN>(dbConnection.dr);
+        //    dbConnection.dr.Close();
+
+        //    return customerDetailList;
+        //}
     }
 }

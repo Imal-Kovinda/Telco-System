@@ -1404,7 +1404,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="validationServerUsername7" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<asp:Textbox runat="server" type="text" class="form-control" id="acc_rating" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
@@ -1728,7 +1728,7 @@
 					     </div>
 
                          <div class="col-6 d-flex flex-row-reverse">
-						    <button type="button" class="mr-2 btn  btn-success">SAVE</button>
+                             <asp:Button runat="server"  class="mr-2 btn btn-success" OnClick="Save_btn" Text="SAVE" />
                         </div>
 
                     </div>

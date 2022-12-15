@@ -87,13 +87,13 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox customer_name;
 
         /// <summary>
-        /// validationServerUsername7 control.
+        /// acc_rating control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationServerUsername7;
+        protected global::System.Web.UI.WebControls.TextBox acc_rating;
 
         /// <summary>
         /// validationServerUsername8 control.
@@ -139,6 +139,15 @@ namespace TelcoSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox account_category;
+
+        /// <summary>
+        /// bill_month control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox bill_month;
 
         /// <summary>
         /// bill_run_date control.

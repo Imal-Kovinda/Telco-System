@@ -33,5 +33,11 @@ namespace TelcoSystemCore.Common
             return (IBankBillPaymentsDAO)bankBillPaymentsDAO;
         }
 
+        public static IPnbsUsersDAO CreateGetPnbsUsersDAO()
+        {
+            IPnbsUsersDAO PnbsUsersDAO = new PnbsUsersSqlDAOImpl();
+            return (IPnbsUsersDAO)PnbsUsersDAO;
+        }
+
     }
 }
