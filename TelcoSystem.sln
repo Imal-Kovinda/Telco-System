@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelcoSystem", "TelcoSystem\TelcoSystem.csproj", "{9C0CA97D-858B-4913-9458-3C6171D74F46}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44F1F109-0F76-486F-B87F-066EE4974BC1} = {44F1F109-0F76-486F-B87F-066EE4974BC1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelcoSystemCore", "TelcoSystemCore\TelcoSystemCore.csproj", "{44F1F109-0F76-486F-B87F-066EE4974BC1}"
 EndProject

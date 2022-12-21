@@ -39,16 +39,20 @@
             <div class="card-body p-5">
               <h4 class="text-dark mb-5">Sign In</h4>
               
-              <form action="/index.html">
+              <form runat="server" action="/index.html">
                 <div class="row">
                   <div class="form-group col-md-12 mb-4">
-                    <input type="email" class="form-control input-lg" id="email" aria-describedby="emailHelp" placeholder="Username" />
+                    <asp:Textbox runat="server" type="text" class="form-control input-lg" id="userName" placeholder="Username" />
+                    <%--<asp:RequiredFieldValidator ID="rfvUser" ErrorMessage="Please enter Username" ControlToValidate="txtUserName" runat="server" />--%>
                   </div>
 
                   <div class="form-group col-md-12 ">
-                    <input type="password" class="form-control input-lg" id="password" placeholder="Password" />
+                    <asp:Textbox runat="server" type="password" TextMode="Password" class="form-control input-lg" id="password" placeholder="Password" />
+                    <%--<asp:RequiredFieldValidator ID="rfvPWD" runat="server" ControlToValidate="txtPWD" ErrorMessage="Please enter Password"/>--%>
                   </div>
-
+                  <div class="form-group col-md-12">
+                      <asp:Label Id="messg" runat="server" Text="Label" visible="false"></asp:Label>
+                  </div>
                   <div class="col-md-12">
                     <div class="d-flex my-2 justify-content-between">
                       <div class="d-inline-block mr-3">
@@ -61,7 +65,7 @@
                       <p><a class="text-blue" href="#">Forgot Your Password?</a></p>
                     </div>
 
-                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign In</button>
+                    <asp:Button runat="server" type="submit" class="btn btn-lg btn-primary btn-block mb-4" onclick="login" Text="Sign In" />
 
                     <%--<p>Don't have an account yet ?
                       <a class="text-blue" href="sign-up.html">Sign Up</a>

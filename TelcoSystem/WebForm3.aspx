@@ -1221,6 +1221,7 @@
             </div>
         </div>
     </div>--%>
+    <form runat="server">
 
     <div class="card col-12 card-default">
 			<div class="card-header card-header-border-bottom">
@@ -1237,24 +1238,24 @@
 			</div>
 
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="row">
 						
 						<%--<div class="col-sm-6">--%>
-							<div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<h4>STATUS_DESC</h4>
-									</div>
-								</div>
-
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">Referance No</label>
-										<input type="text" class="form-control" placeholder="C_COMP_ID">
-									</div>
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<h4>STATUS_DESC</h4>
 								</div>
 							</div>
+
+							<div class="col-6">
+								<div class="form-group">
+									<label for="State">Referance No</label>
+									<input type="text" class="form-control" placeholder="C_COMP_ID">
+								</div>
+							</div>
+						</div>
 						<%--</div>--%>
 
 						<div class="col-sm-6">
@@ -1277,31 +1278,36 @@
 					</div>
 
 					
-				</form>
+				<%--</form>--%>
 			</div>
 		</div>
 
-	<div class="col-lg-6">
+	<div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
 
-						<div class="col-md-12 mb-3">
+                       
+                        <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
-							<input type="text" class="form-control" ID="validationServerUsername" placeholder="Service Number" aria-describedby="inputGroupPrepend3" required runat="server">
+							<asp:Textbox  type="text" class="form-control" ID="service_number" placeholder="Service Number" aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the service number.
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
-							<button type="button" class="mr-2 btn btn-sm btn-success" onclick="FilledUp">CHECK</button>
+                        <div class="col-6 mb-3">
+							<asp:Button runat="server"  class="mr-2 btn btn-sm btn-success" OnClick="FilledUp" Text="CHECK" />
 						</div>
+
+					
+
+					
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
-							<input type="text" class="form-control" id="validationServerUsername2" placeholder="User Code" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox type="text" ID="user_code" placeholder="User Code" runat="server" class="form-control"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the user code.
 							</div>
@@ -1309,7 +1315,7 @@
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Code</label>
-							<input type="text" class="form-control" id="validationServerUsername3" placeholder="Account Code" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="validationServerUsername3" placeholder="Account Code" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the code.
 							</div>
@@ -1328,7 +1334,7 @@
 
                         <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Online</label>
-							<input type="text" class="form-control" id="validationServerUsername12" placeholder="Online" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="validationServerUsername12" placeholder="Online" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a mode.
 							</div>
@@ -1350,38 +1356,39 @@
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Address</label>
-							<input type="text" class="form-control" id="validationServerUsername4" placeholder="Account Address" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="accountAddress" placeholder="Account Address" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
 						</div>
 
 					</div>
-				</form>
+				<%--</form>--%>
 			</div>
 		</div>
 	</div>
 
 
 
-    <div class="col-lg-6">
+    <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
                         <div class="col-md-12 mb-3">
 						    <label class="text-dark font-weight-medium" for="validationServerUsername">City</label>
-						    <select class="form-control" id="exampleFormControlSelect4">
+                            <asp:Textbox runat="server" type="text" class="form-control" ID="city" placeholder="City" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+						    <%--<select class="form-control" id="exampleFormControlSelect4">
 							    <option>Matara</option>
 							    <option>Colombo</option>
 							    <option>Kandy</option>
 							    <option>Galle</option>
-						    </select>
+						    </select>--%>
 			            </div>
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Connection Status</label>
-							<input type="text" class="form-control" id="validationServerUsername5" placeholder="Connection Status" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="connection_status" placeholder="Connection Status" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
@@ -1389,7 +1396,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Custommer Name</label>
-							<input type="text" class="form-control" id="validationServerUsername6" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="customer_name" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
@@ -1397,7 +1404,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
-							<input type="text" class="form-control" id="validationServerUsername7" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="acc_rating" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
@@ -1405,7 +1412,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Line Usage</label>
-							<input type="text" class="form-control" id="validationServerUsername8" placeholder="LINE_USAGE" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="validationServerUsername8" placeholder="LINE_USAGE" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
@@ -1413,7 +1420,7 @@
 
                         <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Total Amt</label>
-							<input type="number" class="form-control" id="validationServerUsername9" placeholder="V_TOT" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="number" class="form-control" id="validationServerUsername9" placeholder="V_TOT" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
@@ -1430,20 +1437,20 @@
 			            </div>
 
                     </div>
-                </form>
+                <%--</form>--%>
 			</div>
         </div>
     </div>
 
-     <div class="col-lg-6">
+     <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">F/Y Rating</label>
-							<input type="text" class="form-control" id="validationServerUsername13" placeholder="IT_BSTR" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="f_y_rating" placeholder="IT_BSTR" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1451,7 +1458,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
-							<input type="text" class="form-control" id="validationServerUsername14" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="nic" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1459,7 +1466,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Category</label>
-							<input type="text" class="form-control" id="validationServerUsername15" placeholder="ACC_CATEGORY" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="account_category" placeholder="ACC_CATEGORY" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1467,15 +1474,13 @@
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Last Month BIll</label>
-							<input type="text" class="form-control" id="validationServerUsername16" placeholder="LAST_MONTH_BILL" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
+							<input type="text" class="form-control" id="bill_month" placeholder="LAST_MONTH_BILL" aria-describedby="inputGroupPrepend3" >
+							
 						</div>
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Run Date</label>
-							<input type="text" class="form-control" id="validationServerUsername17" placeholder="BILL_RUN_CODE" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="bill_run_date" placeholder="BILL_RUN_CODE" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1483,7 +1488,7 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Balance</label>
-							<input type="text" class="form-control" id="validationServerUsername19" placeholder="BILL_BALANCE" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="bill_balance" placeholder="BILL_BALANCE" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1491,7 +1496,7 @@
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Station</label>
-							<input type="text" class="form-control" id="validationServerUsername20" placeholder="BILL_NAME" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="bill_station" placeholder="BILL_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1499,22 +1504,22 @@
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Credit Limit</label>
-							<input type="text" class="form-control" id="validationServerUsername21 placeholder="CR" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="credit_limit" placeholder="CR" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
 						</div>
 
                     </div>
-                </form>
+                <%--</form>--%>
             </div>
         </div>
     </div>
 
-     <div class="col-lg-6">
+     <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
 
                        	<div class="form-group col-md-12">
@@ -1541,7 +1546,7 @@
 
                           <div class="col-md-12 mb-3 mt-4">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Person</label>
-							<input type="text" class="form-control" id="validationServerUsername22" placeholder="CONTACT_PERSON" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="contact_person" placeholder="CONTACT_PERSON" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1549,7 +1554,7 @@
 
                           <div class="col-md-12 mb-3 mt-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Num</label>
-							<input type="text" class="form-control" id="validationServerUsername23" placeholder="CONTACT_NO" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="contact_number" placeholder="CONTACT_NO" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1557,7 +1562,7 @@
 
                           <div class="col-md-12 mb-3 mt-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Email</label>
-							<input type="text" class="form-control" id="validationServerUsername24" placeholder="EMAIL" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="email" placeholder="EMAIL" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1577,7 +1582,7 @@
 
                         <div class="col-md-12 mb-3 mt-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Informed By</label>
-							<input type="text" class="form-control" id="validationServerUsername20" placeholder="INFORMED_BY" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="informed_by" placeholder="INFORMED_BY" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1587,16 +1592,16 @@
                        
 
                     </div>
-                </form>
+               <%-- </form>--%>
             </div>
         </div>
     </div>
 
  
-     <div class="col-lg-6">
+     <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
 
                         <div class="col-md-12 mb-3">
@@ -1620,15 +1625,15 @@
 			            </div>
 
                     </div>
-                </form>
+                <%--</form>--%>
             </div>
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
 
                         <div class="col-md-12 mb-3">
@@ -1643,7 +1648,7 @@
 
                           <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">FID</label>
-							<input type="text" class="form-control" id="validationServerUsername20" placeholder="TXT_FID" aria-describedby="inputGroupPrepend3" required>
+							<asp:Textbox runat="server" type="text" class="form-control" id="fid" placeholder="TXT_FID" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1651,15 +1656,15 @@
                       
 
                     </div>
-                </form>
+                <%--</form>--%>
             </div>
         </div>
     </div>
 
-       <div class="col-lg-6">
+       <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
                           <ul class="list-unstyled list-inline mt-2 ml-3 mb-3">
 					        <li class="d-inline-block mr-3">
@@ -1678,15 +1683,15 @@
 				        </ul>
                     </div>
                   
-                </form>
+                <%--</form>--%>
             </div>
         </div>
     </div>
 
-      <div class="col-lg-6">
+      <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					 <div class="ml-2">
                         <label class="text-dark font-weight-medium d-inline-block mr-3" for="">Follow Up</label>
 
@@ -1707,7 +1712,7 @@
 				        </ul>
                     </div>
                   
-                </form>
+                <%--</form>--%>
             </div>
         </div>
     </div>
@@ -1715,7 +1720,7 @@
     <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
 
                          <div class="col-6">
@@ -1723,11 +1728,11 @@
 					     </div>
 
                          <div class="col-6 d-flex flex-row-reverse">
-						    <button type="button" class="mr-2 btn  btn-success">SAVE</button>
+                             <asp:Button runat="server"  class="mr-2 btn btn-success" OnClick="Save_btn" Text="SAVE" />
                         </div>
 
                     </div>
-                </form>
+                <%--</form>--%>
             </div>
         </div>
     </div>
@@ -1741,7 +1746,7 @@
 			</div>
 
 			<div class="card-body ml-2">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="row">
 						
 						<div class="col-sm-6">
@@ -1791,14 +1796,14 @@
 					</div>
 
 					
-				</form>
+				<%--</form>--%>
 			</div>
 		</div>
 
         <div class="col-lg-6" style="display:none;">
 		    <div class="card card-default">
 			    <div class="card-body">
-				    <form >
+				    <%--<form runat="server">--%>
 					    <div class="form-row">
                             <div>
                                 <button type="button" class="mb-1 mb-4 mr-2 btn btn-primary">P</button>
@@ -1818,10 +1823,11 @@
                             </div>
                       
                         </div>
-                    </form>
+                    <%--</form>--%>
                 </div>
             </div>
         </div>
+    </form>
 <%--    display hidden--%>
 
 
