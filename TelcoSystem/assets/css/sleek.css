@@ -3248,6 +3248,8 @@ input[type="button"].btn-block {
 .dropdown,
 .dropleft {
   position: relative;
+    top: -4px;
+    left: 2px;
 }
 
 .dropdown-toggle {
@@ -15847,9 +15849,10 @@ div.copied {
 /*  sub-menu dropdowns */
 .sidebar .sub-menu {
   list-style-type: none;
-  padding: .625rem 0 .625rem 2.81rem;
-  margin: 0;
   position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
 }
 
 .sidebar .sub-menu > li > a {

@@ -11,8 +11,35 @@ namespace TelcoSystem
 {
 
 
-    public partial class WebForm3
+    public partial class Complain
     {
+
+        /// <summary>
+        /// ref_no control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ref_no;
+
+        /// <summary>
+        /// logged_date control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox logged_date;
+
+        /// <summary>
+        /// by control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox by;
 
         /// <summary>
         /// service_number control.
@@ -33,31 +60,31 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox user_code;
 
         /// <summary>
-        /// validationServerUsername3 control.
+        /// acc_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationServerUsername3;
+        protected global::System.Web.UI.WebControls.TextBox acc_code;
 
         /// <summary>
-        /// validationServerUsername12 control.
+        /// online control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationServerUsername12;
+        protected global::System.Web.UI.WebControls.TextBox online;
 
         /// <summary>
-        /// accountAddress control.
+        /// account_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox accountAddress;
+        protected global::System.Web.UI.WebControls.TextBox account_address;
 
         /// <summary>
         /// city control.
@@ -96,22 +123,22 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox acc_rating;
 
         /// <summary>
-        /// validationServerUsername8 control.
+        /// line_usage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationServerUsername8;
+        protected global::System.Web.UI.WebControls.TextBox line_usage;
 
         /// <summary>
-        /// validationServerUsername9 control.
+        /// total_amt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationServerUsername9;
+        protected global::System.Web.UI.WebControls.TextBox total_amt;
 
         /// <summary>
         /// f_y_rating control.
@@ -139,15 +166,6 @@ namespace TelcoSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox account_category;
-
-        /// <summary>
-        /// bill_month control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bill_month;
 
         /// <summary>
         /// bill_run_date control.
