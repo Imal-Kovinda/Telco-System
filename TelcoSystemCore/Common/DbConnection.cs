@@ -18,7 +18,9 @@ namespace TelcoSystemCore.Common
 
         public DbConnection()
         {
-            con = new SqlConnection("Data Source=10.2.5.72;Initial Catalog=Student;User ID=sa;Password=Bell123");
+            //con = new SqlConnection("Data Source=10.2.5.72;Initial Catalog=Student;User ID=sa;Password=Bell123");
+            con = new SqlConnection("Dsn=telcoSystem;Data Source=10.12.14.75;UID=postgres; PWD=1234");
+            
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandType = System.Data.CommandType.Text;

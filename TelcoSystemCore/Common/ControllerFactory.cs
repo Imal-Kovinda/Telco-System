@@ -38,5 +38,13 @@ namespace TelcoSystemCore.Common
             IPnbsUsersController PnbsUsersController = new PnbsUsersControllerSqlImpl();
             return (IPnbsUsersController)PnbsUsersController;
         }
+        
+        //cmLogComplains
+        public static ICmLogComplainsController CreateCmLogComplainsDAO()
+        {
+            ICmLogComplainsController cmLogComplainsController = new CmLogComplainsControllerImpl();
+            return (ICmLogComplainsController)cmLogComplainsController;
+        }
+
     }
 }

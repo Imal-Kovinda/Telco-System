@@ -39,5 +39,12 @@ namespace TelcoSystemCore.Common
             return (IPnbsUsersDAO)PnbsUsersDAO;
         }
 
+        //cmLogComplain
+        public static ICmLogComplainsDAO CreateCmLogComplainsDAO()
+        {
+            ICmLogComplainsDAO CmLogComplainsDAO = new CmLogComplainsSqlDAOImpl();
+            return (ICmLogComplainsDAO)CmLogComplainsDAO;
+        }
+
     }
 }
