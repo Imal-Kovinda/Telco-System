@@ -14,17 +14,17 @@ namespace TelcoSystemCore.Infrastructure
     {
         int Save(Customer customer, DbConnection dbConnection);
         int Update(Customer customer, DbConnection dbConnection);
-        List<Customer> GetCustomerList(DbConnection dbConnection, string CustomQuery = null);
+        List<Customer> GetCustomerList(DbConnection dbConnection);
 
         List<Customer> GetCustomerDetailList(DbConnection dbConnection, string phoneNumber);
     }
 
     public class CustomerSqlDAOImpl : ICustomerDAO
     {
-        public List<Customer> GetCustomerList(DbConnection dbConnection, string CustomQuery = null)
-        {
-            throw new NotImplementedException();
-        }
+        //public List<Customer> GetCustomerList(DbConnection dbConnection, string CustomQuery = null)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public int Save(Customer customer, DbConnection dbConnection)
         {
@@ -122,7 +122,7 @@ namespace TelcoSystemCore.Infrastructure
         {
             List<Customer> customerList = new List<Customer>();
             dbConnection = new DbConnection();
-            dbConnection.cmd.CommandText = "select * from customer";
+            dbConnection.cmd.CommandText = "select * from lb.customer";
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
             DataAccessObject dataAccessObject = new DataAccessObject();
@@ -137,23 +137,39 @@ namespace TelcoSystemCore.Infrastructure
         {
             List<Customer> customerDetailList = new List<Customer>();
             dbConnection = new DbConnection();
+            //phone = "0115511971"
 
             //query....
-            dbConnection.cmd.CommandText = 
-                "SELECT * FROM " +
-                "CUSTOMER " +
-                "INNER JOIN CUSTOMER_ACCOUNT ON CUSTOMER_ACCOUNT.CUSTOMER_ID = CUSTOMER.CUSTOMER_ID" +
-                "INNER JOIN ACCOUNT_LOCATION ON CUSTOMER_ACCOUNT.ACCOUNT_ID = ACCOUNT_LOCATION.ACCOUNT_ID" +
-                "INNER JOIN CUSTOMER_ACCOUNT_DN ON ACCOUNT_LOCATION.ACCOUNT_LOCATION_ID = CUSTOMER_ACCOUNT_DN.ACCOUNT_LOCATION_ID" +
-                "WHERE CUSTOMER_ACCOUNT_DN.ACCOUNT_DN = phoneNumber";
+
+            dbConnection.cmd.CommandText =
+                "SELECT * FROM lb.customer INNER JOIN lb.customer_account ON customer_account.customer_id = customer.customer_id INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id WHERE customer_account_dn.account_dn = :phoneNumber";
+                //"SELECT * FROM " +
+                //"lb.customer " +
+                //"INNER JOIN lb.customer_account ON customer_account.customer_id = customer.customer_id" +
+                //"INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id" +
+                //"INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id" +
+                //"WHERE lb.customer_account_dn(account_dn) = @phoneNumber";
+
+            dbConnection.cmd.Parameters.AddWithValue(":phoneNumber", phoneNumber);
+
+            //dbConnection.cmd.CommandText = "SELECT * FROM lb.customer WHERE customer_id = '720971623V'";
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
+
             DataAccessObject dataAccessObject = new DataAccessObject();
+
             customerDetailList = dataAccessObject.ReadCollection<Customer>(dbConnection.dr);
             dbConnection.dr.Close();
 
             return customerDetailList;
         }
+
+
+
+
+
+        //SELECT* FROM lb.account_location WHERE account_id = '97015853000152'
+        //INSERT INTO lb.customer_account_dn VALUES(13582, '0115511971', '97015853000152', '20254', 'PD', null, null, null,null, '06-May-98', 'CAREPLUS',null, 'SONALIS', '06-MAY-98', 'COLOMBO','WESTERN', 0, null, 'RES', '28-DEC-99', '28-OCT-02', 'P', '9999999', '06-MAY-98', 'CP', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
         //public List<CustomerAccountDN> GetCustomerAccCode(DbConnection dbConnection, string phoneNumber)
         //{

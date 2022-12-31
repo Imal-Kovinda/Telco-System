@@ -1220,7 +1220,54 @@
                               </div>--%>
                             </div>
                             <div class="card-body pt-0 pb-5">
-                              <table class="table card-table table-responsive table-responsive-large" style="width:100%">
+                              <asp:GridView Style="margin-top: 30px;" ID="GridView" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-hover" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
+                                <Columns>
+                                    <asp:BoundField DataField="CompId" HeaderText="Complain Id" />
+                                    <asp:BoundField DataField="CustName" HeaderText="Customer Name" />
+                                    <asp:BoundField DataField="AccCode" HeaderText="Account" />
+                                    <asp:BoundField DataField="TxnDate" HeaderText="Txn Date" />
+                                    <asp:BoundField DataField="Note" HeaderText="Note" />
+                                    <asp:BoundField DataField="" HeaderText="" />
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("comp_id")%>'></asp:Label>  
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("cust_name")%>'></asp:Label>  
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("acc_code")%>'></asp:Label>  
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("txn_date")%>'></asp:Label>  
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Textbox runat="server" type="text" id="ref_no" class="form-control" placeholder="Note.."></asp:Textbox> 
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="viewBtn" runat="server" OnClick="btn_view_click">View</asp:LinkButton>
+                                            
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                              </asp:GridView>
+                             <%-- <table class="table card-table table-responsive table-responsive-large" style="width:100%">
                                 <thead>
                                   <tr>
                                     <th class="d-none d-lg-table-cell">Comp_Id</th>
@@ -1228,21 +1275,11 @@
                                     <th class="d-none d-lg-table-cell">Account</th>
                                     <th class="d-none d-lg-table-cell">Txn Date</th>
                                     <th class="d-none d-lg-table-cell">Note</th>
-                                    <%--<th class="d-none d-lg-table-cell">Status</th>--%>
-                                  <%--  <th class="d-none d-lg-table-cell">Done</th>--%>
-                                    
-                                   
                                   </tr>
                                 </thead>
+
                                 <tbody>
-                                    <% for (int i=0; i<5; i++) {%>
-                                    <tr>
-                                        <td></td>
-                                    </tr>
-                                    }
-                                        
-                                        
-                                    %>
+                                  
                                   <tr>
                                     <td >24541</td>
                                     <td >
@@ -1253,9 +1290,7 @@
                                     <td class="d-none d-lg-table-cell">
                                         <asp:Textbox runat="server" type="text" id="ref_no" class="form-control" placeholder="Note.."></asp:Textbox>
                                     </td>
-                                   <%-- <td >
-                                      <span class="badge badge-success">Completed</span>
-                                    </td>--%>
+                                   
                                     <td class="text-right">
                                       <div class="dropdown show d-inline-block widget-dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="" role="button" id="dropdown-recent-order1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
@@ -1280,9 +1315,7 @@
                                     <td class="d-none d-lg-table-cell">
                                         <asp:Textbox runat="server" type="text" id="Textbox1" class="form-control" placeholder="Note.."></asp:Textbox>
                                     </td>
-                                    <%--<td >
-                                      <span class="badge badge-warning">Delayed</span>
-                                    </td>--%>
+                                 
                                     <td class="text-right">
                                       <div class="dropdown show d-inline-block widget-dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
@@ -1307,9 +1340,7 @@
                                     <td class="d-none d-lg-table-cell">
                                         <asp:Textbox runat="server" type="text" id="Textbox2" class="form-control" placeholder="Note.."></asp:Textbox>
                                     </td>
-                                    <%--<td >
-                                      <span class="badge badge-warning">On Hold</span>
-                                    </td>--%>
+                                
                                     <td class="text-right">
                                       <div class="dropdown show d-inline-block widget-dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order3" data-toggle="dropdown" aria-haspopup="true"
@@ -1335,9 +1366,7 @@
                                     <td class="d-none d-lg-table-cell">
                                         <asp:Textbox runat="server" type="text" id="Textbox3" class="form-control" placeholder="Note.."></asp:Textbox>
                                     </td>
-                                    <%--<td >
-                                      <span class="badge badge-success">Completed</span>
-                                    </td>--%>
+                                  
                                     <td class="text-right">
                                       <div class="dropdown show d-inline-block widget-dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
@@ -1362,9 +1391,7 @@
                                     <td class="d-none d-lg-table-cell">
                                         <asp:Textbox runat="server" type="text" id="Textbox4" class="form-control" placeholder="Note.."></asp:Textbox>
                                     </td>
-                                   <%-- <td >
-                                      <span class="badge badge-danger">Cancelled</span>
-                                    </td>--%>
+                                  
                                     <td class="text-right">
                                       <div class="dropdown show d-inline-block widget-dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order5" data-toggle="dropdown" aria-haspopup="true"
@@ -1381,7 +1408,7 @@
                                     </td>
                                   </tr>
                                 </tbody>
-                              </table>
+                              </table>--%>
                             </div>
                           </div>
 

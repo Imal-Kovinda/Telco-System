@@ -46,5 +46,34 @@ namespace TelcoSystemCore.Common
             return (ICmLogComplainsController)cmLogComplainsController;
         }
 
+        //CustomerAccount
+        public static ICustomerAccountController CreateCustomerAccountDetailController()
+        {
+            ICustomerAccountController customerAccountDetailController = new CustomerAccountControllerImpl();
+            return (ICustomerAccountController)customerAccountDetailController;
+        }
+
+        //Additional data pack request
+        public static IAdditionalDataPackRequestController CreateAdditionalDataPackRequestDetailController()
+        {
+            IAdditionalDataPackRequestController additionalDataPackRequestDetailController = new AdditionalDataPackRequestControllerImpl();
+            return (IAdditionalDataPackRequestController)additionalDataPackRequestDetailController;
+        }
+
+        //account location
+        public static IAccountLocationController CreateAccountLocationDetailController()
+        {
+            IAccountLocationController accountLocationDetailController = new AccountLocationControllerImpl();
+            return (IAccountLocationController)accountLocationDetailController;
+        }
+
+        //location profile
+        public static ILocationProfileController CreateLocationProfileDetailController()
+        {
+            ILocationProfileController locationProfileDetailController = new LocationProfileControllerImpl();
+            return (ILocationProfileController)locationProfileDetailController;
+        }
+
+
     }
 }

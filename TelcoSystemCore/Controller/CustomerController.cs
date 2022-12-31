@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace TelcoSystemCore.Controller
     {
         int Save(Customer customer);
         int Update(Customer customer);
-        List<Customer> GetCustomerList(string CustomQuery = null);
+        //List<Customer> GetCustomerList(string CustomQuery = null);
 
         List<Customer> GetCustomerDetailList(string phoneNumber);
     }
@@ -73,20 +74,20 @@ namespace TelcoSystemCore.Controller
             List<Customer> listCustomer = new List<Customer>();
             try
             {
-               
+
                 dbConnection = new DbConnection();
                 listCustomer = customerDAO.GetCustomerList(dbConnection);
 
                 if (CustomQuery != null)
                 {
 
-                    return customerDAO.GetCustomerList(dbConnection, CustomQuery);
+                    return customerDAO.GetCustomerDetailList(dbConnection, CustomQuery);
                 }
                 else
                 {
                     //check
                     return customerDAO.GetCustomerList(dbConnection);
-                   
+
                 }
 
             }
@@ -114,18 +115,13 @@ namespace TelcoSystemCore.Controller
             {
 
                 dbConnection = new DbConnection();
-                listDetail = customerDAO.GetCustomerList(dbConnection);
+                //remove this
+                //listDetail = customerDAO.GetCustomerList(dbConnection);
 
                 if (phoneNumber != null)
                 {
 
-                    return customerDAO.GetCustomerList(dbConnection, phoneNumber);
-                }
-                else
-                {
-                    //check
-                    return customerDAO.GetCustomerList(dbConnection);
-
+                    return customerDAO.GetCustomerDetailList(dbConnection, phoneNumber);
                 }
 
             }
