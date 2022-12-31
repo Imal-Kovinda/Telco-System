@@ -46,5 +46,33 @@ namespace TelcoSystemCore.Common
             return (ICmLogComplainsDAO)CmLogComplainsDAO;
         }
 
+        //CustomerAccount
+        public static ICustomerAccountDAO CreateCustomerAccountDAO()
+        {
+            ICustomerAccountDAO customerAccountDAO = new CustomerAccountSqlDAOImpl();
+            return (ICustomerAccountDAO)customerAccountDAO;
+        }
+
+        //Additional data pack request
+        public static IAdditionalDataPackRequestDAO CreateAdditionalDataPackRequestDAO()
+        {
+            IAdditionalDataPackRequestDAO additionalDataPackRequestDAO = new AdditionalDataPackRequestSqlDAOImpl();
+            return (IAdditionalDataPackRequestDAO)additionalDataPackRequestDAO;
+        }
+
+        //account location
+        public static IAccountLocationDAO CreateAccountLocationDAO()
+        {
+            IAccountLocationDAO accountLocationDAO = new AccountLocationSqlDAOImpl();
+            return (IAccountLocationDAO)accountLocationDAO;
+        }
+
+        //location profile
+        public static ILocationProfileDAO CreateLocationProfileDAO()
+        {
+            ILocationProfileDAO locationProfileDAO = new LocationProfileSqlDAOImpl();
+            return (ILocationProfileDAO)locationProfileDAO;
+        }
+
     }
 }

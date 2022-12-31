@@ -1291,19 +1291,15 @@
                        
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
-							<asp:Textbox  type="text" class="form-control" ID="service_number" placeholder="Service Number" aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
+							<asp:Textbox  type="text" class="form-control" ID="service_number" placeholder="Service Number" Autoposback="true" OnTextChanged="customerDetails_TextChanged" aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the service number.
 							</div>
 						</div>
 
-                        <div class="col-6 mb-3">
-							<asp:Button runat="server"  class="mr-2 btn btn-sm btn-success" OnClick="FilledUp" Text="CHECK" />
-						</div>
-
-					
-
-					
+                        <%--<div class="col-6 mb-3">
+							<asp:Button runat="server"  class="mr-2 btn btn-sm btn-success"  Text="CHECK" />
+						</div>--%>
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
@@ -1321,7 +1317,7 @@
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
+                    <%--    <div class="col-md-12 mb-3" style="display:none;">
 						    <label class="text-dark font-weight-medium" for="validationServerUsername">Line Type</label>
 						    <select class="form-control" id="line_type">
 							    <option>1</option>
@@ -1330,18 +1326,18 @@
 							    <option>4</option>
 							    <option>5</option>
 						    </select>
-			            </div>
+			            </div>--%>
 
-                        <div class="col-md-12 mb-3" style="display:none;">
+                       <%-- <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Online</label>
 							<asp:Textbox runat="server" type="text" class="form-control" id="online" placeholder="Online" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a mode.
 							</div>
-						</div>
+						</div>--%>
 
 
-                        <div class="col-md-12 mb-3" style="display:none;">
+                        <%--<div class="col-md-12 mb-3" style="display:none;">
                             <label class="text-dark font-weight-medium" for="validationServerUsername">Online Bill Date</label>
 				            <div class="input-group mb-2">
 					            <div class="input-group-prepend">
@@ -1350,17 +1346,27 @@
 						            </span>
 					            </div>
 
-					            <input type="text" class="form-control" data-mask="00/00/0000" placeholder="" aria-label="">
+					            <asp:Textbox runat="server" type="date" class="form-control" data-mask="00/00/0000" placeholder="" aria-label=""></asp:Textbox>
 				            </div>
-                        </div>
+                        </div>--%>
 
                          <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Address</label>
-							<asp:Textbox runat="server" type="text" class="form-control" ID="account_address" placeholder="Account Address" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Customer Name</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="customer_name" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please choose a username.
 							</div>
 						</div>
+
+                         <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="customer_id" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							<div class="invalid-feedback">
+								Please enter the connection status.
+							</div>
+						</div>
+
+                         
 
 					</div>
 				<%--</form>--%>
@@ -1375,38 +1381,34 @@
 			<div class="card-body">
 				<%--<form runat="server">--%>
 					<div class="form-row">
+
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Address</label>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="account_address" placeholder="Account Address" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						</div>
+
                         <div class="col-md-12 mb-3">
 						    <label class="text-dark font-weight-medium" for="validationServerUsername">City</label>
                             <asp:Textbox runat="server" type="text" class="form-control" ID="city" placeholder="City" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-						    <%--<select class="form-control" id="exampleFormControlSelect4">
-							    <option>Matara</option>
-							    <option>Colombo</option>
-							    <option>Kandy</option>
-							    <option>Galle</option>
-						    </select>--%>
+						  
 			            </div>
 
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Connection Status</label>
 							<asp:Textbox runat="server" type="text" class="form-control" ID="connection_status" placeholder="Connection Status" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
-								Please choose a username.
+								Please Fill this Details.
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Custommer Name</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="customer_name" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
+                       
+                        
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
 							<asp:Textbox runat="server" type="text" class="form-control" id="acc_rating" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
-								Please choose a username.
+								Please Fill this Details.
 							</div>
 						</div>
 
@@ -1414,27 +1416,19 @@
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Line Usage</label>
 							<asp:Textbox runat="server" type="text" class="form-control" id="line_usage" placeholder="LINE_USAGE" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
-								Please choose a username.
+								Please Fill this Details.
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3" style="display:none;">
+                      <%--  <div class="col-md-12 mb-3" style="display:none;">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Total Amt</label>
 							<asp:Textbox runat="server" type="number" class="form-control" id="total_amt" placeholder="V_TOT" aria-describedby="inputGroupPrepend3"></asp:Textbox>
 							<div class="invalid-feedback">
-								Please choose a username.
+								Please Fill this Details.
 							</div>
-						</div>
+						</div>--%>
 
-                        <div class="col-md-12 mb-3" style="display:none;">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Login Name</label>
-						    <select class="form-control" id="login_name">
-							    <option>Kamal</option>
-							    <option>Nimal</option>
-							    <option>Bimal</option>
-							    <option>Amal</option>
-						    </select>
-			            </div>
+                      
 
                     </div>
                 <%--</form>--%>
@@ -1456,13 +1450,7 @@
 							</div>
 						</div>
 
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="nic" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                       
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Category</label>
@@ -1472,15 +1460,15 @@
 							</div>
 						</div>
 
-                         <div class="col-md-12 mb-3">
+                         <%--<div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Last Month BIll</label>
 							<input type="text" class="form-control" id="bill_month" placeholder="LAST_MONTH_BILL" aria-describedby="inputGroupPrepend3" >
 							
-						</div>
+						</div>--%>
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Run Date</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="bill_run_date" placeholder="BILL_RUN_CODE" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<asp:Textbox runat="server" type="text" Text="28" class="form-control" id="bill_run_date" placeholder="28" ReadOnly="true" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
@@ -1494,13 +1482,13 @@
 							</div>
 						</div>
 
-                         <div class="col-md-12 mb-3">
+<%--                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Station</label>
 							<asp:Textbox runat="server" type="text" class="form-control" id="bill_station" placeholder="BILL_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
-						</div>
+						</div>--%>
 
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Credit Limit</label>
@@ -1524,7 +1512,7 @@
 
                        	<div class="form-group col-md-12">
 						    <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Concern</label>
-						    <textarea class="form-control" id="concern" rows="3"></textarea>
+						    <asp:Textbox runat="server" class="form-control" ID="concern" TextMode="Multiline" rows="3"></asp:Textbox>
 					    </div>
 
                         <%-- <ul class="list-unstyled list-inline ml-2 mb-3">
@@ -1569,13 +1557,14 @@
 						</div>
 
                          <div class="col-md-12 mb-3 mt-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Nearest BD</label>
-						    <select class="form-control" id="nearest_bd">
+						    <label class="text-dark font-weight-medium" for="validationServerUsername">Nearest BO</label>
+                            <asp:DropDownList ID="ddlNearestBd" runat="server"></asp:DropDownList>
+						 <%--   <select class="form-control" id="nearest_bd">
 							    <option>Galle</option>
 							    <option>Matara</option>
 							    <option>Hakmana</option>
 							    <option>Kirinda</option>
-						    </select>
+						    </select>--%>
 			            </div>
 
                          
@@ -1723,7 +1712,7 @@
 				<%--<form runat="server">--%>
 					<div class="form-row">
                         <div class="d-flex justify-content-around" >
-                            <asp:Button runat="server"  class="mr-2 btn btn-danger" OnClick="backToDashboard" Text="BACK" />
+                            <asp:Button runat="server"  class="mr-2 btn btn-danger" OnClick="GoToDashboard" Text="BACK" />
 
                             <asp:Button runat="server"  class="mr-2 btn btn-secondary"  Text="GLOBAL INQUIRY" />
 

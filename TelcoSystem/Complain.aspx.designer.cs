@@ -69,13 +69,22 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox acc_code;
 
         /// <summary>
-        /// online control.
+        /// customer_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox online;
+        protected global::System.Web.UI.WebControls.TextBox customer_name;
+
+        /// <summary>
+        /// customer_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox customer_id;
 
         /// <summary>
         /// account_address control.
@@ -105,15 +114,6 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox connection_status;
 
         /// <summary>
-        /// customer_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox customer_name;
-
-        /// <summary>
         /// acc_rating control.
         /// </summary>
         /// <remarks>
@@ -132,15 +132,6 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox line_usage;
 
         /// <summary>
-        /// total_amt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox total_amt;
-
-        /// <summary>
         /// f_y_rating control.
         /// </summary>
         /// <remarks>
@@ -148,15 +139,6 @@ namespace TelcoSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox f_y_rating;
-
-        /// <summary>
-        /// nic control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nic;
 
         /// <summary>
         /// account_category control.
@@ -186,15 +168,6 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox bill_balance;
 
         /// <summary>
-        /// bill_station control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bill_station;
-
-        /// <summary>
         /// credit_limit control.
         /// </summary>
         /// <remarks>
@@ -202,6 +175,15 @@ namespace TelcoSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox credit_limit;
+
+        /// <summary>
+        /// concern control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox concern;
 
         /// <summary>
         /// contact_person control.
@@ -229,6 +211,15 @@ namespace TelcoSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
+
+        /// <summary>
+        /// ddlNearestBd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNearestBd;
 
         /// <summary>
         /// informed_by control.
