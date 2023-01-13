@@ -14,6 +14,7 @@ namespace TelcoSystemCore.Infrastructure
         int Save(LocationProfile locationProfile, DbConnection dbConnection);
         int Update(LocationProfile locationProfile, DbConnection dbConnection);
         List<LocationProfile> GetLocationProfileDetailList(DbConnection dbConnection);
+        List<LocationProfile> GetLocationProfileLocationCd(DbConnection dbConnection, string nearestBo);
     }
 
     public class LocationProfileSqlDAOImpl : ILocationProfileDAO
@@ -22,15 +23,37 @@ namespace TelcoSystemCore.Infrastructure
         {
             List<LocationProfile> locationProfileDetailList = new List<LocationProfile>();
             dbConnection = new DbConnection();
-            //phone = "0115511971"
 
-            //query....
 
             dbConnection.cmd.CommandText =
                 "SELECT locat_cd, locat_name FROM lb.location_profile";
     
 
-            //dbConnection.cmd.Parameters.AddWithValue(":phoneNumber", phoneNumber);
+
+
+            //dbConnection.cmd.CommandText = "SELECT * FROM lb.customer WHERE customer_id = '720971623V'";
+
+            dbConnection.dr = dbConnection.cmd.ExecuteReader();
+
+            DataAccessObject dataAccessObject = new DataAccessObject();
+
+            locationProfileDetailList = dataAccessObject.ReadCollection<LocationProfile>(dbConnection.dr);
+            dbConnection.dr.Close();
+
+            return locationProfileDetailList;
+        }
+
+        public List<LocationProfile> GetLocationProfileLocationCd(DbConnection dbConnection, string nearestBo)
+        {
+            List<LocationProfile> locationProfileDetailList = new List<LocationProfile>();
+            dbConnection = new DbConnection();
+
+            dbConnection.cmd.CommandText =
+                "SELECT locat_cd FROM lb.location_profile WHERE locat_name = :nearestBo";
+
+
+
+            dbConnection.cmd.Parameters.AddWithValue(":nearestBo", nearestBo);
 
             //dbConnection.cmd.CommandText = "SELECT * FROM lb.customer WHERE customer_id = '720971623V'";
 

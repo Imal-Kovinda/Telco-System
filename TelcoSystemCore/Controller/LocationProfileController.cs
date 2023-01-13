@@ -14,6 +14,7 @@ namespace TelcoSystemCore.Controller
         int Save(LocationProfile locationProfile);
         int Update(LocationProfile locationProfile);
         List<LocationProfile> GetLocationProfileDetailList();
+        List<LocationProfile> GetLocationProfileLocationCd(string nearestBo);
     }
 
     public class LocationProfileControllerImpl : ILocationProfileController
@@ -75,6 +76,35 @@ namespace TelcoSystemCore.Controller
                 dbConnection = new DbConnection();
 
                 return locationProfileDAO.GetLocationProfileDetailList(dbConnection);
+
+
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+            return listDetail;
+        }
+
+        public List<LocationProfile> GetLocationProfileLocationCd(string nearestBo)
+        {
+            DbConnection dbConnection = null;
+            List<LocationProfile> listDetail = new List<LocationProfile>();
+
+            try
+            {
+                dbConnection = new DbConnection();
+
+                return locationProfileDAO.GetLocationProfileLocationCd(dbConnection,  nearestBo);
+
 
             }
             catch (Exception)

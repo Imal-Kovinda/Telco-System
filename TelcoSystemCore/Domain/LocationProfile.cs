@@ -10,6 +10,8 @@ namespace TelcoSystemCore.Domain
     [Serializable()]
     public class LocationProfile
     {
+        //TelcoSystemCore.Domain.LocationProfile' does not contain a property with the name 'locat_name'.'
+
         [DBField("locat_cd")]
         public string LocatCd { get; set; }
 

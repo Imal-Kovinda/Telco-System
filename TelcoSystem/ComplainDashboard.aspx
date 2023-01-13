@@ -1190,20 +1190,7 @@
           <div class="content-wrapper">
             <div class="content">
                <form runat="server">
-                    <div class="card col-12 card-default">
-			            <div class="card-header card-header-border-bottom">
-                            <div class="form-group">
-						        <h4>Make a Complain</h4>
-					        </div>
-			            </div>
-
-			            <div class="card-body">
-                  
-					            <div class="d-flex flex-row-reverse">
-						           <asp:Button runat="server" type="button" class="mb-1 mb-4 mr-2 btn btn-primary" onclick="makeComplain" Text="Complain" />
-			                   </div>
-		                </div>
-                    </div>
+                   
 
                      <!-- Recent Order Table -->
                     <div class="row">
@@ -1220,200 +1207,43 @@
                               </div>--%>
                             </div>
                             <div class="card-body pt-0 pb-5">
-                              <asp:GridView Style="margin-top: 30px;" ID="GridView" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-hover" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
+                              <asp:GridView Style="margin-top: 30px;" ID="GridView" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
                                 <Columns>
                                     <asp:BoundField DataField="CompId" HeaderText="Complain Id" />
-                                    <asp:BoundField DataField="CustName" HeaderText="Customer Name" />
+                                    <asp:BoundField DataField="CompType" HeaderText="Complain Type" />
+                                    <asp:BoundField DataField="CompSubType" HeaderText="Complain Sub Type" />
                                     <asp:BoundField DataField="AccCode" HeaderText="Account" />
                                     <asp:BoundField DataField="TxnDate" HeaderText="Txn Date" />
-                                    <asp:BoundField DataField="Note" HeaderText="Note" />
-                                    <asp:BoundField DataField="" HeaderText="" />
-
+                                    <asp:BoundField DataField="CustRemarks" HeaderText="Remarks" />
+                            
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("comp_id")%>'></asp:Label>  
+                                            <asp:LinkButton ID="btnView" CssClass="btn-sm btn-primary btn-user btn-block" runat="server" OnClick="btnView_Click">More</asp:LinkButton> 
                                         </ItemTemplate>
                                     </asp:TemplateField>
-
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("cust_name")%>'></asp:Label>  
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("acc_code")%>'></asp:Label>  
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblService" runat="server" Text='<%#Eval("txn_date")%>'></asp:Label>  
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Textbox runat="server" type="text" id="ref_no" class="form-control" placeholder="Note.."></asp:Textbox> 
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="viewBtn" runat="server" OnClick="btn_view_click">View</asp:LinkButton>
-                                            
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                 
                                 </Columns>
                               </asp:GridView>
-                             <%-- <table class="table card-table table-responsive table-responsive-large" style="width:100%">
-                                <thead>
-                                  <tr>
-                                    <th class="d-none d-lg-table-cell">Comp_Id</th>
-                                    <th class="d-none d-lg-table-cell">Customer Name</th>
-                                    <th class="d-none d-lg-table-cell">Account</th>
-                                    <th class="d-none d-lg-table-cell">Txn Date</th>
-                                    <th class="d-none d-lg-table-cell">Note</th>
-                                  </tr>
-                                </thead>
-
-                                <tbody>
-                                  
-                                  <tr>
-                                    <td >24541</td>
-                                    <td >
-                                      <a class="text-dark" href=""> Coach Swagger</a>
-                                    </td>
-                                    <td class="d-none d-lg-table-cell">1 Unit</td>
-                                    <td class="d-none d-lg-table-cell">Oct 20, 2018</td>
-                                    <td class="d-none d-lg-table-cell">
-                                        <asp:Textbox runat="server" type="text" id="ref_no" class="form-control" placeholder="Note.."></asp:Textbox>
-                                    </td>
-                                   
-                                    <td class="text-right">
-                                      <div class="dropdown show d-inline-block widget-dropdown">
-                                        <a class="dropdown-toggle icon-burger-mini" href="" role="button" id="dropdown-recent-order1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order1">
-                                          <li class="dropdown-item">
-                                            <a href="ViewComplains">View</a>
-                                          </li>
-                                          <li class="dropdown-item">
-                                            <a href="#">Done</a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td >24541</td>
-                                    <td >
-                                      <a class="text-dark" href=""> Toddler Shoes, Gucci Watch</a>
-                                    </td>
-                                    <td class="d-none d-lg-table-cell">2 Units</td>
-                                    <td class="d-none d-lg-table-cell">Nov 15, 2018</td>
-                                    <td class="d-none d-lg-table-cell">
-                                        <asp:Textbox runat="server" type="text" id="Textbox1" class="form-control" placeholder="Note.."></asp:Textbox>
-                                    </td>
-                                 
-                                    <td class="text-right">
-                                      <div class="dropdown show d-inline-block widget-dropdown">
-                                        <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order2">
-                                          <li class="dropdown-item">
-                                            <a href="ViewComplains">View</a>
-                                          </li>
-                                          <li class="dropdown-item">
-                                            <a href="#">Done</a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td >24541</td>
-                                    <td >
-                                      <a class="text-dark" href=""> Hat Black Suits</a>
-                                    </td>
-                                    <td class="d-none d-lg-table-cell">1 Unit</td>
-                                    <td class="d-none d-lg-table-cell">Nov 18, 2018</td>
-                                    <td class="d-none d-lg-table-cell">
-                                        <asp:Textbox runat="server" type="text" id="Textbox2" class="form-control" placeholder="Note.."></asp:Textbox>
-                                    </td>
-                                
-                                    <td class="text-right">
-                                      <div class="dropdown show d-inline-block widget-dropdown">
-                                        <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order3" data-toggle="dropdown" aria-haspopup="true"
-                                          aria-expanded="false" data-display="static"></a>
-                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order3">
-                                          <li class="dropdown-item">
-                                            <a href="ViewComplains">View</a>
-                                          </li>
-                                          <li class="dropdown-item">
-                                            <a href="#">Done</a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td >24541</td>
-                                    <td >
-                                      <a class="text-dark" href=""> Backpack Gents, Swimming Cap Slin</a>
-                                    </td>
-                                    <td class="d-none d-lg-table-cell">5 Units</td>
-                                    <td class="d-none d-lg-table-cell">Dec 13, 2018</td>
-                                    <td class="d-none d-lg-table-cell">
-                                        <asp:Textbox runat="server" type="text" id="Textbox3" class="form-control" placeholder="Note.."></asp:Textbox>
-                                    </td>
-                                  
-                                    <td class="text-right">
-                                      <div class="dropdown show d-inline-block widget-dropdown">
-                                        <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order4">
-                                          <li class="dropdown-item">
-                                            <a href="ViewComplains">View</a>
-                                          </li>
-                                          <li class="dropdown-item">
-                                            <a href="#">Done</a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td >24541</td>
-                                    <td >
-                                      <a class="text-dark" href=""> Speed 500 Ignite</a>
-                                    </td>
-                                    <td class="d-none d-lg-table-cell">1 Unit</td>
-                                    <td class="d-none d-lg-table-cell">Dec 23, 2018</td>
-                                    <td class="d-none d-lg-table-cell">
-                                        <asp:Textbox runat="server" type="text" id="Textbox4" class="form-control" placeholder="Note.."></asp:Textbox>
-                                    </td>
-                                  
-                                    <td class="text-right">
-                                      <div class="dropdown show d-inline-block widget-dropdown">
-                                        <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order5" data-toggle="dropdown" aria-haspopup="true"
-                                          aria-expanded="false" data-display="static"></a>
-                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order5">
-                                          <li class="dropdown-item">
-                                            <a href="ViewComplains">View</a>
-                                          </li>
-                                          <li class="dropdown-item">
-                                            <a href="#">Done</a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>--%>
+                          
                             </div>
                           </div>
 
 			        </div>
 		        </div>
+                 <div class="card col-12 card-default">
+			            <div class="card-header card-header-border-bottom">
+                            <div class="form-group">
+						        <h4>Make a Complain</h4>
+					        </div>
+			            </div>
+
+			            <div class="card-body">
+                  
+					            <div class="d-flex flex-row-reverse">
+						           <asp:Button runat="server" type="button" class="mb-1 mb-4 mr-2 btn btn-primary" onclick="makeComplain" Text="Complain" />
+			                   </div>
+		                </div>
+                    </div>
             </form>
 
 
@@ -1429,16 +1259,7 @@
     
     <!-- Footer -->
     <footer class="footer mt-auto">
-      <div class="copyright bg-white">
-        <p>
-          Copyright &copy; <span id="copy-year"></span> a template by <a class="text-primary" href="https://themefisher.com" target="_blank">Themefisher</a>.
-        </p>
-      </div>
-      <script>
-        var d = new Date();
-        var year = d.getFullYear();
-        document.getElementById("copy-year").innerHTML = year;
-      </script>
+  
     </footer>
 
     </div> <!-- End Page Wrapper -->

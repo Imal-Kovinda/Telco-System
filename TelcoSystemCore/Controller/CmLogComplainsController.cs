@@ -11,37 +11,22 @@ namespace TelcoSystemCore.Controller
 {
     public interface ICmLogComplainsController
     {
-        //int Save(CmLogComplains cmLogComplains);
+        int Save(CmLogComplains cmLogComplains);
         //int Update(CmLogComplains cmLogComplains);
-        List<CmLogComplains> GetCmLogComplainsList(string cmLogComplains = null);
+        List<CmLogComplains> GetCmLogComplainsList(string userId);
     }
 
     public class CmLogComplainsControllerImpl : ICmLogComplainsController
     {
         ICmLogComplainsDAO cmLogComplainsDAO = DAOFactory.CreateCmLogComplainsDAO();
 
-        public List<CmLogComplains> GetCmLogComplainsList(string cmLogComplains = null)
+        public int Save(CmLogComplains cmLogComplains)
         {
             DbConnection dbConnection = null;
-            List<CmLogComplains> listCmLogComplains = new List<CmLogComplains>();
             try
             {
-
                 dbConnection = new DbConnection();
-                listCmLogComplains = cmLogComplainsDAO.GetCmLogComplainsList(dbConnection);
-
-                if (cmLogComplains != null)
-                {
-
-                    return cmLogComplainsDAO.GetCmLogComplainsList(dbConnection, cmLogComplains);
-                }
-                else
-                {
-                    //check
-                    return cmLogComplainsDAO.GetCmLogComplainsList(dbConnection);
-
-                }
-
+                return cmLogComplainsDAO.Save(cmLogComplains, dbConnection);
             }
             catch (Exception)
             {
@@ -55,7 +40,38 @@ namespace TelcoSystemCore.Controller
                     dbConnection.Commit();
                 }
             }
-            //return listCmLogComplains;
+
+        }
+        public List<CmLogComplains> GetCmLogComplainsList(string userId)
+        {
+            DbConnection dbConnection = null;
+            List<CmLogComplains> listCmLogComplains = new List<CmLogComplains>();
+            try
+            {
+
+                dbConnection = new DbConnection();
+                //listCmLogComplains = cmLogComplainsDAO.GetCmLogComplainsList(dbConnection);
+                if (userId != null)
+                {
+
+                    return cmLogComplainsDAO.GetCmLogComplainsList(dbConnection, userId);
+                }
+                
+        
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+            return listCmLogComplains;
         }
     }
 }
