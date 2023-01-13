@@ -53,7 +53,7 @@ namespace TelcoSystemCore.Domain
         public String LineUsage { get; set; }
 
         [DBField("last_month_bill")]
-        public double LastMonthBill { get; set; }
+        public int LastMonthBill { get; set; }
 
         [DBField("user_code")]
         public String UserCode { get; set; }
@@ -104,7 +104,7 @@ namespace TelcoSystemCore.Domain
         public DateTime CompletedOn { get; set; }
 
         [DBField("note")]
-        public long Note { get; set; }
+        public string Note { get; set; }
 
         [DBField("ref_comp_id")]
         public String RefCompId { get; set; }
@@ -125,7 +125,7 @@ namespace TelcoSystemCore.Domain
         public String InfoTo { get; set; }
 
         [DBField("completed_by")]
-        public String CompletedBY { get; set; }
+        public String CompletedBy { get; set; }
 
         [DBField("hold_to")]
         public DateTime HoldTo { get; set; }

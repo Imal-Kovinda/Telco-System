@@ -1222,6 +1222,7 @@
         </div>
     </div>--%>
     <form runat="server">
+    <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
 
     <div class="card col-12 card-default">
 			<div class="card-header card-header-border-bottom">
@@ -1283,95 +1284,68 @@
 		</div>
 
 	<div class="col-12">
-		<div class="card card-default">
-			<div class="card-body">
-				<%--<form runat="server">--%>
-					<div class="form-row">
+        <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+            <ContentTemplate>
+		        <div class="card card-default">
+			        <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
 
                        
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
-							<asp:Textbox  type="text" class="form-control" ID="service_number" placeholder="Service Number" Autoposback="true" OnTextChanged="customerDetails_TextChanged" aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the service number.
-							</div>
-						</div>
+                                <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
+							        <asp:Textbox  type="text" class="form-control" ID="service_number" placeholder="Service Number" Autoposback="true" OnTextChanged="customerDetails_TextChanged" aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the service number.
+							        </div>
+						        </div>
 
-                        <%--<div class="col-6 mb-3">
-							<asp:Button runat="server"  class="mr-2 btn btn-sm btn-success"  Text="CHECK" />
-						</div>--%>
+                                <%--<div class="col-6 mb-3">
+							        <asp:Button runat="server"  class="mr-2 btn btn-sm btn-success"  Text="CHECK" />
+						        </div>--%>
 
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
-							<asp:Textbox type="text" ID="user_code" placeholder="User Code" runat="server" class="form-control"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the user code.
-							</div>
-						</div>
+                                <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
+							        <asp:Textbox type="text" ID="user_code" placeholder="User Code" runat="server" class="form-control"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the user code.
+							        </div>
+						        </div>
 
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Code</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="acc_code" placeholder="Account Code" aria-describedby="inputGroupPrepend3"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the code.
-							</div>
-						</div>
+                                 <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Account Code</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="acc_code" placeholder="Account Code" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the code.
+							        </div>
+						        </div>
 
-                    <%--    <div class="col-md-12 mb-3" style="display:none;">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Line Type</label>
-						    <select class="form-control" id="line_type">
-							    <option>1</option>
-							    <option>2</option>
-							    <option>3</option>
-							    <option>4</option>
-							    <option>5</option>
-						    </select>
-			            </div>--%>
+                          
 
-                       <%-- <div class="col-md-12 mb-3" style="display:none;">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Online</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="online" placeholder="Online" aria-describedby="inputGroupPrepend3"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please choose a mode.
-							</div>
-						</div>--%>
+                                 <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Customer Name</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="customer_name" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please choose a username.
+							        </div>
+						        </div>
 
-
-                        <%--<div class="col-md-12 mb-3" style="display:none;">
-                            <label class="text-dark font-weight-medium" for="validationServerUsername">Online Bill Date</label>
-				            <div class="input-group mb-2">
-					            <div class="input-group-prepend">
-						            <span class="input-group-text">
-							            <i class="mdi mdi-calendar-range"></i>
-						            </span>
-					            </div>
-
-					            <asp:Textbox runat="server" type="date" class="form-control" data-mask="00/00/0000" placeholder="" aria-label=""></asp:Textbox>
-				            </div>
-                        </div>--%>
-
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Customer Name</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="customer_name" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="customer_id" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                                 <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="customer_id" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
 
                          
 
-					</div>
-				<%--</form>--%>
-			</div>
-		</div>
+					        </div>
+				        <%--</form>--%>
+			        </div>
+		        </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
 	</div>
 
 
@@ -1420,13 +1394,6 @@
 							</div>
 						</div>
 
-                      <%--  <div class="col-md-12 mb-3" style="display:none;">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Total Amt</label>
-							<asp:Textbox runat="server" type="number" class="form-control" id="total_amt" placeholder="V_TOT" aria-describedby="inputGroupPrepend3"></asp:Textbox>
-							<div class="invalid-feedback">
-								Please Fill this Details.
-							</div>
-						</div>--%>
 
                       
 
@@ -1442,13 +1409,7 @@
 				<%--<form runat="server">--%>
 					<div class="form-row">
 
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">F/Y Rating</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="f_y_rating" placeholder="IT_BSTR" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                         
 
                        
 
@@ -1505,205 +1466,246 @@
     </div>
 
      <div class="col-12">
-		<div class="card card-default">
-			<div class="card-body">
-				<%--<form runat="server">--%>
-					<div class="form-row">
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>--%>
+		        <div class="card card-default">
+			        <div class="card-body">
+                       
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
 
-                       	<div class="form-group col-md-12">
-						    <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Concern</label>
-						    <asp:Textbox runat="server" class="form-control" ID="concern" TextMode="Multiline" rows="3"></asp:Textbox>
-					    </div>
+                       	        <div class="form-group col-md-12">
+						            <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Concern</label>
+						            <asp:Textbox runat="server" class="form-control" ID="concern" TextMode="Multiline" rows="3"></asp:Textbox>
+					            </div>
 
-                        <%-- <ul class="list-unstyled list-inline ml-2 mb-3">
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Inbound
-							        <input type="radio" name="inb" checked="checked" />
+                                <%-- <ul class="list-unstyled list-inline ml-2 mb-3">
+					                <li class="d-inline-block mr-3">
+						                <label class="text-dark font-weight-medium" class="control control-radio">Inbound
+							                <input type="radio" name="inb" checked="checked" />
 							        
-						        </label>
-					        </li>
+						                </label>
+					                </li>
 
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Outbound
-							        <input type="radio" name="inb" />
+					                <li class="d-inline-block mr-3">
+						                <label class="text-dark font-weight-medium" class="control control-radio">Outbound
+							                <input type="radio" name="inb" />
 							        
-						        </label>
-					        </li>
-				        </ul>--%>
+						                </label>
+					                </li>
+				                </ul>--%>
              
 
-                          <div class="col-md-12 mb-3 mt-4">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Person</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="contact_person" placeholder="CONTACT_PERSON" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                                  <div class="col-md-12 mb-3 mt-4">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Contact Person</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="contact_person" placeholder="CONTACT_PERSON" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
 
-                          <div class="col-md-12 mb-3 mt-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Num</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="contact_number" placeholder="CONTACT_NO" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                                  <div class="col-md-12 mb-3 mt-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Contact Num</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="contact_number" placeholder="CONTACT_NO" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
 
-                          <div class="col-md-12 mb-3 mt-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Email</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="email" placeholder="EMAIL" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                                  <div class="col-md-12 mb-3 mt-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Email</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="email" placeholder="EMAIL" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
 
-                         <div class="col-md-12 mb-3 mt-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Nearest BO</label>
-                            <asp:DropDownList ID="ddlNearestBd" runat="server"></asp:DropDownList>
-						 <%--   <select class="form-control" id="nearest_bd">
-							    <option>Galle</option>
-							    <option>Matara</option>
-							    <option>Hakmana</option>
-							    <option>Kirinda</option>
-						    </select>--%>
-			            </div>
+                                 <div class="col-md-12 mb-3 mt-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Nearest BO</label>
+                                   <%-- <asp:DropDownList ID="ddlNearestBd" runat="server"></asp:DropDownList>--%>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlNearestBd" runat="server" class="form-control" ></asp:DropDownList>
+                                    </div>
+						         <%--   <select class="form-control" id="nearest_bd">
+							            <option>Galle</option>
+							            <option>Matara</option>
+							            <option>Hakmana</option>
+							            <option>Kirinda</option>
+						            </select>--%>
+			                    </div>
 
                          
 
-                        <div class="col-md-12 mb-3 mt-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Informed By</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="informed_by" placeholder="INFORMED_BY" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                                <div class="col-md-12 mb-3 mt-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Informed By</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="informed_by" placeholder="INFORMED_BY" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+
+						        </div>
 
                  
                        
 
+                            </div>
+                       <%-- </form>--%>
                     </div>
-               <%-- </form>--%>
-            </div>
-        </div>
+                </div>
+   <%--         </ContentTemplate>
+        </asp:UpdatePanel>--%>
     </div>
 
  
      <div class="col-12">
-		<div class="card card-default">
-			<div class="card-body">
-				<%--<form runat="server">--%>
-					<div class="form-row">
+     <%--   <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <ContentTemplate>--%>
+		        <div class="card card-default">
+			        <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
 
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Category</label>
-						    <select class="form-control" id="category">
-							    <option>COMP_CAT_1</option>
-							    <option>COMP_CAT_2</option>
-							    <option>COMP_CAT_3</option>
-							    <option>COMP_CAT_4</option>
-						    </select>
-			            </div>
+                                <div class="col-md-12 mb-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Category</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlCategory" runat="server" class="form-control"  ></asp:DropDownList>
+                                    </div>
+						            <%--<select class="form-control" id="category">
+							            <option>COMP_CAT_1</option>
+							            <option>COMP_CAT_2</option>
+							            <option>COMP_CAT_3</option>
+							            <option>COMP_CAT_4</option>
+						            </select>--%>
+			                    </div>
 
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain</label>
-						    <select class="form-control" id="complain">
-							    <option>COMP_TYPE_1</option>
-							    <option>COMP_TYPE_2</option>
-							    <option>COMP_TYPE_3</option>
-							    <option>COMP_TYPE_4</option>
-						    </select>
-			            </div>
+                                <div class="col-md-12 mb-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Complain</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlComplain" runat="server" class="form-control" ></asp:DropDownList>
+                                    </div>
+						            <%--<select class="form-control" id="complain">
+							            <option>COMP_TYPE_1</option>
+							            <option>COMP_TYPE_2</option>
+							            <option>COMP_TYPE_3</option>
+							            <option>COMP_TYPE_4</option>
+						            </select>--%>
+			                    </div>
 
+                            </div>
+                        <%--</form>--%>
                     </div>
-                <%--</form>--%>
-            </div>
-        </div>
+                </div>
+           <%-- </ContentTemplate>
+        </asp:UpdatePanel>--%>
     </div>
 
     <div class="col-12">
-		<div class="card card-default">
-			<div class="card-body">
-				<%--<form runat="server">--%>
-					<div class="form-row">
+  <%--      <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+            <ContentTemplate>--%>
+		        <div class="card card-default">
+			        <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
 
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Sub Category</label>
-						    <select class="form-control" id="complain_sub_category">
-							    <option>COMP_SUB_1</option>
-							    <option>COMP_SUB_2</option>
-							    <option>COMP_SUB_3</option>
-							    <option>COMP_SUB_4</option>
-						    </select>
-			            </div>
+         dr                       <div class="col-md-12 mb-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Sub Category</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlComplainSub" runat="server" class="form-control"></asp:DropDownList>
+                                    </div>
+					
+			                    </div>
 
-                          <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">FID</label>
-							<asp:Textbox runat="server" type="text" class="form-control" id="fid" placeholder="TXT_FID" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
+                                  <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">FID</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="fid" placeholder="TXT_FID" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
+
+                                <div class="col-md-12 mb-3" id="dvInfo" runat="server">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Inform To</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="infoTo" placeholder="Inform to" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
                       
 
+                            </div>
+                        <%--</form>--%>
                     </div>
-                <%--</form>--%>
-            </div>
-        </div>
+                </div>
+<%--            </ContentTemplate>
+        </asp:UpdatePanel>--%>
     </div>
 
        <div class="col-12">
-		<div class="card card-default">
-			<div class="card-body">
-				<%--<form runat="server">--%>
-					<div class="form-row">
-                          <ul class="list-unstyled list-inline mt-2 ml-3 mb-3">
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Inbound
-							        <input type="radio" name="inb" id="inbound" checked="checked" />
-							        
-						        </label>
-					        </li>
+           <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                <ContentTemplate>
+		            <div class="card card-default">
+			            <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
+                                   <asp:RadioButtonList ID="rbBound" runat="server" RepeatDirection="Horizontal" CssClass="margin-left:10px">
+                                        <asp:ListItem Value="1" CssClass="form-check-input" Style="margin-right: 50px">&nbsp;Inbound</asp:ListItem>
+                                        <asp:ListItem Value="0" CssClass="form-check-input">&nbsp;Outbound</asp:ListItem>
+                                    </asp:RadioButtonList>
+                           <%--       <ul class="list-unstyled list-inline mt-2 ml-3 mb-3">
+					                <li class="d-inline-block mr-3">
+						       
+                                        <asp:RadioButton ID="inbound" OnCheckedChanged="Checked_Inbound" Checked="true" runat="server" GroupName="boundGroup" Text="Inbound" />
+					                </li>
 
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" id="outbound" class="control control-radio">Outbound
-							        <input type="radio" name="inb" />
-							        
-						        </label>
-					        </li>
-				        </ul>
-                    </div>
+					                <li class="d-inline-block mr-3">
+						    
+                                        <asp:RadioButton ID="outbound" runat="server" Text="Outbound" GroupName="boundGroup"  OnCheckedChanged="Checked_Outbound"/>
+					                </li>
+				                </ul>--%>
+                            </div>
                   
-                <%--</form>--%>
-            </div>
-        </div>
+                        <%--</form>--%>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+            
     </div>
 
       <div class="col-12">
-		<div class="card card-default">
-			<div class="card-body">
-				<%--<form runat="server">--%>
-					 <div class="ml-2">
-                        <label class="text-dark font-weight-medium d-inline-block mr-3" for="">Follow Up</label>
+           <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                <ContentTemplate>
+		            <div class="card card-default">
+			            <div class="card-body">
+				           
+					             <div class="ml-2">
+                                    <label class="text-dark font-weight-medium d-inline-block mr-3" for="">Follow Up</label>
+                                     <asp:RadioButtonList ID="rbFollow" runat="server" RepeatDirection="Horizontal" CssClass="margin-left:10px">
+                                        <asp:ListItem Value="1" CssClass="form-check-input" Style="margin-right: 50px">&nbsp;Yes</asp:ListItem>
+                                        <asp:ListItem Value="0" CssClass="form-check-input">&nbsp;No</asp:ListItem>
+                                    </asp:RadioButtonList>
+				                 <%--   <ul class="list-unstyled list-inline">
+					                    <li class="d-inline-block mr-3">
+						                 
+                                            <asp:RadioButton ID="followYes" runat="server" Text="Yes" GroupName="follow"  OnCheckedChanged="Checked_followYes"/>
+					                    </li>
 
-				        <ul class="list-unstyled list-inline">
-					        <li class="d-inline-block mr-3">
-						        <label class="text-gray font-weight-sm" class="control control-radio">Yes
-							        <input type="radio" name="option" checked="checked" />
-							        
-						        </label>
-					        </li>
-
-					        <li class="d-inline-block mr-3">
-						        <label class="text-gray font-weight-sm" class="control control-radio">No
-							        <input type="radio" name="option" />
-							        
-						        </label>
-					        </li>
-				        </ul>
-                    </div>
+					                    <li class="d-inline-block mr-3">
+						               
+                                            <asp:RadioButton ID="followNo" runat="server" Text="No" GroupName="follow"  OnCheckedChanged="Checked_followNo"/>
+					                    </li>
+				                    </ul>--%>
+                                     <%--<div class="col-md-12 mb-3" id="dvInfo" runat="server">
+							                <label class="text-dark font-weight-medium" for="validationServerUsername">Inform To</label>
+							                <asp:Textbox runat="server" type="text" class="form-control" id="infoTo" placeholder="Inform to" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							                <div class="invalid-feedback">
+								                Please enter the connection status.
+							                </div>
+						                </div>--%>
+                                </div>
                   
-                <%--</form>--%>
-            </div>
-        </div>
+                      
+                        </div>
+                    </div>
+               </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 
     <div class="col-12">

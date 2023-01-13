@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using TelcoSystemCore.Domain;
 using TelcoSystemCore.Common;
 using TelcoSystemCore.Controller;
+using System.Security.Policy;
 
 namespace TelcoSystem
 {
@@ -15,34 +16,45 @@ namespace TelcoSystem
         List<CmLogComplains> listCmLogComplains = new List<CmLogComplains>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["user_id"]== null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //    if (Session["User_Role_Id"].ToString() == "1" || Session["User_Role_Id"].ToString() == "2")
-            //    {
-            //        BindDataSource();
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect("404.aspx");
-            //    }
-            //}
-            BindDataSource();
+            if (!IsPostBack)
+            {
+                BindDataSource();
+            }
+                //if (Session["user_id"]== null)
+                //{
+                //    Response.Redirect("Login.aspx");
+                //}
+                //else
+                //{
+                //    if (Session["User_Role_Id"].ToString() == "1" || Session["User_Role_Id"].ToString() == "2")
+                //    {
+                //        BindDataSource();
+                //    }
+                //    else
+                //    {
+                //        Response.Redirect("404.aspx");
+                //    }
+                //}
+                
         }
 
         //load data rows
         protected void BindDataSource()
         {
-
-            //ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
-            //listCmLogComplains = cmLogComplainsController.GetCmLogComplainsList();
-            //GridView.DataSource = listCmLogComplains;
-            //GridView.DataBind();
+            var userId = "LBEXAM";
+            ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
+            listCmLogComplains = cmLogComplainsController.GetCmLogComplainsList(userId);
+           
+            GridView.DataSource = listCmLogComplains;
+            GridView.DataBind();
 
         }
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            //
+        }
+        
+
         protected void makeComplain(object sender, EventArgs e)
         {
 

@@ -74,5 +74,38 @@ namespace TelcoSystemCore.Common
             return (ILocationProfileDAO)locationProfileDAO;
         }
 
+        //cm category type master
+        public static ICmCategoryTypeMasterDAO CreateCmCategoryTypeMasterDAO()
+        {
+            ICmCategoryTypeMasterDAO cmCategoryTypeMasterDAO = new CmCategoryTypeMasterSqlDAOImpl();
+            return (ICmCategoryTypeMasterDAO)cmCategoryTypeMasterDAO;
+        }
+
+        //cm complain type master
+        public static ICmComplainTypeMasterDAO CreateCmComplainTypeMasterDAO()
+        {
+            ICmComplainTypeMasterDAO cmComplainTypeMasterDAO = new CmComplainTypeMasterSqlDAOImpl();
+            return (ICmComplainTypeMasterDAO)cmComplainTypeMasterDAO;
+        }
+
+        //cm complain sub type master
+        public static ICmComplainSubTypeMasterDAO CreateCmComplainSubTypeMasterDAO()
+        {
+            ICmComplainSubTypeMasterDAO cmComplainSubTypeMasterDAO = new CmComplainSubTypeMasterSqlDAOImpl();
+            return (ICmComplainSubTypeMasterDAO)cmComplainSubTypeMasterDAO;
+        }
+
+        // cm log complain save data
+        //public static ICmLogComplainsDAO CreateCmLogComplainsDAO()
+        //{
+        //    ICmLogComplainsDAO cmLogComplainDAO = new CmLogComplainsSqlDAOImpl();
+        //    return (ICmLogComplainsDAO)cmLogComplainDAO;
+        //}
+        public static IBillSettlementDAO CreateBillSettlementDAO()
+        {
+            IBillSettlementDAO billSettlementDAO = new BillSettlementSqlDAOImpl();
+            return (IBillSettlementDAO)billSettlementDAO;
+        }
+
     }
 }
