@@ -11,88 +11,88 @@ namespace TelcoSystemCore.Domain
     public class CmLogComplains
     {
         [DBField("comp_id")]
-        public String CompId { get; set; }
+        public string CompId { get; set; }
 
         [DBField("txn_date")]
         public DateTime TxnDate { get; set; }
 
         [DBField("cust_name")]
-        public String CustName { get; set; }
+        public string CustName { get; set; }
 
         [DBField("comp_cat_code")]
-        public String CompCatCode { get; set; }
+        public string CompCatCode { get; set; }
 
         [DBField("comp_type")]
-        public String CompType { get; set; }
+        public string CompType { get; set; }
 
         [DBField("comp_sub_type")]
-        public String CompSubType { get; set; }
+        public string CompSubType { get; set; }
 
         [DBField("dn_svc_no")]
-        public String DnSvcNo { get; set; }
+        public string DnSvcNo { get; set; }
 
         [DBField("login_name")]
-        public String LoginName { get; set; }
+        public string LoginName { get; set; }
 
         [DBField("acc_code")]
-        public String AccCode { get; set; }
+        public string AccCode { get; set; }
 
         [DBField("acc_rating")]
-        public String AccRating { get; set; }
+        public string AccRating { get; set; }
 
         [DBField("conn_status")]
-        public String ConnStatus { get; set; }
+        public string ConnStatus { get; set; }
 
         [DBField("acc_category")]
-        public String AccCategory { get; set; }
+        public string AccCategory { get; set; }
 
         [DBField("line_type")]
-        public String LineType { get; set; }
+        public string LineType { get; set; }
 
         [DBField("line_usage")]
-        public String LineUsage { get; set; }
+        public string LineUsage { get; set; }
 
         [DBField("last_month_bill")]
         public int LastMonthBill { get; set; }
 
         [DBField("user_code")]
-        public String UserCode { get; set; }
+        public string UserCode { get; set; }
 
         [DBField("address")]
-        public String Address { get; set; }
+        public string Address { get; set; }
 
         [DBField("city")]
-        public String City { get; set; }
+        public string City { get; set; }
 
         [DBField("cust_remarks")]
-        public String CustRemarks { get; set; }
+        public string CustRemarks { get; set; }
 
         [DBField("contact_person")]
-        public String ContactPerson { get; set; }
+        public string ContactPerson { get; set; }
 
         [DBField("informed_by")]
-        public String InformedBy { get; set; }
+        public string InformedBy { get; set; }
 
         [DBField("contact_no")]
-        public String ContactNo { get; set; }
+        public string ContactNo { get; set; }
 
         [DBField("followup")]
-        public String Followup { get; set; }
+        public string Followup { get; set; }
 
         [DBField("status")]
-        public String Status { get; set; }
+        public string Status { get; set; }
 
         [DBField("it_bstr")]
-        public String ItBstr { get; set; }
+        public string ItBstr { get; set; }
 
         [DBField("logged_by")]
-        public String LoggedBy { get; set; }
+        public string LoggedBy { get; set; }
 
         [DBField("logged_on")]
         public DateTime LoggedOn { get; set; }
 
         [DBField("modified_by")]
-        public String ModifiedBy { get; set; }
+        public string ModifiedBy { get; set; }
 
         [DBField("modified_on")]
         public DateTime ModifiedOn { get; set; }
@@ -107,39 +107,39 @@ namespace TelcoSystemCore.Domain
         public string Note { get; set; }
 
         [DBField("ref_comp_id")]
-        public String RefCompId { get; set; }
+        public string RefCompId { get; set; }
 
         [DBField("urgent_comp")]
-        public String UrgentComp { get; set; }
+        public string UrgentComp { get; set; }
 
         [DBField("system_type")]
-        public String SystemType { get; set; }
+        public string SystemType { get; set; }
 
         [DBField("email")]
-        public String Email { get; set; }
+        public string Email { get; set; }
 
         [DBField("directed")]
-        public String Directed { get; set; }
+        public string Directed { get; set; }
 
         [DBField("info_to")]
-        public String InfoTo { get; set; }
+        public string InfoTo { get; set; }
 
         [DBField("completed_by")]
-        public String CompletedBy { get; set; }
+        public string CompletedBy { get; set; }
 
         [DBField("hold_to")]
         public DateTime HoldTo { get; set; }
 
         [DBField("call_type")]
-        public String CallType { get; set; }
+        public string CallType { get; set; }
 
         [DBField("fault_id")]
         public int FaultId { get; set; }
 
         [DBField("comp_section_id")]
-        public String CompSectionId { get; set; }
+        public string CompSectionId { get; set; }
 
         [DBField("rejected")]
-        public String Rejected { get; set; }
+        public string Rejected { get; set; }
     }
 }

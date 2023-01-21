@@ -25,6 +25,7 @@ namespace TelcoSystem
         public string ddlCategoryType;
         public string ddlCom;
         public string ddlComSub;
+        //public string ddlSectionMaster;
         public string seqId;
         public string bound;
         public string followStatus;
@@ -55,6 +56,7 @@ namespace TelcoSystem
                 seqId = GenerateSequenceId();
                 ref_no.Text = seqId.ToString();
 
+                BindSections();
                 BindNearestBO();
                 BindCategory();
                 BindComplain();
@@ -125,6 +127,7 @@ namespace TelcoSystem
         protected void Save_btn(object sender, EventArgs e)
         {
             CmLogComplains complains = new CmLogComplains();
+            ComplainRemarks compRe = new ComplainRemarks();
 
             complains.CompId = ref_no.Text;
 
@@ -137,6 +140,8 @@ namespace TelcoSystem
             complains.CompCatCode = ddlCategory.SelectedValue;
             complains.CompType = ddlComplain.SelectedValue;
             complains.CompSubType = ddlComplainSub.SelectedValue;
+
+            complains.InfoTo = ddlSectionMaster.SelectedValue;
 
             var test_serviceNum = service_number.Text;
             complains.DnSvcNo = test_serviceNum.ToString();
@@ -159,8 +164,8 @@ namespace TelcoSystem
             complains.ContactNo = contact_number.Text;
             complains.Followup = rbFollow.SelectedValue;
 
-
-            if(complains.Followup != null)
+            string check = "0";
+            if(complains.Followup != check)
             {
                 complains.Followup = "Y";
                 complains.Status = "P";
@@ -169,7 +174,7 @@ namespace TelcoSystem
             else
             {
                 complains.Followup = "N";
-                complains.Status = "B";
+                complains.Status = "D";
                 //dvInfo.Visible = false;
             }
             //complains.Status = "ab3";
@@ -185,7 +190,7 @@ namespace TelcoSystem
             complains.SystemType = "sm";
             complains.Email = email.Text;
             complains.Directed = "a";
-            complains.InfoTo = infoTo.Text;
+            
             complains.CompletedBy = "AB14";
             //complains.HoldTo = "12-MAR-2023";
             complains.CallType = "l";
@@ -197,15 +202,26 @@ namespace TelcoSystem
 
             //enter in form but no in table.....
             //complains.CustomerId = customer_id.Text;
-        
+
             //complains.BillBalance = bill_balance.Text;
             //complains.CreditLimit = credit_limit.Text;
             //complains.nearestBo = ddlNearestBo;
             //complains.Fid = fid.Text;
 
+            //remark data
+            compRe.CompId = ref_no.Text;
+            compRe.SectionId = ddlSectionMaster.SelectedValue;
+            compRe.ReInfoDate = currentDate;
+            compRe.MyRemarks = "null";
+
+           
 
             ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
             cmLogComplainsController.Save(complains);
+
+            //sent to remarks table
+            IComplainRemarksController complainRemarksController = ControllerFactory.CreateComplainRemarksDetailController();
+            complainRemarksController.Save(compRe);
 
             ClearMe();
         }
@@ -223,7 +239,7 @@ namespace TelcoSystem
             connection_status.Text = string.Empty;
             acc_rating.Text = string.Empty;
             line_usage.Text = string.Empty;
-            infoTo.Text = string.Empty;
+            //infoTo.Text = string.Empty;
             account_category.Text = string.Empty;
             bill_run_date.Text = string.Empty;
             bill_balance.Text = string.Empty;
@@ -312,6 +328,19 @@ namespace TelcoSystem
             ddlComplainSub.DataTextField = "Description";
 
             ddlComplainSub.DataBind();
+        }
+
+        private void BindSections()
+        {
+            IComSectionsMastersController comSectionsMastersController = ControllerFactory.CreateComSectionsMastersDetailController();
+            List<ComSectionsMasters> comSectionsMasters = comSectionsMastersController.GetComSectionsMastersDetailList();
+
+            ddlSectionMaster.DataSource = comSectionsMasters;
+            ddlSectionMaster.DataValueField = "SectionId";
+            ddlSectionMaster.DataTextField = "SectionName";
+
+            ddlSectionMaster.DataBind();
+
         }
 
         protected void GoToDashboard(object sender, EventArgs e)

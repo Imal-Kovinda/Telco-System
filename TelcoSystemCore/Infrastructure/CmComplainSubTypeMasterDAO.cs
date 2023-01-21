@@ -49,11 +49,11 @@ namespace TelcoSystemCore.Infrastructure
             dbConnection = new DbConnection();
 
             dbConnection.cmd.CommandText =
-                "SELECT code FROM lb.cm_complain_sub_type_master WHERE description = :complainSub";
+                "SELECT code FROM lb.cm_complain_sub_type_master WHERE description = ?";
 
 
 
-            dbConnection.cmd.Parameters.AddWithValue(":complainSub", complainSub);
+            dbConnection.cmd.Parameters.AddWithValue("@complainSub", complainSub);
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
 

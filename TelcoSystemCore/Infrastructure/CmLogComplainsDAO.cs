@@ -14,7 +14,15 @@ namespace TelcoSystemCore.Infrastructure
     {
         int Save(CmLogComplains cmLogComplains, DbConnection dbConnection);
         int Update(CmLogComplains cmLogComplains, DbConnection dbConnection);
+
+        int DoneCmLogComplains(DbConnection dbConnection, CmLogComplains done);
         List<CmLogComplains> GetCmLogComplainsList(DbConnection dbConnection, string userId);
+
+        List<CmLogComplains> ViewMoreCmLogComplains(DbConnection dbConnection, string compId);
+
+  
+
+
     }
 
     public class CmLogComplainsSqlDAOImpl : ICmLogComplainsDAO
@@ -118,16 +126,47 @@ namespace TelcoSystemCore.Infrastructure
 
         public int Update(CmLogComplains cmLogComplains, DbConnection dbConnection)
         {
-            throw new NotImplementedException();
+            //update informed_by
+
+            int output = 0;
+
+            dbConnection.cmd.Parameters.Clear();
+            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
+            dbConnection.cmd.CommandText =
+                "UPDATE lb.cm_log_complains SET note = ?, info_to = ? WHERE comp_id = ?";
+
+            dbConnection.cmd.Parameters.AddWithValue("@Note", cmLogComplains.Note);
+            dbConnection.cmd.Parameters.AddWithValue("@InfoTo", cmLogComplains.InfoTo);
+            dbConnection.cmd.Parameters.AddWithValue("@CompId", cmLogComplains.CompId);
+
+            output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
+
+            return output;
+        }
+
+        public int DoneCmLogComplains(DbConnection dbConnection, CmLogComplains done)
+        {
+            int output = 0;
+
+            dbConnection.cmd.Parameters.Clear();
+            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
+            dbConnection.cmd.CommandText =
+                "UPDATE lb.cm_log_complains SET status = 'D' WHERE comp_id = ?";
+
+            dbConnection.cmd.Parameters.AddWithValue("@Status", done.Status);
+
+            output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
+
+            return output;
         }
 
         public List<CmLogComplains> GetCmLogComplainsList(DbConnection dbConnection, string userId)
         {
             List<CmLogComplains> cmLogComplains = new List<CmLogComplains>();
             dbConnection = new DbConnection();
-            dbConnection.cmd.CommandText = "SELECT * FROM lb.cm_log_complains INNER JOIN lb.cm_department_users ON cm_log_complains.info_to = lb.cm_department_users.department_name WHERE cm_department_users.user_id = :userId";
+            dbConnection.cmd.CommandText = "SELECT * FROM lb.cm_log_complains INNER JOIN lb.cm_department_users ON cm_log_complains.info_to = lb.cm_department_users.section_id WHERE cm_department_users.user_id = ? AND cm_log_complains.status = 'P'";
 
-            dbConnection.cmd.Parameters.AddWithValue(":userId", userId);
+            dbConnection.cmd.Parameters.AddWithValue("@userId", userId);
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
             DataAccessObject dataAccessObject = new DataAccessObject();
@@ -138,6 +177,26 @@ namespace TelcoSystemCore.Infrastructure
             return cmLogComplains;
         }
 
+        public List<CmLogComplains> ViewMoreCmLogComplains(DbConnection dbConnection, string compId)
+        {
+            List<CmLogComplains> cmLogComplains = new List<CmLogComplains>();
+            dbConnection = new DbConnection();
+            dbConnection.cmd.CommandText = "SELECT * FROM lb.cm_log_complains WHERE comp_id = ?";
+
+            dbConnection.cmd.Parameters.AddWithValue("@comp_id", compId);
+
+            dbConnection.dr = dbConnection.cmd.ExecuteReader();
+            DataAccessObject dataAccessObject = new DataAccessObject();
+            cmLogComplains = dataAccessObject.ReadCollection<CmLogComplains>(dbConnection.dr);
+            dbConnection.dr.Close();
+
+
+            return cmLogComplains;
+        }
+
+       
       
+
+       
     }
 }

@@ -12,8 +12,13 @@ namespace TelcoSystemCore.Controller
     public interface ICmLogComplainsController
     {
         int Save(CmLogComplains cmLogComplains);
+
+        int Update(CmLogComplains cmLogComplains);
+        
+        int DoneCmLogComplains(CmLogComplains done);
         //int Update(CmLogComplains cmLogComplains);
         List<CmLogComplains> GetCmLogComplainsList(string userId);
+        List<CmLogComplains> ViewMoreCmLogComplains(string compId);
     }
 
     public class CmLogComplainsControllerImpl : ICmLogComplainsController
@@ -72,6 +77,82 @@ namespace TelcoSystemCore.Controller
                 }
             }
             return listCmLogComplains;
+        }
+
+        public List<CmLogComplains> ViewMoreCmLogComplains(string compId)
+        {
+            DbConnection dbConnection = null;
+            List<CmLogComplains> listCmLogComplains = new List<CmLogComplains>();
+            try
+            {
+
+                dbConnection = new DbConnection();
+                //listCmLogComplains = cmLogComplainsDAO.GetCmLogComplainsList(dbConnection);
+                if (compId != null)
+                {
+
+                    return cmLogComplainsDAO.ViewMoreCmLogComplains(dbConnection, compId);
+                }
+
+
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+            return listCmLogComplains;
+        }
+
+        public int Update(CmLogComplains cmLogComplains)
+        {
+            DbConnection dbConnection = null;
+            try
+            {
+                dbConnection = new DbConnection();
+                return cmLogComplainsDAO.Update(cmLogComplains, dbConnection);
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+        }
+
+        public int DoneCmLogComplains(CmLogComplains done)
+        {
+            DbConnection dbConnection = null;
+            try
+            {
+                dbConnection = new DbConnection();
+                return cmLogComplainsDAO.DoneCmLogComplains(dbConnection, done);
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace TelcoSystemCore.Infrastructure
     public interface IPnbsUsersDAO
     {
         bool GetPnbsUsers(string username, string password, DbConnection dbConnection);
-        PnbsUsers GetPnbsUsers(string username, DbConnection dbConnection);
+        PnbsUsers GetPnbsUsers(DbConnection dbConnection, PnbsUsers pnbsUsers);
     }
 
     public class PnbsUsersSqlDAOImpl : IPnbsUsersDAO
@@ -45,20 +45,35 @@ namespace TelcoSystemCore.Infrastructure
 
         }
 
-        public PnbsUsers GetPnbsUsers(string username, DbConnection dbConnection)
+        public PnbsUsers GetPnbsUsers(DbConnection dbConnection, PnbsUsers pnbsUsers)
         {
             PnbsUsers getPnbsUsers = new PnbsUsers();
 
 
             dbConnection.cmd.Parameters.Clear();
-            dbConnection.cmd.CommandText = "SELECT * FROM PNBS_USERS WHERE PNBS_ID = " + username;
-            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
-            using (dbConnection.dr = dbConnection.cmd.ExecuteReader())
-            {
-                DataAccessObject dataAccessObject = new DataAccessObject();
-                getPnbsUsers = dataAccessObject.GetSingleOject<PnbsUsers>(dbConnection.dr);
-            }
+            dbConnection.cmd.CommandText = "SELECT * FROM PNBS_USERS WHERE PNBS_ID = ?";
+
+            dbConnection.cmd.Parameters.AddWithValue("@pnbsUsers", pnbsUsers);
+
+            dbConnection.dr = dbConnection.cmd.ExecuteReader();
+            DataAccessObject dataAccessObject = new DataAccessObject();
+            getPnbsUsers = dataAccessObject.GetSingleOject<PnbsUsers>(dbConnection.dr);
+            dbConnection.dr.Close();
+
+
             return getPnbsUsers;
+            //dbConnection.cmd.CommandType = System.Data.CommandType.Text;
+            //using (dbConnection.dr = dbConnection.cmd.ExecuteReader())
+            //{
+            //    DataAccessObject dataAccessObject = new DataAccessObject();
+            //    getPnbsUsers = dataAccessObject.GetSingleOject<PnbsUsers>(dbConnection.dr);
+            //}
+            //return getPnbsUsers;
+
+
+
+            ///
+
         }
             
 

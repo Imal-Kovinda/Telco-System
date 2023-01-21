@@ -49,11 +49,11 @@ namespace TelcoSystemCore.Infrastructure
             dbConnection = new DbConnection();
 
             dbConnection.cmd.CommandText =
-                "SELECT locat_cd FROM lb.location_profile WHERE locat_name = :nearestBo";
+                "SELECT locat_cd FROM lb.location_profile WHERE locat_name = ?";
 
 
 
-            dbConnection.cmd.Parameters.AddWithValue(":nearestBo", nearestBo);
+            dbConnection.cmd.Parameters.AddWithValue("@nearestBo", nearestBo);
 
             //dbConnection.cmd.CommandText = "SELECT * FROM lb.customer WHERE customer_id = '720971623V'";
 
