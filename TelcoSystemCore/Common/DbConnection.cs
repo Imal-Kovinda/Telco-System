@@ -28,7 +28,7 @@ namespace TelcoSystemCore.Common
             //con = new SqlConnection("Dsn=telcoSystem;data source=10.12.14.75;database=LBS;user id=postgres;uid=postgres");
             //con = new SqlConnection(System.Configuration.ConfigurationSettings.AppSettings["dbConnection"].ToString());
             //string connectionString = ConfigurationSettings.AppSettings["dbConnection"].ToString();
-            con = new OdbcConnection("Dsn=telcoSystem;uid=postgres;PWD=1234");
+            con = new OdbcConnection("Dsn=PostgreSQL30;uid=postgres;PWD=1234");
             //con = new OdbcConnection(connectionString);
             cmd = new OdbcCommand();
             cmd.Connection = con;

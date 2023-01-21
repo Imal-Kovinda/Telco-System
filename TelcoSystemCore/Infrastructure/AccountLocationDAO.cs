@@ -25,11 +25,11 @@ namespace TelcoSystemCore.Infrastructure
 
 
             dbConnection.cmd.CommandText =
-                "SELECT * FROM lb.account_location INNER JOIN lb.customer_account_dn ON customer_account_dn.account_id = account_location.account_id WHERE customer_account_dn.account_dn = :phoneNumber";
+                "SELECT * FROM lb.account_location INNER JOIN lb.customer_account_dn ON customer_account_dn.account_id = account_location.account_id WHERE customer_account_dn.account_dn = ?";
 
 
 
-            dbConnection.cmd.Parameters.AddWithValue(":phoneNumber", phoneNumber);
+            dbConnection.cmd.Parameters.AddWithValue("@phoneNumber", phoneNumber);
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
 

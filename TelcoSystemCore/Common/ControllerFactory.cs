@@ -106,5 +106,19 @@ namespace TelcoSystemCore.Common
             IBillSettlementController billSettlementController = new BillSettlementControllerImpl();
             return (IBillSettlementController)billSettlementController;
         }
+
+        //com sections masters
+        public static IComSectionsMastersController CreateComSectionsMastersDetailController()
+        {
+            IComSectionsMastersController comSectionsMastersDetailController = new ComSectionsMastersControllerImpl();
+            return (IComSectionsMastersController)comSectionsMastersDetailController;
+        }
+
+        // ComplainRemarks
+        public static IComplainRemarksController CreateComplainRemarksDetailController()
+        {
+            IComplainRemarksController complainRemarksDetailController = new ComplainRemarksControllerImpl();
+            return (IComplainRemarksController)complainRemarksDetailController;
+        }
     }
 }

@@ -25,9 +25,9 @@ namespace TelcoSystemCore.Infrastructure
             //account id = "97015853000152"
 
             dbConnection.cmd.CommandText =
-                "SELECT * FROM lb.bill_settlement INNER JOIN  lb.customer_account ON lb.bill_settlement.account_id = customer_account.account_id INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id WHERE customer_account_dn.account_dn = :phoneNumber";
+                "SELECT * FROM lb.bill_settlement INNER JOIN  lb.customer_account ON lb.bill_settlement.account_id = customer_account.account_id INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id WHERE customer_account_dn.account_dn = ?";
 
-            dbConnection.cmd.Parameters.AddWithValue(":phoneNumber", phoneNumber);
+            dbConnection.cmd.Parameters.AddWithValue("@phoneNumber", phoneNumber);
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
 

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8" />CPU USES
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
@@ -65,18 +65,7 @@
     <div class="wrapper">
 
       <!-- Github Link -->
-      <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
-        <svg width="70" height="70" viewBox="0 0 250 250" aria-hidden="true">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="75%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#896def;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#482271;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <path d="M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z" fill="url(#grad1)"></path>
-        </svg>
-        <i class="mdi mdi-github-circle"></i>
-      </a>
+
         
 
 
@@ -664,26 +653,7 @@
               </ul>
             </div>
 
-            <div class="sidebar-footer">
-              <hr class="separator mb-0" />
-              <div class="sidebar-footer-content">
-                <h6 class="text-uppercase">
-                  Cpu Uses <span class="float-right">40%</span>
-                </h6>
-
-                <div class="progress progress-xs">
-                  <div class="progress-bar active" style="width: 40%;" role="progressbar"></div>
-                </div>
-
-                <h6 class="text-uppercase">
-                  Memory Uses <span class="float-right">65%</span>
-                </h6>
-
-                <div class="progress progress-xs">
-                  <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar"></div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </aside>
 
@@ -1162,8 +1132,9 @@
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <span id="userName" class="d-none d-lg-inline-block">Abdus Salam</span>
                     </button>
+
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
@@ -1604,7 +1575,7 @@
 				        <%--<form runat="server">--%>
 					        <div class="form-row">
 
-         dr                       <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-3">
 						            <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Sub Category</label>
                                     <div class="col-sm-12" style="display: flex; flex-direction: row">
                                         <asp:DropDownList ID="ddlComplainSub" runat="server" class="form-control"></asp:DropDownList>
@@ -1622,10 +1593,13 @@
 
                                 <div class="col-md-12 mb-3" id="dvInfo" runat="server">
 							        <label class="text-dark font-weight-medium" for="validationServerUsername">Inform To</label>
-							        <asp:Textbox runat="server" type="text" class="form-control" id="infoTo" placeholder="Inform to" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlSectionMaster" runat="server" class="form-control"  ></asp:DropDownList>
+                                    </div>
+							       <%-- <asp:Textbox runat="server" type="text" class="form-control" id="infoTo" placeholder="Inform to" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 							        <div class="invalid-feedback">
 								        Please enter the connection status.
-							        </div>
+							        </div>--%>
 						        </div>
                       
 

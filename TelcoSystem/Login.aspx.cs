@@ -9,11 +9,13 @@ using TelcoSystemCore.Common;
 using TelcoSystemCore.Domain;
 using TelcoSystemCore.Controller;
 using Login = TelcoSystemCore.Domain.PnbsUsers;
+using System.Security.Policy;
 
 namespace TelcoSystem
 {
     public partial class Login : System.Web.UI.Page
     {
+        List<PnbsUsers> listPnbsUsers = new List<PnbsUsers>();
         //CompanyLoginController companyLoginController = ControllerFactory.CreateCompanyLoginController();
         //WarehouseControllerInterface warehouseController = ControllerFactory.CreateWarehouseController();
         //SubDepartmentControllerInterface subDepartmentController = ControllerFactory.userWarehouseController();
@@ -36,35 +38,42 @@ namespace TelcoSystem
 
         //}
 
+
+
+
         [Obsolete]
-        protected void login(object sender, EventArgs e)
+
+
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //var user_name = userName.Text;
-            //var pwd = password.Text;
-
             IPnbsUsersController loginController = ControllerFactory.CreatePnbsUsersController();
-            TelcoSystemCore.Domain.PnbsUsers login = new TelcoSystemCore.Domain.PnbsUsers();
-            login.PnbsId = userName.Text;
-            login.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(password.Text, "SHA1");
-            if(loginController.GetPnbsUsers(login.PnbsId, login.Password))
+            PnbsUsers pnbsUsers = new PnbsUsers();
+            pnbsUsers.PnbsId = txtUserName.Text;
+            pnbsUsers.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPassword.Text, "SHA1");
+
+         
+       
+
+            pnbsUsers = loginController.GetPnbsUsers(pnbsUsers);
+
+            if (pnbsUsers.PnbsId == "")
             {
-                login = loginController.GetPnbsUsers(login.PnbsId);
-
-                Session["EMP_ID"] = login.EmpId;
-                Session["Name"] = login.Name;
-                Session["PNBS_ID"] = login.PnbsId;
-                Session["NW_USERID"] = login.NwUserid;
-
-
-                if (login.EmpId == 3)
-                    Response.Redirect("ViewPaymentMemo.aspx");
-                else
-                    Response.Redirect("Dashboard.aspx");
+                txtPassword.Text = string.Empty;
+                lblErrorMsg.Text = "Incorrect Username or Password!";
             }
             else
             {
-                password.Text = string.Empty;
+            //    Session["pnbs_userid"] = pnbsUsers.PnbsUserid;
+            //    Session["role_name"] = pnbsUsers.RoleName;
+
+
+            //    if (pnbsUsers.RoleName == "CASHIER")
+            //        Response.Redirect("ComplainDashboard.aspx");
+            //    else
+            //        Response.Redirect("Dashboard.aspx");
+
             }
         }
+        
     }
 }

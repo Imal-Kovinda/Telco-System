@@ -44,11 +44,11 @@ namespace TelcoSystemCore.Infrastructure
             dbConnection = new DbConnection();
 
             dbConnection.cmd.CommandText =
-                "SELECT code FROM lb.cm_category_type_master WHERE description = :category";
+                "SELECT code FROM lb.cm_category_type_master WHERE description = ?";
 
 
 
-            dbConnection.cmd.Parameters.AddWithValue(":category", category);
+            dbConnection.cmd.Parameters.AddWithValue("@category", category);
 
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
 

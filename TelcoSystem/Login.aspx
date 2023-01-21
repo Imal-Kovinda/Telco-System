@@ -36,19 +36,25 @@
               </div>
             </div>
 
-            <div class="card-body p-5">
+            <div class="card-body">
               <h4 class="text-dark mb-5">Sign In</h4>
               
               <form runat="server" action="/index.html">
                 <div class="row">
-                  <div class="form-group col-md-12 mb-4">
-                    <asp:Textbox runat="server" type="text" class="form-control input-lg" id="userName" placeholder="Username" />
-                    <%--<asp:RequiredFieldValidator ID="rfvUser" ErrorMessage="Please enter Username" ControlToValidate="txtUserName" runat="server" />--%>
-                  </div>
+              
+                   <div class="form-group col-md-12 mb-2">
+                        <label class="form-label" for="inputUserName">User Name</label>
+                        <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control input-lg" placeholder="Username"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server"
+                            ControlToValidate="txtUserName" ErrorMessage="Username is Required">*</asp:RequiredFieldValidator>
+                   </div>
 
-                  <div class="form-group col-md-12 ">
-                    <asp:Textbox runat="server" type="password" TextMode="Password" class="form-control input-lg" id="password" placeholder="Password" />
-                    <%--<asp:RequiredFieldValidator ID="rfvPWD" runat="server" ControlToValidate="txtPWD" ErrorMessage="Please enter Password"/>--%>
+                   <div class="form-group col-md-12 ">
+                        <label for="inputPassword" class="form-label">Password</label>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control " TextMode="Password" placeholder="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                            ControlToValidate="txtPassword" ErrorMessage="Password Required">*</asp:RequiredFieldValidator>
+
                   </div>
                   <div class="form-group col-md-12">
                       <asp:Label Id="messg" runat="server" Text="Label" visible="false"></asp:Label>
@@ -58,15 +64,21 @@
                       <div class="d-inline-block mr-3">
                         <label class="control control-checkbox">Remember me
                           <input type="checkbox" />
-                          <div class="control-indicator"></div>
+                          <%--<div class="control-indicator"></div>--%>
                         </label>
                       </div>
 
                       <p><a class="text-blue" href="#">Forgot Your Password?</a></p>
                     </div>
-
-                    <asp:Button runat="server" type="submit" class="btn btn-lg btn-primary btn-block mb-4" onclick="login" Text="Sign In" />
-
+                    <asp:Label ID="lblErrorMsg" runat="server" Text="" ForeColor="#800040" BackColor="#ffc6c6"></asp:Label>
+                    <div class="form-outline mb-3">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
+                    </div>
+                  <%--  <asp:Button runat="server" type="submit" class="btn btn-lg btn-primary btn-block mb-4" onclick="login" Text="Sign In" />--%>
+                    <div class="form-group d-flex justify-content-center">
+                        <a class="small" href="#"></a>
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary btn-block" Width="400px" Font-Bold="true" OnClick="btnLogin_Click" />
+                    </div>
                     <%--<p>Don't have an account yet ?
                       <a class="text-blue" href="sign-up.html">Sign Up</a>
                     </p>--%>

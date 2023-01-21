@@ -106,6 +106,17 @@ namespace TelcoSystemCore.Common
             IBillSettlementDAO billSettlementDAO = new BillSettlementSqlDAOImpl();
             return (IBillSettlementDAO)billSettlementDAO;
         }
+        //com sections master
+        public static IComSectionsMastersDAO CreateComSectionsMastersDAO()
+        {
+            IComSectionsMastersDAO comSectionsMastersDAO = new ComSectionsMastersSqlDAOImpl();
+            return (IComSectionsMastersDAO)comSectionsMastersDAO;
+        }
 
+        public static IComplainRemarksDAO CreateComplainRemarksDAO()
+        {
+            IComplainRemarksDAO complainRemarksDAO = new ComplainRemarksSqlDAOImpl();
+            return (IComplainRemarksDAO)complainRemarksDAO;
+        }
     }
 }

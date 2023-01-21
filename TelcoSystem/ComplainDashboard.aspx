@@ -51,18 +51,7 @@
     <div class="wrapper">
 
       <!-- Github Link -->
-      <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
-        <svg width="70" height="70" viewBox="0 0 250 250" aria-hidden="true">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="75%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#896def;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#482271;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <path d="M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z" fill="url(#grad1)"></path>
-        </svg>
-        <i class="mdi mdi-github-circle"></i>
-      </a>
+     
 
 
 
@@ -648,26 +637,7 @@
               </ul>
             </div>
 
-            <div class="sidebar-footer">
-              <hr class="separator mb-0" />
-              <div class="sidebar-footer-content">
-                <h6 class="text-uppercase">
-                  Cpu Uses <span class="float-right">40%</span>
-                </h6>
-
-                <div class="progress progress-xs">
-                  <div class="progress-bar active" style="width: 40%;" role="progressbar"></div>
-                </div>
-
-                <h6 class="text-uppercase">
-                  Memory Uses <span class="float-right">65%</span>
-                </h6>
-
-                <div class="progress progress-xs">
-                  <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar"></div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </aside>
 
@@ -1193,47 +1163,311 @@
                    
 
                      <!-- Recent Order Table -->
-                    <div class="row">
+                    <div class="row container mb-4">
 			            <div class="col-12">
-				
-                  
-                          <div class="card card-table-border-none recent-orders" id="recent-orders">
-                            <div class="card-header justify-content-between">
-                              <div class="form-group">
-						        <h4>Complains</h4>
-					        </div>
+                          <div class="card" id="recent-orders">
+                           <div class="row  p-3">
+                                <div class="col-6">
+						            <h3>Complains</h3>
+					            </div>
+                                 <div class="col-6 d-flex  flex-row-reverse">
+						              <asp:Button runat="server" type="button" class="mb-1 mb-4 mr-2 btn btn-primary" onclick="makeComplain" Text="Make Complain" />
+			                     </div>
+                           </div>
                               <%--<div class="date-range-report ">
                                 <span></span>
+                                  
+                                  Style="margin-top: 30px;"
+                                  class="table table-bordered table-condensed table-responsive table-hover"
                               </div>--%>
-                            </div>
-                            <div class="card-body pt-0 pb-5">
-                              <asp:GridView Style="margin-top: 30px;" ID="GridView" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
-                                <Columns>
-                                    <asp:BoundField DataField="CompId" HeaderText="Complain Id" />
-                                    <asp:BoundField DataField="CompType" HeaderText="Complain Type" />
-                                    <asp:BoundField DataField="CompSubType" HeaderText="Complain Sub Type" />
-                                    <asp:BoundField DataField="AccCode" HeaderText="Account" />
-                                    <asp:BoundField DataField="TxnDate" HeaderText="Txn Date" />
+                      
+                            <div class="card-body" style="overflow-y:scroll; height:360px;">
+                              <asp:GridView  ID="GridView" runat="server" AllowSorting="True" OnSorting="gridView_Sorting" AutoGenerateColumns="False" CssClass="table table-hover"  ForeColor="#333333" GridLines="None" AllowPaging="True">
+                                  <HeaderStyle CssClass="left-align" />
+                                  <Columns>
+                                    <asp:BoundField DataField="CompId" HeaderText="Complain Id" SortExpression="CompId" />
+                                    <asp:BoundField DataField="CompType" HeaderText="Complain Type" SortExpression="CompType"/>
+                                    <asp:BoundField DataField="CompSubType" HeaderText="Complain Sub Type" SortExpression="CompSubType"/>
+                                    <asp:BoundField DataField="AccCode" HeaderText="Account" SortExpression="AccCode"/>
+                                    <asp:BoundField DataField="TxnDate" HeaderText="Txn Date" SortExpression="TxnDate"/>
                                     <asp:BoundField DataField="CustRemarks" HeaderText="Remarks" />
                             
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="btnView" CssClass="btn-sm btn-primary btn-user btn-block" runat="server" OnClick="btnView_Click">More</asp:LinkButton> 
+                                            <asp:LinkButton ID="btnView" CssClass="btn-sm btn-primary btn-user btn-block" runat="server" OnClick="btnView_Click" CommandArgument='<%# Eval("CompId") %>'>More</asp:LinkButton> 
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                       <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="btnDone" CssClass="btn-sm btn-danger btn-user btn-block" runat="server" OnClick="btnDone_Click" CommandArgument='<%# Eval("CompId") %>'>Done</asp:LinkButton> 
                                         </ItemTemplate>
                                     </asp:TemplateField>
                  
                                 </Columns>
                               </asp:GridView>
-                          
+                            
                             </div>
                           </div>
 
-			        </div>
-		        </div>
-                 <div class="card col-12 card-default">
+			            </div>
+		            </div>
+
+              <%--   hidden div--%>
+                  
+
+                <div id="dvView_More" runat="server"  class="rowcol-12 mt-1 mb-10" style="overflow-y:scroll; height:460px;">
+                       
+                        <div runat="server"  class="col-12"  >
+		                     <div class="card card-table-border-none recent-orders">
+                                
+			                    <div class="card-body"  >
+				                <%--<formview></formview>--%>
+					                    <div class="form-row">
+
+                       
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Id</label>
+							                    <asp:Textbox  type="text" class="form-control" ID="comp_id"  aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
+							
+						                    </div>
+
+                        
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Transaction Date</label>
+							                    <asp:Textbox type="text" ID="txn_date" runat="server" class="form-control"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+						                    </div>
+
+                                             <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Customer Name</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="cust_name"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3 mt-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Category Code</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="comp_cat_code"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+						
+						                    </div>
+
+                                             <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Type</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" ID="comp_type"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                             <div class="col-md-12 mb-3">
+						                        <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Sub Type</label>
+                                                <asp:Textbox runat="server" type="text" class="form-control" ID="comp_sub_type"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+						 
+			                                </div>
+
+                                             <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">DN Service Number</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" ID="dn_svc_no"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+						
+						                    </div>
+
+					                    </div>
+				                    <%--</form>--%>
+			                    </div>
+		                    </div>
+	                    </div>
+
+
+
+                        <div class="col-12">
+		                    <div class="card card-default">
+			                    <div class="card-body">
+				                    <%--<form runat="server">--%>
+					                    <div class="form-row">
+                       
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Account Code</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="acc_code"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="acc_rating"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+						
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Connection Status</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="conn_status"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3" style="display:none;">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Account Category</label>
+							                    <asp:Textbox runat="server" type="number" class="form-control" id="acc_category"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+						                    </div>
+
+                                             <div class="col-md-12 mb-3 mt-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Line Type</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="line_type"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3 mt-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Line Usage</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="line_usage"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                             <div class="col-md-12 mb-3 mt-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Last Month Bill</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="last_month_bill"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3 mt-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="user_code"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="form-group col-md-12">
+						                        <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Address</label>
+						                        <asp:Textbox class="form-control" ID="comp_address" runat="server"></asp:Textbox>
+					                        </div>
+
+
+                                        </div>
+                                    <%--</form>--%>
+			                    </div>
+                            </div>
+                        </div>
+
+                         <div class="col-12">
+		                    <div class="card card-default">
+			                    <div class="card-body">
+				                    <%--<form runat="server">--%>
+					                    <div class="form-row">
+
+                                             <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Customer Remark</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="cust_remarks"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Contact Person</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="contact_person"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+						
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Contact Number</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="contact_no"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+						                    </div>
+
+                                             <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Informed By</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="informed_by"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Logged BY</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="logged_by" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Attended On</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="attended_on"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							                    <div class="invalid-feedback">
+								                    Please enter the connection status.
+							                    </div>
+						                    </div>
+
+                                    
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">My Remarks</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="my_remarks" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+                                            
+                                             <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Inform To</label>
+							                    <asp:DropDownList ID="ddlSectionMaster" runat="server" class="form-control"  ></asp:DropDownList>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Reference Complain Id</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="ref_comp_id"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Urgent Complain</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="urgent_comp"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Hold To</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="hold_to"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Fault Id</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="fault_id"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+
+                                            <div class="col-md-12 mb-3">
+							                    <label class="text-dark font-weight-medium" for="validationServerUsername">Rejected</label>
+							                    <asp:Textbox runat="server" type="text" class="form-control" id="rejected"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						                    </div>
+                                          
+
+                         
+
+                                             <div class="col-md-6 mb-3">
+                                                 <asp:Button runat="server"  class="mr-2 btn btn-secondary" onclick="backToDashboard" Text="OK" />
+                                            </div>
+
+                                             <div class="col-md-6 mb-3">
+                                                 <asp:Button runat="server"  class="mr-2 btn btn-success" onclick="btn_ReSave" Text="Save" />
+                                            </div>
+
+
+                                        
+
+                                        </div>
+                                    <%--</form>--%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                     
+
+
+               
+                   
+
+                 <%--  hidden div--%>
+
+                 <%--<div class="card col-12 card-default mt-6">
 			            <div class="card-header card-header-border-bottom">
-                            <div class="form-group">
-						        <h4>Make a Complain</h4>
+                             <div class="p-3">
+						        <h3>Make a Complain</h3>
 					        </div>
 			            </div>
 
@@ -1243,7 +1477,7 @@
 						           <asp:Button runat="server" type="button" class="mb-1 mb-4 mr-2 btn btn-primary" onclick="makeComplain" Text="Complain" />
 			                   </div>
 		                </div>
-                    </div>
+                    </div>--%>
             </form>
 
 

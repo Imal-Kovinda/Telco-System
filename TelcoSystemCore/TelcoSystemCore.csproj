@@ -55,6 +55,8 @@
     <Compile Include="Controller\CmComplainSubTypeMasterController.cs" />
     <Compile Include="Controller\CmComplainTypeMasterController.cs" />
     <Compile Include="Controller\CmLogComplainsController.cs" />
+    <Compile Include="Controller\ComplainRemarksController.cs" />
+    <Compile Include="Controller\ComSectionsMastersController.cs" />
     <Compile Include="Controller\CustomerAccountController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\LocationProfileController.cs" />
@@ -70,6 +72,8 @@
     <Compile Include="Domain\CmComplainSubTypeMaster.cs" />
     <Compile Include="Domain\CmComplainTypeMaster.cs" />
     <Compile Include="Domain\CmLogComplains.cs" />
+    <Compile Include="Domain\ComplainRemarks.cs" />
+    <Compile Include="Domain\ComSectionsMasters.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\CustomerAccount.cs" />
     <Compile Include="Domain\CustomerAccountDN.cs" />
@@ -88,6 +92,8 @@
     <Compile Include="Infrastructure\CmComplainSubTypeMasterDAO.cs" />
     <Compile Include="Infrastructure\CmComplainTypeMasterDAO.cs" />
     <Compile Include="Infrastructure\CmLogComplainsDAO.cs" />
+    <Compile Include="Infrastructure\ComplainRemarksDAO.cs" />
+    <Compile Include="Infrastructure\ComSectionsMastersDAO.cs" />
     <Compile Include="Infrastructure\CusCmCategoryTypeMastertomer.cs" />
     <Compile Include="Infrastructure\CustomerAccountDAO.cs" />
     <Compile Include="Infrastructure\CustomerDAO.cs" />

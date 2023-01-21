@@ -142,7 +142,7 @@ namespace TelcoSystemCore.Infrastructure
             //query....
 
             dbConnection.cmd.CommandText =
-                "SELECT * FROM lb.customer INNER JOIN lb.customer_account ON customer_account.customer_id = customer.customer_id INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id WHERE customer_account_dn.account_dn = :phoneNumber";
+                "SELECT * FROM lb.customer INNER JOIN lb.customer_account ON customer_account.customer_id = customer.customer_id INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id WHERE customer_account_dn.account_dn = ?";
                 //"SELECT * FROM " +
                 //"lb.customer " +
                 //"INNER JOIN lb.customer_account ON customer_account.customer_id = customer.customer_id" +
@@ -150,7 +150,7 @@ namespace TelcoSystemCore.Infrastructure
                 //"INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id" +
                 //"WHERE lb.customer_account_dn(account_dn) = @phoneNumber";
 
-            dbConnection.cmd.Parameters.AddWithValue(":phoneNumber", phoneNumber);
+            dbConnection.cmd.Parameters.AddWithValue("@phoneNumber", phoneNumber);
 
             //dbConnection.cmd.CommandText = "SELECT * FROM lb.customer WHERE customer_id = '720971623V'";
 
