@@ -1144,7 +1144,7 @@
                       </li>
 
                       <li class="dropdown-footer">
-                        <a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href=""> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>
@@ -1160,33 +1160,35 @@
           <div class="content-wrapper">
             <div class="content">
                <form runat="server">
-                   
+               <%--    style="position: relative; z-index: -1;"--%>
+                 <%--  style="position: absolute; z-index: 1;"--%>
 
                      <!-- Recent Order Table -->
-                    <div class="row container mb-4">
+                    <div class="row container mb-4" >
 			            <div class="col-12">
                           <div class="card" id="recent-orders">
-                           <div class="row  p-3">
+                           <div class="row p-3">
                                 <div class="col-6">
-						            <h3>Complains</h3>
+						            <h2>Complains</h2>
 					            </div>
                                  <div class="col-6 d-flex  flex-row-reverse">
 						              <asp:Button runat="server" type="button" class="mb-1 mb-4 mr-2 btn btn-primary" onclick="makeComplain" Text="Make Complain" />
 			                     </div>
                            </div>
-                              <%--<div class="date-range-report ">
-                                <span></span>
-                                  
-                                  Style="margin-top: 30px;"
-                                  class="table table-bordered table-condensed table-responsive table-hover"
-                              </div>--%>
+                            
                       
-                            <div class="card-body" style="overflow-y:scroll; height:360px;">
+                            <div class="card-body" style="overflow-y:scroll; height:280px;" >
                               <asp:GridView  ID="GridView" runat="server" AllowSorting="True" OnSorting="gridView_Sorting" AutoGenerateColumns="False" CssClass="table table-hover"  ForeColor="#333333" GridLines="None" AllowPaging="True">
                                   <HeaderStyle CssClass="left-align" />
                                   <Columns>
-                                    <asp:BoundField DataField="CompId" HeaderText="Complain Id" SortExpression="CompId" />
+                                    <%--<asp:BoundField DataField="CompId" HeaderText="Complain Id" SortExpression="CompId" />--%>
+                                    <asp:TemplateField  HeaderText="Complain ID">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="btnRemarks" CssClass="btn-sm btn-secondary btn-user btn-block" runat="server" OnClick="btnRemarks_Click" CommandArgument='<%# Eval("CompId") %>'><%# Eval("CompId") %></asp:LinkButton> 
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                     <asp:BoundField DataField="CompType" HeaderText="Complain Type" SortExpression="CompType"/>
+                                    
                                     <asp:BoundField DataField="CompSubType" HeaderText="Complain Sub Type" SortExpression="CompSubType"/>
                                     <asp:BoundField DataField="AccCode" HeaderText="Account" SortExpression="AccCode"/>
                                     <asp:BoundField DataField="TxnDate" HeaderText="Txn Date" SortExpression="TxnDate"/>
@@ -1206,17 +1208,22 @@
                  
                                 </Columns>
                               </asp:GridView>
-                            
                             </div>
+
+
                           </div>
 
 			            </div>
 		            </div>
 
+                  <%-- <div class="col-6"  ID="confirmBox" runat="server">
+                       <h2>ConfirmMe</h2>
+                   </div>--%>
+
               <%--   hidden div--%>
                   
 
-                <div id="dvView_More" runat="server"  class="rowcol-12 mt-1 mb-10" style="overflow-y:scroll; height:460px;">
+                <div id="dvView_More" runat="server"  class="rowcol-12 mt-1 mb-10" style="overflow-y:scroll; height:380px;">
                        
                         <div runat="server"  class="col-12"  >
 		                     <div class="card card-table-border-none recent-orders">
@@ -1433,14 +1440,11 @@
 							
 						                    </div>
                                           
-
-                         
-
                                              <div class="col-md-6 mb-3">
                                                  <asp:Button runat="server"  class="mr-2 btn btn-secondary" onclick="backToDashboard" Text="OK" />
                                             </div>
 
-                                             <div class="col-md-6 mb-3">
+                                             <div class="col-md-6 mb-3  d-flex  flex-row-reverse">
                                                  <asp:Button runat="server"  class="mr-2 btn btn-success" onclick="btn_ReSave" Text="Save" />
                                             </div>
 
@@ -1454,37 +1458,47 @@
                         </div>
                     </div>
 
-
-
-                     
-
-
-               
-                   
-
                  <%--  hidden div--%>
 
-                 <%--<div class="card col-12 card-default mt-6">
-			            <div class="card-header card-header-border-bottom">
-                             <div class="p-3">
-						        <h3>Make a Complain</h3>
-					        </div>
-			            </div>
+                  <div ID="dvCompRemarks_grid" runat="server" class="col-12">
+		                    <div class="card card-default">
+			                    <div class="card-body">
+				                    <%--<form runat="server">--%>
+					                 <div class="card-body" style="overflow-y:scroll; height:240px;" >
+                                          <asp:GridView  ID="GridViewRemarks" runat="server" AllowSorting="True" OnSorting="gridView_Sorting" AutoGenerateColumns="False" CssClass="table table-hover"  ForeColor="#333333" GridLines="None" AllowPaging="True">
+                                              <HeaderStyle CssClass="left-align" />
+                                              <Columns>
+                                                <asp:BoundField DataField="CompId" HeaderText="Complain Id"/>
+                                                <asp:BoundField DataField="SectionId" HeaderText="Section Id"/>
+                                                <asp:BoundField DataField="ReInfoDate" HeaderText="Re-inform Date"/>
+                                                <asp:BoundField DataField="MyRemarks" HeaderText="My Remarks"/>
+                                            </Columns>
+                                          </asp:GridView>
+                                          <div class="col-md-12 d-flex  flex-row-reverse mb-3">
+                                                <asp:Button runat="server"  class="mr-2 btn btn-success" onclick="backToGridView" Text="OK" />
+                                          </div>
+                                        </div>
+                                    <%--</form>--%>
+			                    </div>
+                            </div>
+                        </div>
 
-			            <div class="card-body">
-                  
-					            <div class="d-flex flex-row-reverse">
-						           <asp:Button runat="server" type="button" class="mb-1 mb-4 mr-2 btn btn-primary" onclick="makeComplain" Text="Complain" />
-			                   </div>
-		                </div>
-                    </div>--%>
+                  <%-- POPUP DIV--%>
+                   <div id="popup" runat="server" style="border-radius:8px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid black; width: 400px; height: 260px; z-index: 1;">
+                        <div class="p-4 mb-4">
+                            <h4>Confirm that complain</h4>
+                        </div>
+                       <div class="row">
+                            <div class="col-md-6 ">
+                                <asp:Button runat="server"  class="mr-2 btn btn-secondary" onclick="cancelPopup" Text="Cancel" />
+                            </div>
+                           <div class="col-md-6 d-flex  flex-row-reverse">
+                                <asp:Button runat="server"  class="mr-2 btn btn-success" onclick="donePopup" Text="Confirm" />
+                            </div>
+                       </div>
+                   </div>
+
             </form>
-
-
-
-
-
-
 
 
       </div> <!-- End Content -->

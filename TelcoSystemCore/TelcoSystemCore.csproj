@@ -60,6 +60,7 @@
     <Compile Include="Controller\CustomerAccountController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\LocationProfileController.cs" />
+    <Compile Include="Controller\PnbsMenuRolesUsersController.cs" />
     <Compile Include="Controller\PnbsUsersController.cs" />
     <Compile Include="Controller\LteLoginController.cs" />
     <Compile Include="Domain\AccountLocation.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Domain\CustomerAccountDN.cs" />
     <Compile Include="Domain\DirectoryNumbers.cs" />
     <Compile Include="Domain\LocationProfile.cs" />
+    <Compile Include="Domain\PnbsMenuRolesUsers.cs" />
     <Compile Include="Domain\PnbsUsers.cs" />
     <Compile Include="Domain\ReceiptDetail.cs" />
     <Compile Include="Domain\ReceiptMaster.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Infrastructure\CustomerDAO.cs" />
     <Compile Include="Infrastructure\DirectoryNumbersDAO.cs" />
     <Compile Include="Infrastructure\LocationProfileDAO.cs" />
+    <Compile Include="Infrastructure\PnbsMenuRolesUsersDAO.cs" />
     <Compile Include="Infrastructure\PnbsUsersDAO.cs" />
     <Compile Include="Infrastructure\LteLoginDAO.cs" />
     <Compile Include="Infrastructure\ReceiptDetailDAO.cs" />

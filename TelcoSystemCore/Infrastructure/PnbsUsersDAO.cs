@@ -12,72 +12,35 @@ namespace TelcoSystemCore.Infrastructure
 {
     public interface IPnbsUsersDAO
     {
-        bool GetPnbsUsers(string username, string password, DbConnection dbConnection);
-        PnbsUsers GetPnbsUsers(DbConnection dbConnection, PnbsUsers pnbsUsers);
+        //bool GetPnbsUsers(string username, string password, DbConnection dbConnection);
+        int GetPnbsUsers(DbConnection dbConnection, PnbsUsers pnbsUsers);
     }
 
     public class PnbsUsersSqlDAOImpl : IPnbsUsersDAO
         
     {
+       
 
-        public bool GetPnbsUsers(string username, string password, DbConnection dbConnection)
+        public int GetPnbsUsers(DbConnection dbConnection, PnbsUsers pnbsUsers)
         {
-            PnbsUsers getPnbsUsers = new PnbsUsers();
+            //"DILEEKAS"
+            //"C3E4119CCF6628BA"
 
+            int output = 0;
 
             dbConnection.cmd.Parameters.Clear();
-            dbConnection.cmd.CommandText = "SELECT * FROM PNBS_USERS WHERE PNBS_ID = " + username;
             dbConnection.cmd.CommandType = System.Data.CommandType.Text;
-            using (dbConnection.dr = dbConnection.cmd.ExecuteReader())
-            {
-                DataAccessObject dataAccessObject = new DataAccessObject();
-                getPnbsUsers = dataAccessObject.GetSingleOject<PnbsUsers>(dbConnection.dr);
-            }
+            dbConnection.cmd.CommandText = "SELECT * FROM lb.pnbs_users WHERE pnbs_id = '"+ pnbsUsers.PnbsId + "' AND password = '"+ pnbsUsers.Password +"'";
 
-            if (getPnbsUsers.Password == password)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //dbConnection.cmd.Parameters.AddWithValue("@PnbsId", pnbsUsers.PnbsId);
+            //dbConnection.cmd.Parameters.AddWithValue("@Password", pnbsUsers.Password);
+
+            output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
+
+            return output;
+
 
         }
-
-        public PnbsUsers GetPnbsUsers(DbConnection dbConnection, PnbsUsers pnbsUsers)
-        {
-            PnbsUsers getPnbsUsers = new PnbsUsers();
-
-
-            dbConnection.cmd.Parameters.Clear();
-            dbConnection.cmd.CommandText = "SELECT * FROM PNBS_USERS WHERE PNBS_ID = ?";
-
-            dbConnection.cmd.Parameters.AddWithValue("@pnbsUsers", pnbsUsers);
-
-            dbConnection.dr = dbConnection.cmd.ExecuteReader();
-            DataAccessObject dataAccessObject = new DataAccessObject();
-            getPnbsUsers = dataAccessObject.GetSingleOject<PnbsUsers>(dbConnection.dr);
-            dbConnection.dr.Close();
-
-
-            return getPnbsUsers;
-            //dbConnection.cmd.CommandType = System.Data.CommandType.Text;
-            //using (dbConnection.dr = dbConnection.cmd.ExecuteReader())
-            //{
-            //    DataAccessObject dataAccessObject = new DataAccessObject();
-            //    getPnbsUsers = dataAccessObject.GetSingleOject<PnbsUsers>(dbConnection.dr);
-            //}
-            //return getPnbsUsers;
-
-
-
-            ///
-
-        }
-            
-
-
 
     }
 }

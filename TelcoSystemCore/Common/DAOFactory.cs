@@ -118,5 +118,12 @@ namespace TelcoSystemCore.Common
             IComplainRemarksDAO complainRemarksDAO = new ComplainRemarksSqlDAOImpl();
             return (IComplainRemarksDAO)complainRemarksDAO;
         }
+
+        //pnbs menu users
+        public static IPnbsMenuRolesUsersDAO CreatePnbsMenuRolesUsersDAO()
+        {
+            IPnbsMenuRolesUsersDAO pnbsMenuRolesUsersDAO = new PnbsMenuRolesUsersSqlDAOImpl();
+            return (IPnbsMenuRolesUsersDAO)pnbsMenuRolesUsersDAO;
+        }
     }
 }

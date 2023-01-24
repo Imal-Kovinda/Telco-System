@@ -9,29 +9,30 @@ using TelcoSystemCore.Infrastructure;
 
 namespace TelcoSystemCore.Controller
 {
-    public interface IComplainRemarksController
+    public interface IPnbsMenuRolesUsersController
     {
-        int Save(ComplainRemarks complainRemarks);
-        int Update(ComplainRemarks complainRemarks);
+        int Save(PnbsMenuRolesUsers pnbsMenuRolesUsers);
+        int Update(PnbsMenuRolesUsers pnbsMenuRolesUsers);
+        //List<PnbsMenuRolesUsers> GetPnbsMenuRolesUsersList(string CustomQuery = null);
 
-        List<ComplainRemarks> GetComplainRemarksDetailList(string compRemarks);
+        List<PnbsMenuRolesUsers> GetPnbsMenuRolesUsersDetailList(PnbsMenuRolesUsers userId);
     }
 
-    public class ComplainRemarksControllerImpl : IComplainRemarksController
+    public class PnbsMenuRolesUsersControllerImpl : IPnbsMenuRolesUsersController
     {
-        IComplainRemarksDAO complainRemarksDAO = DAOFactory.CreateComplainRemarksDAO();
+        IPnbsMenuRolesUsersDAO pnbsMenuRolesUsersDAO = DAOFactory.CreatePnbsMenuRolesUsersDAO();
 
-        public List<ComplainRemarks> GetComplainRemarksDetailList(string compRemarks)
+        public List<PnbsMenuRolesUsers> GetPnbsMenuRolesUsersDetailList(PnbsMenuRolesUsers userId)
         {
             DbConnection dbConnection = null;
-            List<ComplainRemarks> listDetail = new List<ComplainRemarks>();
+            List<PnbsMenuRolesUsers> listDetail = new List<PnbsMenuRolesUsers>();
 
             try
             {
 
                 dbConnection = new DbConnection();
 
-                return complainRemarksDAO.GetComplainRemarksDetailList(dbConnection, compRemarks);
+                return pnbsMenuRolesUsersDAO.GetPnbsMenuRolesUsersDetailList(dbConnection, userId);
 
             }
             catch (Exception)
@@ -49,13 +50,13 @@ namespace TelcoSystemCore.Controller
             return listDetail;
         }
 
-        public int Save(ComplainRemarks complainRemarks)
+        public int Save(PnbsMenuRolesUsers PnbsMenuRolesUsers)
         {
             DbConnection dbConnection = null;
             try
             {
                 dbConnection = new DbConnection();
-                return complainRemarksDAO.Save(complainRemarks, dbConnection);
+                return pnbsMenuRolesUsersDAO.Save(PnbsMenuRolesUsers, dbConnection);
             }
             catch (Exception)
             {
@@ -73,13 +74,13 @@ namespace TelcoSystemCore.Controller
 
         }
 
-        public int Update(ComplainRemarks complainRemarks)
+        public int Update(PnbsMenuRolesUsers PnbsMenuRolesUsers)
         {
             DbConnection dbConnection = null;
             try
             {
                 dbConnection = new DbConnection();
-                return complainRemarksDAO.Update(complainRemarks, dbConnection);
+                return pnbsMenuRolesUsersDAO.Update(PnbsMenuRolesUsers, dbConnection);
             }
             catch (Exception)
             {
