@@ -120,5 +120,15 @@ namespace TelcoSystemCore.Common
             IComplainRemarksController complainRemarksDetailController = new ComplainRemarksControllerImpl();
             return (IComplainRemarksController)complainRemarksDetailController;
         }
+
+        //pnbs menu users
+        public static IPnbsMenuRolesUsersController CreatePnbsMenuRolesUsersDetailController()
+        {
+            IPnbsMenuRolesUsersController pnbsMenuRolesUsersDetailController = new PnbsMenuRolesUsersControllerImpl();
+            return (IPnbsMenuRolesUsersController)pnbsMenuRolesUsersDetailController;
+        }
+        
+
+  
     }
 }

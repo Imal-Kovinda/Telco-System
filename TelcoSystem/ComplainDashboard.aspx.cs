@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Policy;
 using System.Web.UI.WebControls;
 using TelcoSystemCore.Common;
 using TelcoSystemCore.Controller;
@@ -10,15 +11,24 @@ namespace TelcoSystem
     public partial class ComplainDashboard : System.Web.UI.Page
     {
         List<CmLogComplains> listCmLogComplains = new List<CmLogComplains>();
+        List<ComplainRemarks> complainRemarks = new List<ComplainRemarks>();
+        //CmLogComplains objDone = new CmLogComplains();
         string ComplainSort;
-        
+        //string complainData;
+        public string pnbs_id;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                string pnbs_id = Request.QueryString["pnbs_id"];
+
                 BindSections();
                 BindDataSource();
                 dvView_More.Visible = false;
+                dvCompRemarks_grid.Visible = false;
+                popup.Visible = false;
+                //confirmBox.Visible = false;
 
             }
             //if (Session["user_id"] == null)
@@ -42,7 +52,7 @@ namespace TelcoSystem
         //load data rows
         protected void BindDataSource()
         {
-            var userId = "LBEXAM";
+            var userId = pnbs_id;//"LBIVR";
             ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
             listCmLogComplains = cmLogComplainsController.GetCmLogComplainsList(userId);
            
@@ -50,7 +60,20 @@ namespace TelcoSystem
             GridView.DataBind();
 
         }
-        
+        protected void btnRemarks_Click(object sender, EventArgs e)
+        {
+            dvCompRemarks_grid.Visible = true;
+
+            LinkButton button = (LinkButton)sender;
+            string compId = button.CommandArgument;
+
+            IComplainRemarksController complainRemarksController = ControllerFactory.CreateComplainRemarksDetailController();
+            complainRemarks = complainRemarksController.GetComplainRemarksDetailList(compId);
+
+            GridViewRemarks.DataSource = complainRemarks;
+            GridViewRemarks.DataBind();
+        }
+
         //make complain btn
         protected void makeComplain(object sender, EventArgs e)
         {
@@ -105,20 +128,47 @@ namespace TelcoSystem
         
         protected void btnDone_Click(object sender, EventArgs e)
         {
-
-            //INSERT INTO lb.cm_department_users (user_id, department_name, section_id) VALUES('LBEXAM', 'Kandy', 'SME');
+           
+            //confirmBox.Visible = true;
             LinkButton button = (LinkButton)sender;
             string doneid = button.CommandArgument;
 
             CmLogComplains done = new CmLogComplains();
             done.Status = doneid;
 
+            Session["userId"] = done.Status;
+            //objDone.Status = doneid;
+
+            //complainData = done.Status;
+            popup.Visible = true;
+
+
+            //ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
+            //cmLogComplainsController.DoneCmLogComplains(done);
+
+            //Response.AppendHeader("Refresh", "5; URL=ComplainDashboard.aspx");
+
+
+        }
+        
+        protected void donePopup(object sender, EventArgs e)
+        {
+            CmLogComplains donePop = new CmLogComplains();
+            donePop.Status = (string)Session["userId"];
+            //donePop.Status = complainData;
+
             ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
-            cmLogComplainsController.DoneCmLogComplains(done);
+            cmLogComplainsController.DoneCmLogComplains(donePop);
+
+            popup.Visible = false;
 
             Response.AppendHeader("Refresh", "5; URL=ComplainDashboard.aspx");
 
-
+        }
+        
+        protected void cancelPopup(object sender, EventArgs e)
+        {
+            popup.Visible = false;
         }
 
         private void BindSections()
@@ -133,6 +183,7 @@ namespace TelcoSystem
             ddlSectionMaster.DataBind();
 
         }
+      
 
         protected void btn_ReSave(object sender, EventArgs e)
         {
@@ -171,6 +222,11 @@ namespace TelcoSystem
         protected void backToDashboard(object sender, EventArgs e)
         {
             dvView_More.Visible = false;
+        }
+        
+        protected void backToGridView(object sender, EventArgs e)
+        {
+            dvCompRemarks_grid.Visible = false;
         }
 
         //sorting part

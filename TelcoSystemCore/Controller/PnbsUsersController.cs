@@ -14,7 +14,7 @@ namespace TelcoSystemCore.Controller
     {
         //bool GetPnbsUsers(string username, string password);
 
-        PnbsUsers GetPnbsUsers(PnbsUsers pnbsUsers);
+        int GetPnbsUsers(PnbsUsers pnbsUsers);
     }
 
     public class PnbsUsersControllerSqlImpl : IPnbsUsersController
@@ -48,16 +48,16 @@ namespace TelcoSystemCore.Controller
         //    return PnbsUsersStatus;
         //}
 
-
-        public PnbsUsers GetPnbsUsers(PnbsUsers pnbsUsers)
+      
+        public int GetPnbsUsers(PnbsUsers pnbsUsers)
         {
             DbConnection dbConnection = null;
-            PnbsUsers PnbsUsers = new PnbsUsers();
+            //PnbsUsers PnbsUsers = new PnbsUsers();
 
             try
             {
                 dbConnection = new DbConnection();
-                PnbsUsers = PnbsUsersDAO.GetPnbsUsers(dbConnection, pnbsUsers);
+                return PnbsUsersDAO.GetPnbsUsers(dbConnection, pnbsUsers);
 
             }
             catch (Exception)
@@ -73,7 +73,6 @@ namespace TelcoSystemCore.Controller
                     dbConnection.Commit();
                 }
             }
-            return PnbsUsers;
         }
     }
 }

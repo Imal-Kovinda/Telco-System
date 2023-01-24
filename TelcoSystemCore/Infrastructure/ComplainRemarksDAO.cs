@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TelcoSystemCore.Common;
 using TelcoSystemCore.Domain;
 using DbConnection = TelcoSystemCore.Common.DbConnection;
 
@@ -14,15 +15,31 @@ namespace TelcoSystemCore.Infrastructure
         int Save(ComplainRemarks complainRemarks, DbConnection dbConnection);
         int Update(ComplainRemarks complainRemarks, DbConnection dbConnection);
 
-        List<ComplainRemarks> GetComplainRemarksDetailList(DbConnection dbConnection);
+        List<ComplainRemarks> GetComplainRemarksDetailList(DbConnection dbConnection, string compRemarks);
     }
 
     public class ComplainRemarksSqlDAOImpl : IComplainRemarksDAO
     {
-        public List<ComplainRemarks> GetComplainRemarksDetailList(DbConnection dbConnection)
+        public List<ComplainRemarks> GetComplainRemarksDetailList(DbConnection dbConnection, string compRemarks)
         {
-            throw new NotImplementedException();
+            List<ComplainRemarks> complainRemarks = new List<ComplainRemarks>();
+            dbConnection = new DbConnection();
+            dbConnection.cmd.CommandText =
+                "SELECT * FROM lb.complain_remarks WHERE comp_id ='"+ compRemarks+"'";
+
+            //dbConnection.cmd.Parameters.AddWithValue("@CompId", complainRemarks);
+
+            dbConnection.dr = dbConnection.cmd.ExecuteReader();
+            DataAccessObject dataAccessObject = new DataAccessObject();
+            complainRemarks = dataAccessObject.ReadCollection<ComplainRemarks>(dbConnection.dr);
+            dbConnection.dr.Close();
+
+
+            return complainRemarks;
         }
+
+
+
 
         public int Save(ComplainRemarks complainRemarks, DbConnection dbConnection)
         {
