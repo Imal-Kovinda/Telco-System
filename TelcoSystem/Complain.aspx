@@ -1494,21 +1494,7 @@
 						    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 					    </div>
 
-                        <%-- <ul class="list-unstyled list-inline ml-2 mb-3">
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Inbound
-							        <input type="radio" name="inb" checked="checked" />
-							        
-						        </label>
-					        </li>
-
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Outbound
-							        <input type="radio" name="inb" />
-							        
-						        </label>
-					        </li>
-				        </ul>--%>
+                      
              
 
                           <div class="col-md-12 mb-3 mt-4">

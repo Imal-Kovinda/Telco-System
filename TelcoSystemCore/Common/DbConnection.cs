@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,25 @@ namespace TelcoSystemCore.Common
     public class DbConnection
     {
 
-        public SqlConnection con;
-        public SqlCommand cmd;
-        public SqlTransaction tr;
-        public SqlDataReader dr;
+        [NonSerialized]
+        public OdbcConnection con;
+        [NonSerialized]
+        public OdbcCommand cmd;
+        [NonSerialized]
+        public OdbcTransaction tr;
+        [NonSerialized]
+        public OdbcDataReader dr;
+
+        //public SqlConnection con;
+        //public SqlCommand cmd;
+        //public SqlTransaction tr;
+        //public SqlDataReader dr;
 
 
         public DbConnection()
         {
-            con = new SqlConnection("Data Source=10.2.5.72;Initial Catalog=Student;User ID=sa;Password=Bell123");
-            cmd = new SqlCommand();
+            con = new OdbcConnection("Dsn=PostgreSQL30;uid=postgres;PWD=1234");
+            cmd = new OdbcCommand();
             cmd.Connection = con;
             cmd.CommandType = System.Data.CommandType.Text;
             try

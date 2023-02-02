@@ -7,10 +7,11 @@ using TelcoSystemCore.Domain;
 
 namespace TelcoSystemCore.Controller
 {
-    //public class CustomerController
+    //public class customercontroller
     //{
-    //    int Save(Customer student);
-    //    int Update(Customer student);
-    //    List<Customer> GetCustomerList(bool withCountry);
+    //    int save(customer student);
+    //    int update(customer student);
+    //    list<customer> getcustomerlist(bool withcountry);
     //}
+
 }

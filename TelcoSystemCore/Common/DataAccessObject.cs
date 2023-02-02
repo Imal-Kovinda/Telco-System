@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -18,7 +19,7 @@ namespace TelcoSystemCore.Common
         /// <param name="dbConnection"></param>
         /// <param name="readCommand"></param>
         /// <returns></returns>
-        public List<T> ReadCollection<T>(SqlDataReader reader) where T : class
+        public List<T> ReadCollection<T>(OdbcDataReader reader) where T : class
             //public List<T> ReadCollection<T>(OdbcDataReader reader) where T : class
         {
             List<T> collection = new List<T>();
@@ -43,8 +44,10 @@ namespace TelcoSystemCore.Common
         /// <param name="dbConnection">Opend Database Connection</param>
         /// <param name="readCommand">parameterized Sql Command</param>
         /// <returns>Generic Domain Object</returns>
-        //public T GetSingleOject<T>(OdbcDataReader reader) where T : class
-        public T GetSingleOject<T>(SqlDataReader reader) where T : class
+
+        //public T GetSingleOject<T>(SqlDataReader reader) where T : class
+
+        public T GetSingleOject<T>(OdbcDataReader reader) where T : class
         {
             Type type = typeof(T);
             T singleObject = Activator.CreateInstance<T>();
@@ -66,7 +69,7 @@ namespace TelcoSystemCore.Common
         /// <param name="rdr"></param>
         /// <returns></returns>
         //public T GetItemFromReader<T>(OdbcDataReader rdr) where T : class
-        public T GetItemFromReader<T>(SqlDataReader rdr) where T : class
+        public T GetItemFromReader<T>(OdbcDataReader rdr) where T : class
         {
             Type type = typeof(T);
             T item = Activator.CreateInstance<T>();
