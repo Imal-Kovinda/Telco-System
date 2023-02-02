@@ -11,171 +11,171 @@ namespace TelcoSystemCore.Domain
     public class CustomerAccount
     {
         [DBField("account_id")]
-        public string AccountId { get; set; }
+        public string accountId { get; set; }
 
         [DBField("account_name")]
-        public string AccountName { get; set; }
+        public string accountName { get; set; }
 
         [DBField("customer_id")]
-        public string CustomerId { get; set; }
+        public string customerId { get; set; }
 
         [DBField("priority_id")]
-        public string PriorityId { get; set; }
+        public string priorityId { get; set; }
 
         [DBField("company_id")]
-        public string CompanyId { get; set; }
+        public string companyId { get; set; }
 
         [DBField("current_balance")]
-        public double CurrentBalance { get; set; }
+        public double currentBalance { get; set; }
 
         [DBField("connect_status_id")]
-        public string ConnectStatusId { get; set; }
+        public string connectStatusId { get; set; }
 
         [DBField("cr_credit_rating_code")]
-        public string CrCreditRatingCode { get; set; }
+        public string crCreditRatingCode { get; set; }
 
         [DBField("ac_account_category")]
-        public string AcAccountCategory { get; set; }
+        public string acAccountCategory { get; set; }
 
         [DBField("title")]
-        public string Title { get; set; }
+        public string title { get; set; }
 
         [DBField("address_line_1")]
-        public string AddressLine1 { get; set; }
+        public string addressLine1 { get; set; }
 
         [DBField("address_line_2")]
-        public string AddressLine2 { get; set; }
+        public string addressLine2 { get; set; }
 
         [DBField("address_line_3")]
-        public string AddressLine3 { get; set; }
+        public string addressLine3 { get; set; }
 
         [DBField("city")]
-        public string City { get; set; }
+        public string city { get; set; }
 
         [DBField("postal_code")]
-        public string PostalCode { get; set; }
+        public string postalCode { get; set; }
 
         [DBField("introduced_by")]
-        public string IntroducedBy { get; set; }
+        public string introducedBy { get; set; }
 
         [DBField("introduced_on")]
-        public DateTime IntroducedOn { get; set; }
+        public DateTime introducedOn { get; set; }
 
         [DBField("last_modified_by")]
-        public string LastModifiedBy { get; set; }
+        public string lastModifiedBy { get; set; }
 
         [DBField("last_modified_on")]
-        public DateTime LastModifiedOn { get; set; }
+        public DateTime lastModifiedOn { get; set; }
 
         [DBField("bill_run_code")]
-        public double BillRunCode { get; set; }
+        public double billRunCode { get; set; }
 
         [DBField("deactivated_by")]
-        public string DeactivatedBy { get; set; }
+        public string deactivatedBy { get; set; }
 
         [DBField("deactivated_on")]
-        public DateTime DeactivatedOn { get; set; }
+        public DateTime deactivatedOn { get; set; }
 
         [DBField("ledger_cd")]
-        public string LedgerCd { get; set; }
+        public string ledgerCd { get; set; }
 
         [DBField("acct_type")]
-        public string Acct_Type { get; set; }
+        public string acct_Type { get; set; }
 
         [DBField("opening_balance")]
-        public double OpeningBalance { get; set; }
+        public double openingBalance { get; set; }
 
         [DBField("control_account")]
-        public string ControlAccount { get; set; }
+        public string controlAccount { get; set; }
 
         [DBField("bill_run_stat")]
-        public string BillRunStat { get; set; }
+        public string billRunStat { get; set; }
 
         [DBField("team_no")]
-        public int TeamNo { get; set; }
+        public int teamNo { get; set; }
 
         [DBField("sales_person")]
-        public string SalesPerson { get; set; }
+        public string salesPerson { get; set; }
 
         [DBField("collector")]
-        public string Collector { get; set; }
+        public string collector { get; set; }
 
         [DBField("province")]
-        public string Province { get; set; }
+        public string province { get; set; }
 
         [DBField("district")]
-        public string District { get; set; }
+        public string district { get; set; }
 
         [DBField("priority_val")]
-        public int PriorityVal { get; set; }
+        public int priorityVal { get; set; }
 
         [DBField("major_industry")]
-        public string MajorIndustry { get; set; }
+        public string majorIndustry { get; set; }
 
         [DBField("minor_industry")]
-        public string MinorIndustry { get; set; }
+        public string minorIndustry { get; set; }
 
         [DBField("prv_ac_account_category")]
-        public string PrvAcAccountCategory { get; set; }
+        public string prvAcAccountCategory { get; set; }
 
         [DBField("cus_comment_checked")]
-        public string CusCommentChecked { get; set; }
+        public string cusCommentChecked { get; set; }
 
         [DBField("confidential")]
-        public string Confidential { get; set; }
+        public string confidential { get; set; }
 
         [DBField("status_changed_on")]
-        public DateTime StatusChangedOn { get; set; }
+        public DateTime statusChangedOn { get; set; }
 
         [DBField("discon_avoid_date")]
-        public DateTime DisconAvoidDate { get; set; }
+        public DateTime disconAvoidDate { get; set; }
 
         [DBField("top_customer_stat")]
-        public string TopcustomerStat { get; set; }
+        public string topcustomerStat { get; set; }
 
         [DBField("reminder_pd")]
-        public string ReminderPd { get; set; }
+        public string reminderPd { get; set; }
 
         [DBField("rental_category")]
-        public string RentalCategory { get; set; }
+        public string rentalCategory { get; set; }
 
         [DBField("pre_paid")]
-        public string PrePaid { get; set; }
+        public string prePaid { get; set; }
 
         [DBField("switch_type")]
-        public string SwitchType { get; set; }
+        public string switchType { get; set; }
 
         [DBField("credit_limit")]
-        public int CreditLimit { get; set; }
+        public int creditLimit { get; set; }
 
         [DBField("disconnect_stat")]
-        public string DisconnectStat { get; set; }
+        public string disconnectStat { get; set; }
 
         [DBField("stat_after_days")]
-        public string StatAfterDays { get; set; }
+        public string statAfterDays { get; set; }
 
         [DBField("grace_period")]
-        public DateTime GracePeriod { get; set; }
+        public DateTime gracePeriod { get; set; }
 
         [DBField("allocated_sales_person")]
-        public string AllocatedSalesPersona { get; set; }
+        public string allocatedSalesPersona { get; set; }
 
         [DBField("revenue_region")]
-        public string RevenueRegion { get; set; }
+        public string revenueRegion { get; set; }
 
         [DBField("email")]
-        public string Email { get; set; }
+        public string email { get; set; }
 
         [DBField("indirect_br")]
-        public string IndirectBr { get; set; }
+        public string indirectBr { get; set; }
 
         [DBField("mobile_number")]
-        public string MobileNumber { get; set; }
+        public string mobileNumber { get; set; }
 
         [DBField("policy_apply_date")]
-        public DateTime PosicyApplyDate { get; set; }
+        public DateTime posicyApplyDate { get; set; }
 
         [DBField("customer_type_id")]
-        public string CustomerTypeId { get; set; }
+        public string customerTypeId { get; set; }
     }
 }
