@@ -11,6 +11,8 @@ namespace TelcoSystemCore.Controller
 {
     public interface ICustomerAccountController
     {
+
+        List<CustomerAccount> GetCustomerAccountDetailList(string phoneNumber);
         int Save(CustomerAccount customerAccount);
         int Delete(CustomerAccount customerAccount);
         int Update(CustomerAccount customerAccount);
@@ -68,6 +70,7 @@ namespace TelcoSystemCore.Controller
                     dbConnection.Commit();
                 }
             }
+
         }
 
         public int Update(CustomerAccount customerAccount)
@@ -92,14 +95,21 @@ namespace TelcoSystemCore.Controller
             }
         }
 
+
         public int Delete(CustomerAccount customerAccount)
         {
 
             DbConnection dbConnection = null;
+            List<CustomerAccount> listDetail = new List<CustomerAccount>();
+
             try
             {
+
                 dbConnection = new DbConnection();
-                return customerAccountDAO.Delete(customerAccount, dbConnection);
+
+
+                if (phoneNumber != null)
+                    return customerAccountDAO.Delete(customerAccount, dbConnection);
             }
             catch (Exception)
             {
@@ -110,6 +120,8 @@ namespace TelcoSystemCore.Controller
             {
                 if (dbConnection.con.State == System.Data.ConnectionState.Open)
                 {
+
+                    return customerAccountDAO.GetCustomerAccountDetailList(dbConnection, phoneNumber);
                     dbConnection.Commit();
                 }
             }
@@ -136,6 +148,7 @@ namespace TelcoSystemCore.Controller
                     dbConnection.Commit();
                 }
             }
+            return listDetail;
             return customerAccount;
         }
 

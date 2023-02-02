@@ -178,8 +178,16 @@ namespace TelcoSystemCore.Domain
         [DBField("discon_avoid_date")]
         public DateTime disconAvoidDate { get; set; }
 
-      
+        [DBField("indirect_br")]
+        public string IndirectBr { get; set; }
 
+        [DBField("mobile_number")]
+        public string MobileNumber { get; set; }
 
+        [DBField("policy_apply_date")]
+        public DateTime PosicyApplyDate { get; set; }
+
+        [DBField("customer_type_id")]
+        public string CustomerTypeId { get; set; }
     }
 }

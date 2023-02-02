@@ -3248,6 +3248,8 @@ input[type="button"].btn-block {
 .dropdown,
 .dropleft {
   position: relative;
+    top: -4px;
+    left: 2px;
 }
 
 .dropdown-toggle {
@@ -8269,6 +8271,8 @@ button.bg-purple:focus {
 .mb-3,
 .my-3 {
   margin-bottom: 1rem !important;
+    top: 0px;
+    left: 0px;
 }
 
 .ml-3,
@@ -12110,8 +12114,10 @@ a.text-purple:hover, a.text-purple:focus {
 /*===== REBOOT =====*/
 * {
   outline: 0;
-  margin: 0;
   padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
 }
 
 html, * {
@@ -15845,9 +15851,10 @@ div.copied {
 /*  sub-menu dropdowns */
 .sidebar .sub-menu {
   list-style-type: none;
-  padding: .625rem 0 .625rem 2.81rem;
-  margin: 0;
   position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
 }
 
 .sidebar .sub-menu > li > a {

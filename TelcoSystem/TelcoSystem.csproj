@@ -145,6 +145,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
+    <Content Include="500.aspx" />
     <Content Include="About.aspx" />
     <Content Include="AccDetails.aspx" />
     <Content Include="Connections.aspx" />
@@ -876,6 +878,7 @@
     <Content Include="assets\plugins\toastr\toastr.min.js" />
     <Content Include="BasicInputs.aspx" />
     <Content Include="ChequePayments.aspx" />
+    <Content Include="ComplainDashboard.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -907,8 +910,10 @@
     <Content Include="assets\plugins\bootstrap\js\bootstrap.js.map" />
     <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="assets\plugins\toastr\toastr.js.map" />
+    <Content Include="Login.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Validate.aspx" />
+    <Content Include="Complain.aspx" />
     <Content Include="Complain.aspx" />
     <Content Include="BranchReceipt.aspx" />
     <Content Include="BatchReceiptUpload.aspx" />
@@ -946,6 +951,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="ViewComplains.aspx" />
     <Content Include="Customer.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -953,6 +959,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AccDetails.aspx.cs">
       <DependentUpon>AccDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -990,6 +1010,13 @@
     <Compile Include="ChequePayments.aspx.designer.cs">
       <DependentUpon>ChequePayments.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ComplainDashboard.aspx.cs">
+      <DependentUpon>ComplainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComplainDashboard.aspx.designer.cs">
+      <DependentUpon>ComplainDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1021,6 +1048,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -1050,6 +1084,13 @@
     <Compile Include="Validate.aspx.designer.cs">
       <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewComplains.aspx.cs">
+      <DependentUpon>ViewComplains.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewComplains.aspx.designer.cs">
+      <DependentUpon>ViewComplains.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer.aspx.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1064,6 +1105,8 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Complain.aspx.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
     <Compile Include="Complain.aspx.cs">
       <DependentUpon>Complain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1103,6 +1146,8 @@
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Complain.aspx.designer.cs">
+      <DependentUpon>Complain.aspx</DependentUpon>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>

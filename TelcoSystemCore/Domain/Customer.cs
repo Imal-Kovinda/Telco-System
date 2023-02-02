@@ -11,7 +11,7 @@ namespace TelcoSystemCore.Domain
     public class Customer
     {
         [DBField("CUSTOMER_ID")]
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
 
         [DBField("CUSTOMER_NAME")]
         public string CustomerName { get; set; }
@@ -29,13 +29,13 @@ namespace TelcoSystemCore.Domain
         public string ActivatedBy { get; set; }
 
         [DBField("ADDRESS_LINE_1")]
-        public int AddressLine1 { get; set; }
+        public string AddressLine1 { get; set; }
 
         [DBField("ADDRESS_LINE_2")]
-        public int AddressLine2 { get; set; }
+        public string AddressLine2 { get; set; }
 
         [DBField("ADDRESS_LINE_3")]
-        public int AddressLine3 { get; set; }
+        public string AddressLine3 { get; set; }
 
         [DBField("CITY")]
         public string City { get; set; }
@@ -47,7 +47,7 @@ namespace TelcoSystemCore.Domain
         public string ModifiedBy { get; set; }
 
         [DBField("MODIFIED_ON")]
-        public string ModifiedOn { get; set; }
+        public DateTime ModifiedOn { get; set; }
 
         [DBField("PROFILE_STATUS")]
         public string ProfileStatus { get; set; }
@@ -80,7 +80,7 @@ namespace TelcoSystemCore.Domain
         public string ProfessionDesignation { get; set; }
 
         [DBField("DATE_OF_BIRTH")]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [DBField("CONTACT_PHONE_NO")]
         public string ContactPhoneNumber { get; set; }
@@ -94,7 +94,7 @@ namespace TelcoSystemCore.Domain
         [DBField("SALES_PERSON")]
         public string SalesPerson { get; set; }
 
-        [DBField("NEW_ID_NUMBER ")]
+        [DBField("NEW_ID_NUMBER")]
         public string NewIdNumber { get; set; }
 
 

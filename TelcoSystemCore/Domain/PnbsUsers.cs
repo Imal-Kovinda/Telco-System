@@ -13,53 +13,77 @@ namespace TelcoSystemCore.Domain
         [DBField("EMP_ID ")]
         public string empId { get; set; }
 
-        [DBField("NAME ")]
-        public string empNmae { get; set; }
+        [DBField("EMP_ID")]
+        public int EmpId { get; set; }
 
         [DBField("PNBS_ID ")]
         public string pnbsId { get; set; }
 
+        [DBField("NAME")]
+        public string Name { get; set; }
+      
+
+        [DBField("PNBS_ID")]
+        public string PnbsId { get; set; }
+
         [DBField("NW_USERID")]
-        public string nwUserid { get; set;}
+        public int NwUserid { get; set; }
 
         [DBField("LOCATION ")]
         public string location { get; set; }
 
-        [DBField("NIC_ID")]
-        public string nic { get; set; }
+        [DBField("LOCATION")]
+        public string Location { get; set; }
 
         [DBField("DEPARTMENT ")]
         public string department { get; set; }
 
+        [DBField("NIC_ID ")]
+        public string NicId { get; set; }
+
+        [DBField("DEPARTMENT")]
+        public string Department { get; set; }
+
+
         [DBField("DIVISION")]
-        public string division { get; set; }
+        public string Division { get; set; }
+
 
         [DBField("CREATED_ON")]
-        public DateTime createdOn { get; set; }
+        public int CreatedOn { get; set; }
 
         [DBField("CREATED_BY")]
-        public string createdBy { get; set; }
+        public int CreatedBy { get; set; }
+
 
         [DBField("DEACTIVATED_ON")]
-        public DateTime deactivatedOn { get; set; }
+        public int DeactivatedOn { get; set; }
 
-        [DBField("DEACTIVATED_BY ")]
-        public string deactivatedBy { get; set; }
+
+        [DBField("DEACTIVATED_BY")]
+        public int DeactivatedBy { get; set; }
 
         [DBField("CONTACT_NO")]
-        public string contactNo { get; set; }
+        public int ContactNo { get; set; }
+
 
         [DBField("PASSWORD")]
-        public string password { get; set; }
+        public string Password { get; set; }
+
 
         [DBField("FIRST_LOGIN ")]
-        public DateTime firstLogin { get; set; }
+        public int FirstLogin { get; set; }
 
         [DBField("CURRENT_LOGIN")]
-        public DateTime currentLogin { get; set; }
+        public int CurrentLogin { get; set; }
+
 
         [DBField("PREVIOUS_LOGIN")]
-        public DateTime previousLogin { get; set; }
+        public int PreviousLogin { get; set; }
+
+
 
     }
+
+    
 }

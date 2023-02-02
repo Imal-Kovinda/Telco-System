@@ -1,47 +1,30 @@
-﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Complain.aspx.cs" Inherits="TelcoSystem.WebForm3" %>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
-  
+
+
+
+<%@ Page Language="C#"  Title="Complain" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Complain.aspx.cs" Inherits="TelcoSystem.Complain" %>
+
     <title>Form Validation - Sleek Admin Dashboard Template</title>
-    
+
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
 
-    <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
-  
-    <!-- PLUGINS CSS STYLE -->
-    <link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet" />
-    <link href="assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
-  
-    <!-- No Extra plugin used -->
-    
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    
-    
+<div class="content">
+
+	<div class="row">
+
     <link href='assets/plugins/select2/css/select2.min.css' rel='stylesheet'>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+		
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="assets/css/sleek.css" />
-  
-    <!-- FAVICON -->
-    <link href="assets/img/favicon.png" rel="shortcut icon" />
-  
+
+		<div class="card col-12 card-default">
+			<div class="card-header card-header-border-bottom">
+				<div class="col-6">
+                        <h2>Complain Entry</h2>
+                        
     <!--
       HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     -->
@@ -65,7 +48,7 @@
     <div class="wrapper">
 
       <!-- Github Link -->
-     <%-- <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
+      <a href="https://github.com/tafcoder/sleek-dashboard"  target="_blank" class="github-link">
         <svg width="70" height="70" viewBox="0 0 250 250" aria-hidden="true">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="75%" x2="100%" y2="0%">
@@ -76,8 +59,8 @@
           <path d="M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z" fill="url(#grad1)"></path>
         </svg>
         <i class="mdi mdi-github-circle"></i>
-      </a>--%>
-        <img src="~/assets/logo/bell.jpeg" runat="server" Width="60" Height="20" />
+      </a>
+        
 
 
 
@@ -106,8 +89,10 @@
 
                 <span class="brand-name text-truncate">Sleek Dashboard</span>
               </a>
-            </div>
-
+                    </div>
+                    <div class="col-6 d-flex flex-row-reverse">
+                        <img src="~/assets/logo/bell.jpeg" runat="server" Width="120" Height="60" />
+                        
             <!-- begin sidebar scrollbar -->
             <div class="" data-simplebar style="height: 100%;">
               <!-- sidebar menu -->
@@ -223,76 +208,25 @@
                            <li class="">
                               <a href="button-loading.html">Button Loading</a>
                             </li>
-                          </div>
+			</div>
                         </ul>
                       </li>
-                      
-                      <li class="">
-                        <a class="sidenav-item-link" href="card.html">
-                          <span class="nav-text">Card</span>
-                        </a>
-                      </li>
 
-                      <li class="">
-                        <a class="sidenav-item-link" href="carousel.html">
-                          <span class="nav-text">Carousel</span>
-                        </a>
-                      </li>
-
+			<div class="card-body">
+		
+					<div class="row">
+						
                       <li class="">
                         <a class="sidenav-item-link" href="collapse.html">
                           <span class="nav-text">Collapse</span>
                         </a>
                       </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="list-group.html">
-                          <span class="nav-text">List Group</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="modal.html">
-                          <span class="nav-text">Modal</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="pagination.html">
-                          <span class="nav-text">Pagination</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="popover-tooltip.html">
-                          <span class="nav-text">Popover & Tooltip</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="progress-bar.html">
-                          <span class="nav-text">Progress Bar</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="spinner.html">
-                          <span class="nav-text">Spinner</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="switcher.html">
-                          <span class="nav-text">Switcher</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="tab.html">
-                          <span class="nav-text">Tab</span>
-                        </a>
-                      </li>
-                    </div>
+					
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<h4>STATUS_DESC</h4>
+								</div>
                   </ul>
                 </li>
 
@@ -316,49 +250,15 @@
                           <span class="nav-text">Flag Icon</span>
                         </a>
                       </li>
-                    </div>
+							</div>
                   </ul>
                 </li>
 
-                <li class="has-sub active expand">
-                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
-                    aria-expanded="false" aria-controls="forms">
-                    <i class="mdi mdi-email-mark-as-unread"></i>
-                    <span class="nav-text">Forms</span> <b class="caret"></b>
-                  </a>
-
-                  <ul class="collapse show" id="forms" data-parent="#sidebar-menu">
-                    <div class="sub-menu">
-                      <li class="">
-                        <a class="sidenav-item-link" href="basic-input.html">
-                          <span class="nav-text">Basic Input</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="input-group.html">
-                          <span class="nav-text">Input Group</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="checkbox-radio.html">
-                          <span class="nav-text">Checkbox & Radio</span>
-                        </a>
-                      </li>
-
-                      <li class="active">
-                        <a class="sidenav-item-link" href="form-validation.html">
-                          <span class="nav-text">Form Validation</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="form-advance.html">
-                          <span class="nav-text">Form Advance</span>
-                        </a>
-                      </li>
-                    </div>
+							<div class="col-6">
+								<div class="form-group">
+									<label for="State">Referance No</label>
+									<asp:Textbox runat="server" type="text" id="ref_no" class="form-control" placeholder="C_COMP_ID"></asp:Textbox>
+								</div>
                   </ul>
                 </li>
 
@@ -400,13 +300,13 @@
                            <li class="">
                               <a href="expendable-data-table.html">Expendable Data Table</a>
                             </li>
-                          </div>
+							</div>
                         </ul>
                       </li>
-                    </div>
+						</div>
                   </ul>
                 </li>
-
+				
                 <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
                     aria-expanded="false" aria-controls="maps">
@@ -414,20 +314,13 @@
                     <span class="nav-text">Maps</span> <b class="caret"></b>
                   </a>
 
-                  <ul class="collapse " id="maps" data-parent="#sidebar-menu">
-                    <div class="sub-menu">
-                      <li class="">
-                        <a class="sidenav-item-link" href="google-map.html">
-                          <span class="nav-text">Google Map</span>
-                        </a>
-                      </li>
-
-                      <li class="">
-                        <a class="sidenav-item-link" href="vector-map.html">
-                          <span class="nav-text">Vector Map</span>
-                        </a>
-                      </li>
-                    </div>
+						<div class="col-sm-6">
+							<div class="row">
+								<div class="col-6">
+									<div class="form-group">
+										<label for="State">Logged Date</label>
+										<asp:Textbox runat="server" ID="logged_date" type="text" class="form-control" placeholder="TXN_DATE"></asp:Textbox>
+									</div>
                   </ul>
                 </li>
 
@@ -451,25 +344,15 @@
                           <span class="nav-text">Chart Widget</span>
                         </a>
                       </li>
-                    </div>
+								</div>
                   </ul>
                 </li>
 
-                <li class="has-sub ">
-                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
-                    aria-expanded="false" aria-controls="charts">
-                    <i class="mdi mdi-chart-pie"></i>
-                    <span class="nav-text">Charts</span> <b class="caret"></b>
-                  </a>
-
-                  <ul class="collapse " id="charts" data-parent="#sidebar-menu">
-                    <div class="sub-menu">
-                      <li class="">
-                        <a class="sidenav-item-link" href="chartjs.html">
-                          <span class="nav-text">ChartJS</span>
-                        </a>
-                      </li>
-                    </div>
+								<div class="col-6">
+									<div class="form-group">
+										<label for="Zip">by</label>
+										<asp:Textbox runat="server" ID="by" type="text" class="form-control" placeholder="LOGGED_BY"></asp:Textbox>
+									</div>
                   </ul>
                 </li>
 
@@ -507,7 +390,7 @@
                            <li class="">
                               <a href="sign-up.html">Sign Up</a>
                             </li>
-                          </div>
+								</div>
                         </ul>
                       </li>
 
@@ -526,10 +409,10 @@
                            <li class="">
                               <a href="404.html">404 Page</a>
                             </li>
-                          </div>
+							</div>
                         </ul>
                       </li>
-                    </div>
+						</div>
                   </ul>
                 </li>
 
@@ -590,7 +473,7 @@
                             <li class="">
                               <a href="header-dark.html">Header Dark</a>
                             </li>
-                          </div>
+					</div>
                         </ul>
                       </li>
 
@@ -636,7 +519,7 @@
                             <li class="">
                               <a href="right-sidebar.html">Right Sidebar</a>
                             </li>
-                          </div>
+			</div>
                         </ul>
                       </li>
 
@@ -645,15 +528,17 @@
                           <span class="nav-text">RTL Direction</span>
                         </a>
                       </li>
-                    </div>
+		</div>
                   </ul>
                 </li>
 
-                <!-- <li class="section-title">
-                  Documentation
-                </li> -->
-              </ul>
-            </div>
+	<div class="col-12">
+        <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+            <ContentTemplate>
+		        <div class="card card-default">
+			        <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
 
             <div class="sidebar-footer">
               <hr class="separator mb-0" />
@@ -661,62 +546,59 @@
                 <h6 class="text-uppercase">
                   Cpu Uses <span class="float-right">40%</span>
                 </h6>
+                       
+                                <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
+							        <asp:Textbox  type="text" class="form-control" ID="service_number" placeholder="Service Number" Autoposback="true" OnTextChanged="customerDetails_TextChanged" aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the service number.
+							        </div>
+						        </div>
 
-                <div class="progress progress-xs">
-                  <div class="progress-bar active" style="width: 40%;" role="progressbar"></div>
-                </div>
+                                <%--<div class="col-6 mb-3">
+							        <asp:Button runat="server"  class="mr-2 btn btn-sm btn-success"  Text="CHECK" />
+						        </div>--%>
 
-                <h6 class="text-uppercase">
-                  Memory Uses <span class="float-right">65%</span>
-                </h6>
+                                <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
+							        <asp:Textbox type="text" ID="user_code" placeholder="User Code" runat="server" class="form-control"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the user code.
+							        </div>
+						        </div>
 
-                <div class="progress progress-xs">
-                  <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+                                 <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Account Code</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="acc_code" placeholder="Account Code" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the code.
+							        </div>
+						        </div>
         </aside>
 
-
+                          
           <!-- ====================================
         ——— PAGE WRAPPER
         ===================================== -->
         <div class="page-wrapper">
-          
-          <!-- Header -->
-          <header class="main-header " id="header">
-            <nav class="navbar navbar-static-top navbar-expand-lg">
-              <!-- Sidebar toggle button -->
-              <button id="sidebar-toggler" class="sidebar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-              </button>
-              <!-- search form -->
-              <div class="search-form d-none d-lg-inline-block">
-                <div class="input-group">
-                  <%--<button type="button" name="search" id="search-btn" class="btn btn-flat">
-                    <i class="mdi mdi-magnify"></i>
-                  </button>
-                  <input type="text" name="query" id="search-input" class="form-control" placeholder="'button', 'chart' etc."
-                    autofocus autocomplete="off" />--%>
-                    <h2>Complain Entry</h2>
-                </div>
+
+                                 <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Customer Name</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="customer_name" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please choose a username.
+							        </div>
                 <div id="search-results-container">
-                 <%-- <ul id="search-results"></ul>--%>
-                </div>
+                  <ul id="search-results"></ul>
+						        </div>
               </div>
 
-              <div class="navbar-right ">
-                <ul class="nav navbar-nav">
-                  <li class="dropdown notifications-menu custom-dropdown">
-                    <button class="dropdown-toggle notify-toggler custom-dropdown-toggler">
-                      <i class="mdi mdi-bell-outline"></i>
-                    </button>
-
-                    <div class="card card-default dropdown-notify dropdown-menu-right mb-0">
-                      <div class="card-header card-header-border-bottom px-3">
-                        <h2>Notifications</h2>
-                      </div>
+                                 <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="customer_id" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
 
                       <div class="card-body px-0 py-3">
                         <ul class="nav nav-tabs nav-style-border p-0 justify-content-between" id="myTab" role="tablist">
@@ -741,7 +623,7 @@
                                   <div class="position-relative mr-3">
                                     <img class="rounded-circle" src="assets/img/user/u2.jpg" alt="Image">
                                     <span class="status away"></span>
-                                  </div>
+						        </div>
                                   <div class="media-body d-flex justify-content-between">
                                     <div class="message-contents">
                                       <h4 class="title">Aaren</h4>
@@ -754,7 +636,7 @@
                                   </div>
                                 </a>
                               </li>
-
+                         
                               <li>
                                 <a href="javscript:void(0)" class="media media-message media-notification media-active">
                                   <div class="position-relative mr-3">
@@ -769,8 +651,9 @@
                                       <span class="font-size-12 font-weight-medium text-white">
                                         <i class="mdi mdi-clock-outline"></i> Just now...
                                       </span>
-                                    </div>
-                                  </div>
+					        </div>
+				        <%--</form>--%>
+			        </div>
                                 </a>
                               </li>
 
@@ -779,16 +662,10 @@
                                   <div class="position-relative mr-3">
                                     <img class="rounded-circle" src="assets/img/user/u5.jpg" alt="Image">
                                     <span class="status away"></span>
-                                  </div>
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Emma</h4>
-                                      <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                                      </span>
-                                    </div>
+		        </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+	</div>
                                   </div>
                                 </a>
                               </li>
@@ -805,54 +682,57 @@
                                       <h4 class="title">New event added</h4>
                                       <p class="last-msg font-size-14">03/Jan/2020 (1pm - 2pm)</p>
 
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 10 min ago...
-                                      </span>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
+    <div class="col-12">
+		<div class="card card-default">
+			<div class="card-body">
+				<%--<form runat="server">--%>
+					<div class="form-row">
 
-                              <li>
-                                <a href="javscript:void(0)" class="media media-message media-notification">
-
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Address</label>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="account_address" placeholder="Account Address" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
                                   <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
                                     <i class="mdi mdi-chart-areaspline font-size-20"></i>
-                                  </div>
+						</div>
 
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Sales report</h4>
-                                      <p class="last-msg font-size-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
+                        <div class="col-md-12 mb-3">
+						    <label class="text-dark font-weight-medium" for="validationServerUsername">City</label>
+                            <asp:Textbox runat="server" type="text" class="form-control" ID="city" placeholder="City" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+						  
                                       <span class="font-size-12 font-weight-medium text-secondary">
                                         <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
                                       </span>
                                     </div>
-                                  </div>
+			            </div>
                                 </a>
                               </li>
 
                               <li>
                                 <a href="javscript:void(0)" class="media media-message media-notification">
 
-                                  <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
-                                    <i class="mdi mdi-account-multiple-check font-size-20"></i>
-                                  </div>
+                         <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Connection Status</label>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="connection_status" placeholder="Connection Status" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							<div class="invalid-feedback">
+								Please Fill this Details.
+							</div>
+						</div>
 
                                   <div class="media-body d-flex justify-content-between">
                                     <div class="message-contents">
                                       <h4 class="title">Add request</h4>
                                       <p class="last-msg font-size-14">Add Dany Jones as your contact consequat nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim.</p>
-
+                       
                                       <button type="button" class="my-1 btn btn-sm btn-success">Accept</button>
                                       <button type="button" class="my-1 btn btn-sm btn-secondary">Delete</button>
-
-                                      <span class="font-size-12 font-weight-medium text-secondary d-block">
-                                        <i class="mdi mdi-clock-outline"></i> 5 min ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                        
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="acc_rating" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<div class="invalid-feedback">
+								Please Fill this Details.
+							</div>
                                 </a>
                               </li>
 
@@ -861,18 +741,15 @@
 
                                   <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-danger text-white">
                                     <i class="mdi mdi-server-network-off font-size-20"></i>
-                                  </div>
+						</div>
 
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Server overloaded</h4>
-                                      <p class="last-msg font-size-14">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
-
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 30 min ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Line Usage</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="line_usage" placeholder="LINE_USAGE" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							<div class="invalid-feedback">
+								Please Fill this Details.
+							</div>
+						</div>
                                 </a>
                               </li>
 
@@ -887,7 +764,7 @@
                                     <div class="message-contents">
                                       <h4 class="title">Task complete</h4>
                                       <p class="last-msg font-size-14">Nam ut nisi erat. Ut quis tortor varius, hendrerit arcu quis, congue nisl. In scelerisque, sem ut ve.</p>
-
+                      
                                       <span class="font-size-12 font-weight-medium text-secondary">
                                         <i class="mdi mdi-clock-outline"></i> 2 hrs ago...
                                       </span>
@@ -897,16 +774,9 @@
                               </li>
 
                             </ul>
-                          </div>
-
-                          <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile2-tab">
-                            <ul class="list-unstyled" data-simplebar style="height: 360px">
-                              <li>
-                                <a href="javscript:void(0)" class="media media-message media-notification">
-                                  <div class="position-relative mr-3">
-                                    <img class="rounded-circle" src="assets/img/user/u6.jpg" alt="Image">
-                                    <span class="status away"></span>
-                                  </div>
+                    </div>
+                <%--</form>--%>
+			</div>
                                   <div class="media-body d-flex justify-content-between">
                                     <div class="message-contents">
                                       <h4 class="title">William</h4>
@@ -915,21 +785,16 @@
                                       <span class="font-size-12 font-weight-medium text-secondary">
                                         <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
                                       </span>
-                                    </div>
-                                  </div>
+        </div>
+    </div>
                                 </a>
                               </li>
 
-                              <li>
-                                <a href="javscript:void(0)" class="media media-message media-notification">
-                                  <div class="position-relative mr-3">
-                                    <img class="rounded-circle" src="assets/img/user/u7.jpg" alt="Image">
-                                    <span class="status away"></span>
-                                  </div>
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Camble</h4>
-                                      <p class="last-msg">Nam ut nisi erat. Ut quis tortor varius, hendrerit arcu quis, congue nisl. In scelerisque, sem ut ve.</p>
+     <div class="col-12">
+		<div class="card card-default">
+			<div class="card-body">
+				<%--<form runat="server">--%>
+					<div class="form-row">
 
                                       <span class="font-size-12 font-weight-medium text-secondary">
                                         <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
@@ -938,7 +803,7 @@
                                   </div>
                                 </a>
                               </li>
-
+                         
                               <li>
                                 <a href="javscript:void(0)" class="media media-message media-notification media-active">
                                   <div class="position-relative mr-3">
@@ -957,7 +822,7 @@
                                   </div>
                                 </a>
                               </li>
-
+                       
                               <li>
                                 <a href="javscript:void(0)" class="media media-message media-notification">
                                   <div class="position-relative mr-3">
@@ -969,35 +834,37 @@
                                       <h4 class="title">Aaren</h4>
                                       <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
 
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Category</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="account_category" placeholder="ACC_CATEGORY" aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							<div class="invalid-feedback">
+								Please enter the connection status.
+							</div>
+						</div>
+
+                         <%--<div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Last Month BIll</label>
+							<input type="text" class="form-control" id="bill_month" placeholder="LAST_MONTH_BILL" aria-describedby="inputGroupPrepend3" >
+							
+						</div>--%>
+
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Run Date</label>
+							<asp:Textbox runat="server" type="text" Text="28" class="form-control" id="bill_run_date" placeholder="28" ReadOnly="true" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<div class="invalid-feedback">
+								Please enter the connection status.
+							</div>
+						</div>
                                 </a>
                               </li>
 
-                              <li>
-                                <a href="javscript:void(0)" class="media media-message media-notification">
-                                  <div class="position-relative mr-3">
-                                    <img class="rounded-circle" src="assets/img/user/u5.jpg" alt="Image">
-                                    <span class="status away"></span>
-                                  </div>
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Emma</h4>
-                                      <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                                      </span>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-
-                            </ul>
-                          </div>
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Balance</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="bill_balance" placeholder="BILL_BALANCE" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<div class="invalid-feedback">
+								Please enter the connection status.
+							</div>
+						</div>
 
                           <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
                             <ul class="list-unstyled" data-simplebar style="height: 360px">
@@ -1013,11 +880,13 @@
                                       <h4 class="title">New event added</h4>
                                       <p class="last-msg font-size-14">03/Jan/2020 (1pm - 2pm)</p>
 
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 10 min ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Credit Limit</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="credit_limit" placeholder="CR" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							<div class="invalid-feedback">
+								Please enter the connection status.
+							</div>
+						</div>
                                 </a>
                               </li>
 
@@ -1026,18 +895,10 @@
 
                                   <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
                                     <i class="mdi mdi-chart-areaspline font-size-20"></i>
-                                  </div>
-
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Sales report</h4>
-                                      <p class="last-msg font-size-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                    </div>
+                <%--</form>--%>
+            </div>
+        </div>
                                 </a>
                               </li>
 
@@ -1046,41 +907,42 @@
 
                                   <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
                                     <i class="mdi mdi-account-multiple-check font-size-20"></i>
-                                  </div>
+    </div>
 
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Add request</h4>
-                                      <p class="last-msg font-size-14">Add Dany Jones as your contact consequat nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim.</p>
+     <div class="col-12">
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>--%>
+		        <div class="card card-default">
+			        <div class="card-body">
+                       
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
 
-                                      <button type="button" class="my-1 btn btn-sm btn-success">Accept</button>
-                                      <button type="button" class="my-1 btn btn-sm btn-secondary">Delete</button>
-
-                                      <span class="font-size-12 font-weight-medium text-secondary d-block">
-                                        <i class="mdi mdi-clock-outline"></i> 5 min ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                       	        <div class="form-group col-md-12">
+						            <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Concern</label>
+						            <asp:Textbox runat="server" class="form-control" ID="concern" TextMode="Multiline" rows="3"></asp:Textbox>
+					            </div>
                                 </a>
                               </li>
 
                               <li>
                                 <a href="javscript:void(0)" class="media media-message media-notification">
-
+          
                                   <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-danger text-white">
                                     <i class="mdi mdi-server-network-off font-size-20"></i>
                                   </div>
-
+             
                                   <div class="media-body d-flex justify-content-between">
                                     <div class="message-contents">
                                       <h4 class="title">Server overloaded</h4>
                                       <p class="last-msg font-size-14">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
 
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 30 min ago...
-                                      </span>
-                                    </div>
-                                  </div>
+                                  <div class="col-md-12 mb-3 mt-4">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Contact Person</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="contact_person" placeholder="CONTACT_PERSON" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
                                 </a>
                               </li>
 
@@ -1089,79 +951,30 @@
 
                                   <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-purple text-white">
                                     <i class="mdi mdi-playlist-check font-size-20"></i>
-                                  </div>
+						        </div>
 
-                                  <div class="media-body d-flex justify-content-between">
-                                    <div class="message-contents">
-                                      <h4 class="title">Task complete</h4>
-                                      <p class="last-msg font-size-14">Nam ut nisi erat. Ut quis tortor varius, hendrerit arcu quis, congue nisl. In scelerisque, sem ut ve.</p>
+                                  <div class="col-md-12 mb-3 mt-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Contact Num</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="contact_number" placeholder="CONTACT_NO" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
 
-                                      <span class="font-size-12 font-weight-medium text-secondary">
-                                        <i class="mdi mdi-clock-outline"></i> 2 hrs ago...
-                                      </span>
+                                  <div class="col-md-12 mb-3 mt-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Email</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="email" placeholder="EMAIL" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+						        </div>
+
+                                 <div class="col-md-12 mb-3 mt-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Nearest BO</label>
+                                   <%-- <asp:DropDownList ID="ddlNearestBd" runat="server"></asp:DropDownList>--%>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlNearestBd" runat="server" class="form-control" ></asp:DropDownList>
                                     </div>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <ul class="dropdown-menu dropdown-menu-right d-none">
-                      <li class="dropdown-header">You have 5 notifications</li>
-                      <li>
-                        <a href="#">
-                          <i class="mdi mdi-account-plus"></i> New user registered
-                          <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="mdi mdi-account-remove"></i> User deleted
-                          <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 07 AM</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="mdi mdi-chart-areaspline"></i> Sales report is ready
-                          <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 12 PM</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="mdi mdi-account-supervisor"></i> New client
-                          <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="mdi mdi-server-network-off"></i> Server overloaded
-                          <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 05 AM</span>
-                        </a>
-                      </li>
-                      <li class="dropdown-footer">
-                        <a class="text-center" href="#"> View All </a>
-                      </li>
-                    </ul>
-                  </li>
-               <%--   <li class="right-sidebar-in right-sidebar-2-menu">
-                    <i class="mdi mdi-settings mdi-spin"></i>
-                  </li>--%>
-                  <!-- User Account -->
-                  <li class="dropdown user-menu">
-                    <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <!-- User image -->
-                      <li class="dropdown-header">
-                        <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
-                        <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
-                        </div>
                       </li>
 
                       <li>
@@ -1180,295 +993,213 @@
                       <li class="right-sidebar-in">
                         <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
                       </li>
-
+				
                       <li class="dropdown-footer">
                         <a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>
                 </ul>
-              </div>
+			                    </div>
             </nav>
           </header>
 
-          
+                         
           <!-- ====================================
           ——— CONTENT WRAPPER
           ===================================== -->
           <div class="content-wrapper">
             <div class="content">
 
+                                <div class="col-md-12 mb-3 mt-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Informed By</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="informed_by" placeholder="INFORMED_BY" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
 
+						        </div>
 
-
-
+                 
+                       
 <div class="row">
 
-    <div class="card col-12 card-default">
-			 <div class="card-header justify-content-between" style="padding-top:0rem;">
-                      <h2>Complain Entry</h2>
-                      <div class="date-range-report ">
-                          <img src="assets/img/LankaBell.jpg" style="width:200px; height:100px;">
-                      </div>
+                            </div>
+                       <%-- </form>--%>
                     </div>
+                </div>
+   <%--         </ContentTemplate>
+        </asp:UpdatePanel>--%>
+    </div>
+========
+    <form runat="server">
+>>>>>>>> f3d2dc4a0c800aec4df918f719f99a55570a9a49:TelcoSystem/ViewComplains.aspx
 
-			<div class="card-body">
-				<form >
-					<div class="row">
+ 
+     <div class="col-12">
+     <%--   <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <ContentTemplate>--%>
+		        <div class="card card-default">
+			        <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
+
+                       
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Complain Id</label>
+							<asp:Textbox  type="text" class="form-control" ID="comp_id"  aria-describedby="inputGroupPrepend3" runat="server"></asp:Textbox>
+							
+						</div>
+
+                        
+
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Transaction Date</label>
+							<asp:Textbox type="text" ID="txn_date" runat="server" class="form-control"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+						</div>
+
+                                <div class="col-md-12 mb-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Category</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlCategory" runat="server" class="form-control"  ></asp:DropDownList>
+                                    </div>
 						
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<h3>STATUS_DESC</h3>
-									</div>
-								</div>
+                         <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Complain Type</label>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="comp_type"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+			                    </div>
 
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">Referance No</label>
-										<input type="text" class="form-control" placeholder="C_COMP_ID">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<label for="State">Logged Date</label>
-										<input type="text" class="form-control" placeholder="TXN_DATE">
-									</div>
-								</div>
-
-								<div class="col-6">
-									<div class="form-group">
-										<label for="Zip">by</label>
-										<input type="text" class="form-control" placeholder="LOGGED_BY">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					
-				</form>
-			</div>
-		</div>
-
-	<div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
-
-						<div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Service Number</label>
-							<input type="text" class="form-control" id="validationServerUsername" placeholder="Service Number" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the service number.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">User Code</label>
-							<input type="text" class="form-control" id="validationServerUsername2" placeholder="User Code" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the user code.
-							</div>
-						</div>
+                                <div class="col-md-12 mb-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Complain</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlComplain" runat="server" class="form-control" ></asp:DropDownList>
+                                    </div>
 
                          <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Code</label>
-							<input type="text" class="form-control" id="validationServerUsername3" placeholder="Account Code" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the code.
-							</div>
-						</div>
+							<label class="text-dark font-weight-medium" for="validationServerUsername">DN Service Number</label>
+							<asp:Textbox runat="server" type="text" class="form-control" ID="dn_svc_no"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+						
+			                    </div>
 
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Line Type</label>
-						    <select class="form-control" id="exampleFormControlSelect3">
-							    <option>1</option>
-							    <option>2</option>
-							    <option>3</option>
-							    <option>4</option>
-							    <option>5</option>
-						    </select>
-			            </div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Online</label>
-							<input type="text" class="form-control" id="validationServerUsername12" placeholder="Online" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a mode.
-							</div>
-						</div>
-
-
-                        <div class="col-md-12 mb-3">
-                            <label class="text-dark font-weight-medium" for="validationServerUsername">Online Bill Date</label>
-				            <div class="input-group mb-2">
-					            <div class="input-group-prepend">
-						            <span class="input-group-text">
-							            <i class="mdi mdi-calendar-range"></i>
-						            </span>
-					            </div>
-
-					            <input type="text" class="form-control" data-mask="00/00/0000" placeholder="" aria-label="">
-				            </div>
-                        </div>
-
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Address</label>
-							<input type="text" class="form-control" id="validationServerUsername4" placeholder="Account Address" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-
-    <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">City</label>
-						    <select class="form-control" id="exampleFormControlSelect4">
-							    <option>Matara</option>
-							    <option>Colombo</option>
-							    <option>Kandy</option>
-							    <option>Galle</option>
-						    </select>
-			            </div>
-
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Connection Status</label>
-							<input type="text" class="form-control" id="validationServerUsername5" placeholder="Connection Status" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Custommer Name</label>
-							<input type="text" class="form-control" id="validationServerUsername6" placeholder="CUST_NAME" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
-							<input type="text" class="form-control" id="validationServerUsername7" placeholder="ACC_RATING" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Line Usage</label>
-							<input type="text" class="form-control" id="validationServerUsername8" placeholder="LINE_USAGE" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Total Amt</label>
-							<input type="number" class="form-control" id="validationServerUsername9" placeholder="V_TOT" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please choose a username.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Login Name</label>
-						    <select class="form-control" id="exampleFormControlSelect5">
-							    <option>Kamal</option>
-							    <option>Nimal</option>
-							    <option>Bimal</option>
-							    <option>Amal</option>
-						    </select>
-			            </div>
-
+                            </div>
+                        <%--</form>--%>
                     </div>
-                </form>
-			</div>
-        </div>
+                </div>
+           <%-- </ContentTemplate>
+        </asp:UpdatePanel>--%>
     </div>
 
-     <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
 
-                         <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">F/Y Rating</label>
-							<input type="text" class="form-control" id="validationServerUsername13" placeholder="IT_BSTR" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
 
+    <div class="col-12">
+  <%--      <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+            <ContentTemplate>--%>
+		        <div class="card card-default">
+			        <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
+
+
+                                <div class="col-md-12 mb-3">
+						            <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Sub Category</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlComplainSub" runat="server" class="form-control"></asp:DropDownList>
+                                    </div>
+					
                         <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Rating</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="acc_rating"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+						
+			                    </div>
+
+                                  <div class="col-md-12 mb-3">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">FID</label>
+							        <asp:Textbox runat="server" type="text" class="form-control" id="fid" placeholder="TXT_FID" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							        <div class="invalid-feedback">
+								        Please enter the connection status.
+							        </div>
+
+                         <div class="col-md-12 mb-3 mt-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Last Month Bill</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="last_month_bill"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
+						        </div>
+
+                                <div class="col-md-12 mb-3" id="dvInfo" runat="server">
+							        <label class="text-dark font-weight-medium" for="validationServerUsername">Inform To</label>
+                                    <div class="col-sm-12" style="display: flex; flex-direction: row">
+                                        <asp:DropDownList ID="ddlSectionMaster" runat="server" class="form-control"  ></asp:DropDownList>
+                                    </div>
+						
+                        <div class="form-group col-md-12">
+						    <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Address</label>
+						    <textarea class="form-control" id="address" rows="3"></textarea>
+						        </div>
+                      
+
+                            </div>
+                        <%--</form>--%>
+                    </div>
+                </div>
+<%--            </ContentTemplate>
+        </asp:UpdatePanel>--%>
+    </div>
+
+       <div class="col-12">
+           <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                <ContentTemplate>
+		            <div class="card card-default">
+			            <div class="card-body">
+				        <%--<form runat="server">--%>
+					        <div class="form-row">
+                                   <asp:RadioButtonList ID="rbBound" runat="server" RepeatDirection="Horizontal" CssClass="margin-left:10px">
+                                        <asp:ListItem Value="1" CssClass="form-check-input" Style="margin-right: 50px">&nbsp;Inbound</asp:ListItem>
+                                        <asp:ListItem Value="0" CssClass="form-check-input">&nbsp;Outbound</asp:ListItem>
+                                    </asp:RadioButtonList>
+                     
+                        <div class="col-md-12 mb-3">
+<<<<<<<< HEAD:TelcoSystem/Complain.aspx
 							<label class="text-dark font-weight-medium" for="validationServerUsername">ID Number</label>
 							<input type="text" class="form-control" id="validationServerUsername14" placeholder="CP_ID_NUMBER" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Account Category</label>
-							<input type="text" class="form-control" id="validationServerUsername15" placeholder="ACC_CATEGORY" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
+                            </div>
+                  
+                        <%--</form>--%>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+            
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Last Month BIll</label>
 							<input type="text" class="form-control" id="validationServerUsername16" placeholder="LAST_MONTH_BILL" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
-						</div>
+    </div>
 
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Run Date</label>
-							<input type="text" class="form-control" id="validationServerUsername17" placeholder="BILL_RUN_CODE" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
-                        <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Balance</label>
-							<input type="text" class="form-control" id="validationServerUsername19" placeholder="BILL_BALANCE" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
+      <div class="col-12">
+           <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                <ContentTemplate>
+		            <div class="card card-default">
+			            <div class="card-body">
+				           
+					             <div class="ml-2">
+                                    <label class="text-dark font-weight-medium d-inline-block mr-3" for="">Follow Up</label>
+                                     <asp:RadioButtonList ID="rbFollow" runat="server" RepeatDirection="Horizontal" CssClass="margin-left:10px">
+                                        <asp:ListItem Value="1" CssClass="form-check-input" Style="margin-right: 50px">&nbsp;Yes</asp:ListItem>
+                                        <asp:ListItem Value="0" CssClass="form-check-input">&nbsp;No</asp:ListItem>
+                                    </asp:RadioButtonList>
+				           
                          <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Bill Station</label>
 							<input type="text" class="form-control" id="validationServerUsername20" placeholder="BILL_NAME" aria-describedby="inputGroupPrepend3" required>
 							<div class="invalid-feedback">
 								Please enter the connection status.
 							</div>
-						</div>
-
+                                </div>
+                  
                         <div class="col-md-12 mb-3">
 							<label class="text-dark font-weight-medium" for="validationServerUsername">Credit Limit</label>
 							<input type="text" class="form-control" id="validationServerUsername21 placeholder="CR" aria-describedby="inputGroupPrepend3" required>
@@ -1476,216 +1207,34 @@
 								Please enter the connection status.
 							</div>
 						</div>
-
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-     <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
-
-                       	<div class="form-group col-md-12">
-						    <label class="text-dark font-weight-medium" for="exampleFormControlTextarea1">Concern</label>
-						    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-					    </div>
-
                       
-             
-
-                          <div class="col-md-12 mb-3 mt-4">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Person</label>
-							<input type="text" class="form-control" id="validationServerUsername22" placeholder="CONTACT_PERSON" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
-                          <div class="col-md-12 mb-3 mt-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Num</label>
-							<input type="text" class="form-control" id="validationServerUsername23" placeholder="CONTACT_NO" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
-                          <div class="col-md-12 mb-3 mt-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Email</label>
-							<input type="text" class="form-control" id="validationServerUsername24" placeholder="EMAIL" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
-                         <div class="col-md-12 mb-3 mt-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Nearest BD</label>
-						    <select class="form-control" id="exampleFormControlSelect9">
-							    <option>Galle</option>
-							    <option>Matara</option>
-							    <option>Hakmana</option>
-							    <option>Kirinda</option>
-						    </select>
-			            </div>
-
-                         
-
-                        <div class="col-md-12 mb-3 mt-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">Informed By</label>
-							<input type="text" class="form-control" id="validationServerUsername20" placeholder="INFORMED_BY" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-
-                 
-                       
-
-                    </div>
+                        </div>
                 </form>
             </div>
-        </div>
-    </div>
-
- 
-     <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
-
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Category</label>
-						    <select class="form-control" id="exampleFormControlSelect9">
-							    <option>COMP_CAT_1</option>
-							    <option>COMP_CAT_2</option>
-							    <option>COMP_CAT_3</option>
-							    <option>COMP_CAT_4</option>
-						    </select>
-			            </div>
-
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain</label>
-						    <select class="form-control" id="exampleFormControlSelect9">
-							    <option>COMP_TYPE_1</option>
-							    <option>COMP_TYPE_2</option>
-							    <option>COMP_TYPE_3</option>
-							    <option>COMP_TYPE_4</option>
-						    </select>
-			            </div>
-
                     </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
-
-                        <div class="col-md-12 mb-3">
-						    <label class="text-dark font-weight-medium" for="validationServerUsername">Complain Sub Category</label>
-						    <select class="form-control" id="exampleFormControlSelect9">
-							    <option>COMP_SUB_1</option>
-							    <option>COMP_SUB_2</option>
-							    <option>COMP_SUB_3</option>
-							    <option>COMP_SUB_4</option>
-						    </select>
-			            </div>
-
-                          <div class="col-md-12 mb-3">
-							<label class="text-dark font-weight-medium" for="validationServerUsername">FID</label>
-							<input type="text" class="form-control" id="validationServerUsername20" placeholder="TXT_FID" aria-describedby="inputGroupPrepend3" required>
-							<div class="invalid-feedback">
-								Please enter the connection status.
-							</div>
-						</div>
-                      
-
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-       <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					<div class="form-row">
-                          <ul class="list-unstyled list-inline mt-2 ml-3 mb-3">
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Inbound
-							        <input type="radio" name="inb" checked="checked" />
-							        
-						        </label>
-					        </li>
-
-					        <li class="d-inline-block mr-3">
-						        <label class="text-dark font-weight-medium" class="control control-radio">Outbound
-							        <input type="radio" name="inb" />
-							        
-						        </label>
-					        </li>
-				        </ul>
-                    </div>
-                  
-                </form>
-            </div>
-        </div>
-    </div>
-
-      <div class="col-lg-6">
-		<div class="card card-default">
-			<div class="card-body">
-				<form >
-					 <div class="ml-2">
-                        <label class="text-dark font-weight-medium d-inline-block mr-3" for="">Follow Up</label>
-
-				        <ul class="list-unstyled list-inline">
-					        <li class="d-inline-block mr-3">
-						        <label class="text-gray font-weight-sm" class="control control-radio">Yes
-							        <input type="radio" name="option" checked="checked" />
-							        
-						        </label>
-					        </li>
-
-					        <li class="d-inline-block mr-3">
-						        <label class="text-gray font-weight-sm" class="control control-radio">No
-							        <input type="radio" name="option" />
-							        
-						        </label>
-					        </li>
-				        </ul>
-                    </div>
-                  
-                </form>
-            </div>
-        </div>
+               </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 
     <div class="col-12">
 		<div class="card card-default">
 			<div class="card-body">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="form-row">
+                        <div class="d-flex justify-content-around" >
+                            <asp:Button runat="server"  class="mr-2 btn btn-danger" OnClick="GoToDashboard" Text="BACK" />
 
-                         <div class="col-6">
-                            <button type="button" class="mr-2 btn  btn-secondary">GLOBAL INQUIRY</button>
-					     </div>
+                            <asp:Button runat="server"  class="mr-2 btn btn-secondary"  Text="GLOBAL INQUIRY" />
 
-                         <div class="col-6">
-						    <button type="button" class="mr-2 btn  btn-success">SAVE</button>
-                        </div>
+                            <asp:Button runat="server"  class="mr-2 btn btn-success" OnClick="Save_btn" Text="SAVE" />
+					    </div>
 
-                    </div>
-                </form>
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Contact Number</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="contact_no"  aria-describedby="inputGroupPrepend3"></asp:Textbox>
+							
+                   </div>
+                <%--</form>--%>
             </div>
         </div>
     </div>
@@ -1699,7 +1248,7 @@
 			</div>
 
 			<div class="card-body ml-2">
-				<form >
+				<%--<form runat="server">--%>
 					<div class="row">
 						
 						<div class="col-sm-6">
@@ -1716,6 +1265,9 @@
                                     <button type="button" class="mb-1 mr-2 btn  btn-secondary">HISTORY</button>
 								</div>
 								
+                         <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Inform To</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="info_to" aria-describedby="inputGroupPrepend3" ></asp:Textbox>
                               
                                 <div class="col-6" style="display:none;">
 								    <button type="button" class="mb-1 mr-2 btn  btn-warning">MESSAGE</button>
@@ -1724,6 +1276,11 @@
                                     <button type="button" class="mb-1 mr-2 btn  btn-primary">ISP PROXYMITY</button>
 								</div>
 							</div>
+
+                        <div class="col-md-12 mb-3">
+							<label class="text-dark font-weight-medium" for="validationServerUsername">Reference Complain Id</label>
+							<asp:Textbox runat="server" type="text" class="form-control" id="ref_comp_id"  aria-describedby="inputGroupPrepend3" ></asp:Textbox>
+							
 						</div>
 
 						<div class="col-sm-6">
@@ -1744,19 +1301,20 @@
                                 <div class="col-6" style="display:none;">
                                     <button type="button" class="mb-1 mr-2 btn  btn-danger">EXIT</button>
 								</div>
+                <%--</form>--%>
 							</div>
 						</div>
 					</div>
 
 					
-				</form>
+				<%--</form>--%>
 			</div>
 		</div>
 
         <div class="col-lg-6" style="display:none;">
 		    <div class="card card-default">
 			    <div class="card-body">
-				    <form >
+				    <%--<form runat="server">--%>
 					    <div class="form-row">
                             <div>
                                 <button type="button" class="mb-1 mb-4 mr-2 btn btn-primary">P</button>
@@ -1776,24 +1334,25 @@
                             </div>
                       
                         </div>
-                    </form>
+             
                 </div>
             </div>
         </div>
+
+
+   <%-- displane hidden--%>
+
+
+
+    </form>
 <%--    display hidden--%>
 
-
-
 </div>
-
-
-
-
 
       </div> <!-- End Content -->
     </div> <!-- End Content Wrapper -->
     
-    
+
     <!-- Footer -->
     <footer class="footer mt-auto">
       <div class="copyright bg-white">
@@ -1812,56 +1371,18 @@
   </div> <!-- End Wrapper -->
 
 
-    <!-- <script type="module">
-      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-      const el = document.createElement('pwa-update');
-      document.body.appendChild(el);
-    </script> -->
-
+      </div> <!-- End Content -->
+    
+</asp:Content>
+   
     <!-- Javascript -->
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/simplebar/simplebar.min.js"></script>
- 
-    
-    
 
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
 
     <script src="assets/js/sleek.js"></script>
   <link href="assets/options/optionswitch.css" rel="stylesheet">
 <script src="assets/options/optionswitcher.js"></script>
 </body>
 </html>
-
-

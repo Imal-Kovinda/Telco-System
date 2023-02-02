@@ -44,9 +44,7 @@ namespace TelcoSystemCore.Common
         /// <param name="dbConnection">Opend Database Connection</param>
         /// <param name="readCommand">parameterized Sql Command</param>
         /// <returns>Generic Domain Object</returns>
-
-        //public T GetSingleOject<T>(SqlDataReader reader) where T : class
-
+        //public T GetSingleOject<T>(OdbcDataReader reader) where T : class
         public T GetSingleOject<T>(OdbcDataReader reader) where T : class
         {
             Type type = typeof(T);
@@ -127,6 +125,9 @@ namespace TelcoSystemCore.Common
         {
             //throw new NotImplementedException();
         }
+
+    
+
 
         #endregion
     }
