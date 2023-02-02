@@ -7,9 +7,57 @@ using TelcoSystemCore.Common;
 
 namespace TelcoSystemCore.Domain
 {
-    [Serializable()]
+    [Serializable]
     public class CustomerAccount
     {
+        [DBField("top_customer_stat")]
+        public string topCusStat { get; set; }
+
+        [DBField("reminder_pd")]
+        public string reminderPd { get; set; }
+
+        [DBField("rental_category")]
+        public string rentalCategory { get; set; }
+
+        [DBField("pre_paid")]
+        public string prePaid { get; set; }
+
+        [DBField("switch_type")]
+        public string switchType { get; set; }
+
+        [DBField("credit_limit")]
+        public int creditLimit { get; set; }
+
+        [DBField("disconnect_stst")]
+        public string disconnectStat { get; set; }
+
+        [DBField("stat_after_days")]
+        public string statAfterDays { get; set; }
+
+        [DBField("grace_period")]
+        public DateTime gracePeriod { get; set; }
+
+        [DBField("allocated_sales_person ")]
+        public string allocatedSalesPerson { get; set; }
+
+        [DBField("revenue_region")]
+        public string revenueRegion { get; set; }
+
+        [DBField("email")]
+        public string email { get; set; }
+
+        [DBField("indirect_br")]
+        public string indirectBr { get; set; }
+
+        [DBField("mobile_number")]
+        public string mobileNumber { get; set; }
+
+        [DBField("policy_apply_date")]
+        public DateTime policyApplyDate { get; set; }
+
+        [DBField("customer_type_id")]
+        public string cusTypeId { get; set; }
+
         [DBField("account_id")]
         public string accountId { get; set; }
 
