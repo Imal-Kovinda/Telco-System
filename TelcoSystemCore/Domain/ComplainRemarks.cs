@@ -10,6 +10,12 @@ namespace TelcoSystemCore.Domain
     [Serializable()]
     public class ComplainRemarks
     {
+        [DBField("remark_id")]
+        public string RemarkId { get; set; }
+
+        [DBField("seq_id")]
+        public string SeqId { get; set; }
+
         [DBField("comp_id")]
         public string CompId { get; set; }
 
@@ -23,6 +29,9 @@ namespace TelcoSystemCore.Domain
 
         [DBField("my_remarks")]
         public string MyRemarks { get; set; }
+
+        [DBField("user_code")]
+        public string UserCode { get; set; }
 
     }
 }

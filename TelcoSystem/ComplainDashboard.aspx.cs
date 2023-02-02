@@ -15,13 +15,16 @@ namespace TelcoSystem
         //CmLogComplains objDone = new CmLogComplains();
         string ComplainSort;
         //string complainData;
-        public string pnbs_id;
+        string pnbs_id;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                string pnbs_id = Request.QueryString["pnbs_id"];
+                pnbs_id = Server.UrlDecode(Request.QueryString["id"]);
+
+                txtLoggedName.InnerText = pnbs_id;
+                txtSubLoggedName.InnerText = pnbs_id;
 
                 BindSections();
                 BindDataSource();
@@ -77,8 +80,9 @@ namespace TelcoSystem
         //make complain btn
         protected void makeComplain(object sender, EventArgs e)
         {
-
-            //Server.Transfer("Complain.aspx");
+            var transId = pnbs_id;
+            Session["pnbs_id"] = transId;
+            Response.Redirect("Complain.aspx?id=" + Session["pnbs_id"]);
         }
 
         protected void btnView_Click(object sender, EventArgs e)
@@ -162,8 +166,8 @@ namespace TelcoSystem
 
             popup.Visible = false;
 
-            Response.AppendHeader("Refresh", "5; URL=ComplainDashboard.aspx");
-
+            Response.AppendHeader("Refresh", "5; URL=ComplainDashboard.aspx?id=" + Session["pnbs_id"]);
+         
         }
         
         protected void cancelPopup(object sender, EventArgs e)
