@@ -26,6 +26,9 @@ namespace TelcoSystemCore.Infrastructure
             //"DILEEKAS"
             //"C3E4119CCF6628BA"
 
+            //"LOCHANAW"
+            //"2F19F7E5EFEA182EA78FC26F6BCAC7DB"
+
             int output = 0;
 
             dbConnection.cmd.Parameters.Clear();

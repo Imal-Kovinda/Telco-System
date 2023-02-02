@@ -1132,15 +1132,14 @@
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
-                      <span id="userName" class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <span  ID="txtLoggedName" runat="server" class="d-none d-lg-inline-block"></span>
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
                         <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
-                        <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
+                        <div ID="txtSubLoggedName" runat="server" class="d-inline-block">
                         </div>
                       </li>
 

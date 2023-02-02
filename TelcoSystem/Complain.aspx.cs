@@ -29,7 +29,7 @@ namespace TelcoSystem
         public string seqId;
         public string bound;
         public string followStatus;
-
+        string pnbs_id;
         private static int lastId = 0;
         private static DateTime lastDate;
         
@@ -45,6 +45,12 @@ namespace TelcoSystem
 
             if(!IsPostBack)
             {
+                pnbs_id = Server.UrlDecode(Request.QueryString["id"]);
+
+               
+
+                txtLoggedName.InnerText = pnbs_id;
+                txtSubLoggedName.InnerText = pnbs_id;
                 //string shortDate = DateTime.Now.ToShortDateString();
                 string shortDate = DateTime.Now.ToString("yyyy-MM-dd");
                 DateTime currentDate = DateTime.Parse(shortDate);
@@ -146,7 +152,7 @@ namespace TelcoSystem
             var test_serviceNum = service_number.Text;
             complains.DnSvcNo = test_serviceNum.ToString();
 
-            complains.LoginName = "Imal Kovinda";
+            complains.LoginName = pnbs_id;
             complains.AccCode = acc_code.Text;
             complains.AccRating = acc_rating.Text;
             complains.ConnStatus = connection_status.Text;
@@ -209,12 +215,23 @@ namespace TelcoSystem
             //complains.Fid = fid.Text;
 
             //remark data
+
+            //get sequence number
+            seqId = GenerateSequenceId();
+
+            
+           
+            //compRe.RemarkId = "1";
+            //compRe.SeqId ="3";
             compRe.CompId = ref_no.Text;
             compRe.SectionId = ddlSectionMaster.SelectedValue;
             compRe.ReInfoDate = currentDate;
-            compRe.MyRemarks = "null";
+            compRe.MyRemarks = "init_comp";
+            compRe.UserCode = pnbs_id;
 
-           
+
+
+
 
             ICmLogComplainsController cmLogComplainsController = ControllerFactory.CreateCmLogComplainsDAO();
             cmLogComplainsController.Save(complains);

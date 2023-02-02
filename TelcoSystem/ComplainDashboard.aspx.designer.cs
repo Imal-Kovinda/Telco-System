@@ -15,6 +15,24 @@ namespace TelcoSystem
     {
 
         /// <summary>
+        /// txtLoggedName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtLoggedName;
+
+        /// <summary>
+        /// txtSubLoggedName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtSubLoggedName;
+
+        /// <summary>
         /// GridView control.
         /// </summary>
         /// <remarks>
@@ -87,13 +105,22 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox comp_sub_type;
 
         /// <summary>
-        /// dn_svc_no control.
+        /// my_remarks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dn_svc_no;
+        protected global::System.Web.UI.WebControls.TextBox my_remarks;
+
+        /// <summary>
+        /// ddlSectionMaster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSectionMaster;
 
         /// <summary>
         /// acc_code control.
@@ -177,15 +204,6 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox comp_address;
 
         /// <summary>
-        /// cust_remarks control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cust_remarks;
-
-        /// <summary>
         /// contact_person control.
         /// </summary>
         /// <remarks>
@@ -231,22 +249,13 @@ namespace TelcoSystem
         protected global::System.Web.UI.WebControls.TextBox attended_on;
 
         /// <summary>
-        /// my_remarks control.
+        /// dn_svc_no control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox my_remarks;
-
-        /// <summary>
-        /// ddlSectionMaster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSectionMaster;
+        protected global::System.Web.UI.WebControls.TextBox dn_svc_no;
 
         /// <summary>
         /// ref_comp_id control.
@@ -292,6 +301,15 @@ namespace TelcoSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox rejected;
+
+        /// <summary>
+        /// cust_remarks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cust_remarks;
 
         /// <summary>
         /// dvCompRemarks_grid control.

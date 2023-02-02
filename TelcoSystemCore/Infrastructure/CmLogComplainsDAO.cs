@@ -164,7 +164,8 @@ namespace TelcoSystemCore.Infrastructure
         {
             List<CmLogComplains> cmLogComplains = new List<CmLogComplains>();
             dbConnection = new DbConnection();
-            dbConnection.cmd.CommandText = "SELECT * FROM lb.cm_log_complains INNER JOIN lb.cm_department_users ON cm_log_complains.info_to = lb.cm_department_users.section_id WHERE cm_department_users.user_id = ? AND cm_log_complains.status = 'P'";
+            dbConnection.cmd.CommandText =
+                "SELECT * FROM lb.cm_log_complains INNER JOIN lb.cm_department_users ON cm_log_complains.info_to = lb.cm_department_users.section_id WHERE cm_department_users.user_id = ? AND cm_log_complains.status = 'P'";
 
             dbConnection.cmd.Parameters.AddWithValue("@userId", userId);
 
