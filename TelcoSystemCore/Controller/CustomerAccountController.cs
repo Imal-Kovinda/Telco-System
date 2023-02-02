@@ -11,15 +11,44 @@ namespace TelcoSystemCore.Controller
 {
     public interface ICustomerAccountController
     {
-        int Save(CustomerAccount customer);
-        int Update(CustomerAccount customer);
+
         List<CustomerAccount> GetCustomerAccountDetailList(string phoneNumber);
+        int Save(CustomerAccount customerAccount);
+        int Delete(CustomerAccount customerAccount);
+        int Update(CustomerAccount customerAccount);
+        List<CustomerAccount> GetCustomerAccounts();
+
+        CustomerAccount GetCustomerAccount(String customerAccountId);
 
     }
 
     public class CustomerAccountControllerImpl : ICustomerAccountController
     {
         ICustomerAccountDAO customerAccountDAO = DAOFactory.CreateCustomerAccountDAO();
+
+        public List<CustomerAccount> GetCustomerAccounts()
+        {
+            DbConnection dbConnection = null;
+            List<CustomerAccount> listCusAccount = new List<CustomerAccount>();
+            try
+            {
+                dbConnection = new DbConnection();
+                listCusAccount = customerAccountDAO.GetCustomerAccounts(dbConnection);
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
+                {
+                    dbConnection.Commit();
+                }
+            }
+            return listCusAccount;
+        }
 
         public int Save(CustomerAccount customerAccount)
         {
@@ -66,8 +95,10 @@ namespace TelcoSystemCore.Controller
             }
         }
 
-        public List<CustomerAccount> GetCustomerAccountDetailList(string phoneNumber)
+
+        public int Delete(CustomerAccount customerAccount)
         {
+
             DbConnection dbConnection = null;
             List<CustomerAccount> listDetail = new List<CustomerAccount>();
 
@@ -75,14 +106,35 @@ namespace TelcoSystemCore.Controller
             {
 
                 dbConnection = new DbConnection();
-              
+
 
                 if (phoneNumber != null)
+                    return customerAccountDAO.Delete(customerAccount, dbConnection);
+            }
+            catch (Exception)
+            {
+                dbConnection.RollBack();
+                throw;
+            }
+            finally
+            {
+                if (dbConnection.con.State == System.Data.ConnectionState.Open)
                 {
 
                     return customerAccountDAO.GetCustomerAccountDetailList(dbConnection, phoneNumber);
+                    dbConnection.Commit();
                 }
+            }
+        }
 
+        public CustomerAccount GetCustomerAccount(String customerAccountId)
+        {
+            DbConnection dbConnection = null;
+            CustomerAccount customerAccount = new CustomerAccount();
+            try
+            {
+                dbConnection = new DbConnection();
+                customerAccount = customerAccountDAO.GetCustomerAccount(dbConnection, customerAccountId);
             }
             catch (Exception)
             {
@@ -97,6 +149,12 @@ namespace TelcoSystemCore.Controller
                 }
             }
             return listDetail;
+            return customerAccount;
         }
+
+
     }
+
+
+
 }
