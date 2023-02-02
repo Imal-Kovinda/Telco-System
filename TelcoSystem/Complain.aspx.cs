@@ -49,8 +49,8 @@ namespace TelcoSystem
 
                
 
-                txtLoggedName.InnerText = pnbs_id;
-                txtSubLoggedName.InnerText = pnbs_id;
+                //txtLoggedName.InnerText = pnbs_id;
+                //txtSubLoggedName.InnerText = pnbs_id;
                 //string shortDate = DateTime.Now.ToShortDateString();
                 string shortDate = DateTime.Now.ToString("yyyy-MM-dd");
                 DateTime currentDate = DateTime.Parse(shortDate);
