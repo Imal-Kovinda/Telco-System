@@ -65,7 +65,7 @@ namespace TelcoSystemCore.Domain
         public string accountName { get; set; }
 
         [DBField("customer_id")]
-        public string cusId { get; set; }
+        public string customerId { get; set; }
 
         [DBField("priority_id")]
         public string priorityId { get; set; }
@@ -74,7 +74,7 @@ namespace TelcoSystemCore.Domain
         public string companyId { get; set; }
 
         [DBField("current_balance")]
-        public int currentBalance { get; set; }
+        public double currentBalance { get; set; }
 
         [DBField("connect_status_id")]
         public string connectStatusId { get; set; }
@@ -83,19 +83,19 @@ namespace TelcoSystemCore.Domain
         public string crCreditRatingCode { get; set; }
 
         [DBField("ac_account_category")]
-        public string acAccCategory { get; set; }
+        public string acAccountCategory { get; set; }
 
         [DBField("title")]
         public string title { get; set; }
 
         [DBField("address_line_1")]
-        public string address1 { get; set; }
+        public string addressLine1 { get; set; }
 
         [DBField("address_line_2")]
-        public string address2 { get; set; }
+        public string addressLine2 { get; set; }
 
         [DBField("address_line_3")]
-        public string address3 { get; set; }
+        public string addressLine3 { get; set; }
 
         [DBField("city")]
         public string city { get; set; }
@@ -116,7 +116,7 @@ namespace TelcoSystemCore.Domain
         public DateTime lastModifiedOn { get; set; }
 
         [DBField("bill_run_code")]
-        public int billRunCode { get; set; }
+        public double billRunCode { get; set; }
 
         [DBField("deactivated_by")]
         public string deactivatedBy { get; set; }
@@ -128,10 +128,10 @@ namespace TelcoSystemCore.Domain
         public string ledgerCd { get; set; }
 
         [DBField("acct_type")]
-        public string accType { get; set; }
+        public string acct_Type { get; set; }
 
         [DBField("opening_balance")]
-        public int openBalance { get; set; }
+        public double openingBalance { get; set; }
 
         [DBField("control_account")]
         public string controlAccount { get; set; }
@@ -157,14 +157,14 @@ namespace TelcoSystemCore.Domain
         [DBField("priority_val")]
         public int priorityVal { get; set; }
 
-        [DBField("MAJOR_INDUSTRY ")]
+        [DBField("major_industry")]
         public string majorIndustry { get; set; }
 
         [DBField("minor_industry")]
         public string minorIndustry { get; set; }
 
         [DBField("prv_ac_account_category")]
-        public string prvAcAccCategory { get; set; }
+        public string prvAcAccountCategory { get; set; }
 
         [DBField("cus_comment_checked")]
         public string cusCommentChecked { get; set; }
@@ -178,16 +178,15 @@ namespace TelcoSystemCore.Domain
         [DBField("discon_avoid_date")]
         public DateTime disconAvoidDate { get; set; }
 
-        [DBField("indirect_br")]
-        public string IndirectBr { get; set; }
+        [DBField("top_customer_stat")]
+        public string topcustomerStat { get; set; }
 
-        [DBField("mobile_number")]
-        public string MobileNumber { get; set; }
+
 
         [DBField("policy_apply_date")]
-        public DateTime PosicyApplyDate { get; set; }
+        public DateTime posicyApplyDate { get; set; }
 
         [DBField("customer_type_id")]
-        public string CustomerTypeId { get; set; }
+        public string customerTypeId { get; set; }
     }
 }

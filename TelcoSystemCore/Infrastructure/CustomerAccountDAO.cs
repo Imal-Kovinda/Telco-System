@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,55 +11,51 @@ namespace TelcoSystemCore.Infrastructure
 {
     public interface ICustomerAccountDAO
     {
+        int SaveMe(CustomerAccount customerAccount, DbConnection dbConnection);
+        int UpdateMe(CustomerAccount customerAccount, DbConnection dbConnection);
+        List<CustomerAccount> GetCustomerAccountDetailList(DbConnection dbConnection, string phoneNumber);
+
+        //
         int Save(CustomerAccount customerAccount, DbConnection dbConnection);
         int Update(CustomerAccount customerAccount, DbConnection dbConnection);
-        List<CustomerAccount> GetCustomerAccountDetailList(DbConnection dbConnection, string phoneNumber);
         int Delete(CustomerAccount customerAccount, DbConnection dbConnection);
         List<CustomerAccount> GetCustomerAccounts(DbConnection dbConnection);
 
         CustomerAccount GetCustomerAccount(DbConnection dbConnection, String accountId);
-
     }
 
     public class CustomerAccountSqlDAOImpl : ICustomerAccountDAO
     {
-        public List<CustomerAccount> GetCustomerAccountDetailList(DbConnection dbConnection, string phoneNumber)
         CustomerAccount customerAccount = new CustomerAccount();
-        public List<CustomerAccount> GetCustomerAccounts(DbConnection dbConnection)
+        public List<CustomerAccount> GetCustomerAccountDetailList(DbConnection dbConnection, string phoneNumber)
         {
             List<CustomerAccount> customerAccountDetailList = new List<CustomerAccount>();
             dbConnection = new DbConnection();
-            List<CustomerAccount> ListCusAccount = new List<CustomerAccount>();
 
             dbConnection.cmd.CommandText =
                 "SELECT * FROM lb.customer_account  INNER JOIN lb.account_location ON customer_account.account_id = account_location.account_id INNER JOIN lb.customer_account_dn ON account_location.account_location_id = customer_account_dn.account_location_id WHERE customer_account_dn.account_dn = ?";
-            
+
 
             dbConnection.cmd.Parameters.AddWithValue("@phoneNumber", phoneNumber);
-            dbConnection = new DbConnection();
-            dbConnection.cmd.CommandText = "select * from lb.customer_account ";
             dbConnection.dr = dbConnection.cmd.ExecuteReader();
 
             DataAccessObject dataAccessObject = new DataAccessObject();
 
             customerAccountDetailList = dataAccessObject.ReadCollection<CustomerAccount>(dbConnection.dr);
-            ListCusAccount = dataAccessObject.ReadCollection<CustomerAccount>(dbConnection.dr);
             dbConnection.dr.Close();
 
             return customerAccountDetailList;
-            return ListCusAccount;
         }
 
-        public int Save(CustomerAccount customerAccount, DbConnection dbConnection)
+        public int SaveMe(CustomerAccount customerAccount, DbConnection dbConnection)
         {
-           
+
             int output = 0;
 
             dbConnection.cmd.Parameters.Clear();
             dbConnection.cmd.CommandType = System.Data.CommandType.Text;
             dbConnection.cmd.CommandText = "Insert into Customer (CUSTOMER_ID, CUSTOMER_NAME, CUSTOMER_TYPE_ID, TITLE,ACTIVATED_ON, ACTIVATED_BY, ADDRESS_LINE_1, ADDRESS_LINE_2, ADDRESS_LINE_3, CITY, POSTAL_CODE, MODIFIED_BY, MODIFIED_ON, PROFILE_STATUS, CP_REMARKS, DISTRICT, PROVINCE, CUST_GROUP, CUST_RATING, TOP_CUSTOMER_STAT, CONFIDENTIAL, PREFERRED_LANGUAGE, PROFESSION_DESIGNATION, DATE_OF_BIRTH, CONTACT_PHONE_NO, MANAGER_1, MANAGER_2, SALES_PERSON, NEW_ID_NUMBER) " +
                                                   "values (@CUSTOMER_ID,@CUSTOMER_NAME,@CUSTOMER_TYPE_ID,@TITLE,@ACTIVATED_ON,@ACTIVATED_BY,@ADDRESS_LINE_1, @ADDRESS_LINE_2, @ADDRESS_LINE_3, @CITY, @POSTAL_CODE, @MODIFIED_BY, @MODIFIED_ON, @PROFILE_STATUS, @CP_REMARKS, @DISTRICT, @PROVINCE, @CUST_GROUP, @CUST_RATING, @TOP_CUSTOMER_STAT, @CONFIDENTIAL, @PREFERRED_LANGUAGE, @PROFESSION_DESIGNATION, @DATE_OF_BIRTH, @CONTACT_PHONE_NO, @MANAGER_1, @MANAGER_2, @SALES_PERSON, @NEW_ID_NUMBER) SELECT SCOPE_IDENTITY() ";
-            dbConnection.cmd.CommandText = " ";
 
 
             //dbConnection.cmd.Parameters.AddWithValue("@CUSTOMER_ID", customer.CustomerId);
@@ -92,42 +87,23 @@ namespace TelcoSystemCore.Infrastructure
             //dbConnection.cmd.Parameters.AddWithValue("@MANAGER_2", customer.Manager2);
             //dbConnection.cmd.Parameters.AddWithValue("@SALES_PERSON", customer.SalesPerson);
             //dbConnection.cmd.Parameters.AddWithValue("@NEW_ID_NUMBER", customer.NewIdNumber);
-            output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
-
-
-            return output;
-
-        }
-
-        public int Update(CustomerAccount customerAccount, DbConnection dbConnection)
-        {
-
-            int output = 0;
-
-            dbConnection.cmd.Parameters.Clear();
-            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
-            dbConnection.cmd.CommandText = " ";
 
 
             output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
-            //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerId);
 
-            output = dbConnection.cmd.ExecuteNonQuery();
 
             return output;
 
 
         }
 
-        public int Update(CustomerAccount customerAccount, DbConnection dbConnection)
-        public int Delete(CustomerAccount customerAccount, DbConnection dbConnection)
+        public int UpdateMe(CustomerAccount customerAccount, DbConnection dbConnection)
         {
             int output = 0;
 
             dbConnection.cmd.Parameters.Clear();
             dbConnection.cmd.CommandType = System.Data.CommandType.Text;
             dbConnection.cmd.CommandText = "Update Student set CUSTOMER_ID = @CUSTOMER_ID ,CUSTOMER_NAME = @CUSTOMER_NAME,CUSTOMER_TYPE_ID = @CUSTOMER_TYPE_ID,TITLE  =@TITLE ,ACTIVATED_ON = @ACTIVATED_ON, ACTIVATED_BY = @ACTIVATED_BY, ADDRESS_LINE_1= @ADDRESS_LINE_1, ADDRESS_LINE_2 = @ADDRESS_LINE_2, ADDRESS_LINE_3 = @ADDRESS_LINE_3, CITY = @CITY, POSTAL_CODE = @POSTAL_CODE,  MODIFIED_BY = @MODIFIED_BY, MODIFIED_ON = @MODIFIED_ON, PROFILE_STATUS = @PROFILE_STATUS, CP_REMARKS = @CP_REMARKS, DISTRICT = @DISTRICT, PROVINCE = @PROVINCE, CUST_GROUP = @CUST_GROUP, CUST_RATING = @CUST_RATING, TOP_CUSTOMER_STAT = @TOP_CUSTOMER_STAT, CONFIDENTIAL = @CONFIDENTIAL, PREFERRED_LANGUAGE = @PREFERRED_LANGUAGE, PROFESSION_DESIGNATION = @PROFESSION_DESIGNATION, DATE_OF_BIRTH = @DATE_OF_BIRTH, CONTACT_PHONE_NO = @CONTACT_PHONE_NO, MANAGER_1 = @MANAGER_1, MANAGER_2 = @MANAGER_2, SALES_PERSON = @SALES_PERSON, NEW_ID_NUMBER = @NEW_ID_NUMBER WHERE CUSTOMER_ID = @CUSTOMER_ID ";
-            dbConnection.cmd.CommandText = " ";
 
             //dbConnection.cmd.Parameters.AddWithValue("@CUSTOMER_ID", customer.CustomerId);
             //dbConnection.cmd.Parameters.AddWithValue("@CUSTOMER_NAME", customer.CustomerName);
@@ -160,6 +136,71 @@ namespace TelcoSystemCore.Infrastructure
             //dbConnection.cmd.Parameters.AddWithValue("@NEW_ID_NUMBER", customer.NewIdNumber);
 
             output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
+
+
+            return output;
+
+
+        }
+
+        public List<CustomerAccount> GetCustomerAccounts(DbConnection dbConnection)
+        {
+            List<CustomerAccount> ListCusAccount = new List<CustomerAccount>();
+
+            dbConnection = new DbConnection();
+            dbConnection.cmd.CommandText = "select * from lb.customer_account ";
+            dbConnection.dr = dbConnection.cmd.ExecuteReader();
+            DataAccessObject dataAccessObject = new DataAccessObject();
+            ListCusAccount = dataAccessObject.ReadCollection<CustomerAccount>(dbConnection.dr);
+            dbConnection.dr.Close();
+
+            return ListCusAccount;
+        }
+
+        public int Save(CustomerAccount customerAccount, DbConnection dbConnection)
+        {
+
+            int output = 0;
+
+            dbConnection.cmd.Parameters.Clear();
+            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
+            dbConnection.cmd.CommandText = " ";
+
+
+            output = Convert.ToInt32(dbConnection.cmd.ExecuteScalar());
+
+
+            return output;
+
+        }
+
+        public int Update(CustomerAccount customerAccount, DbConnection dbConnection)
+        {
+
+            int output = 0;
+
+            dbConnection.cmd.Parameters.Clear();
+            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
+            dbConnection.cmd.CommandText = " ";
+
+
+            //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerId);
+
+            output = dbConnection.cmd.ExecuteNonQuery();
+
+            return output;
+
+        }
+
+        public int Delete(CustomerAccount customerAccount, DbConnection dbConnection)
+        {
+            int output = 0;
+
+            dbConnection.cmd.Parameters.Clear();
+            dbConnection.cmd.CommandType = System.Data.CommandType.Text;
+            dbConnection.cmd.CommandText = " ";
+
+
             //dbConnection.cmd.Parameters.AddWithValue("@ID", customer.CustomerId);
 
             output = dbConnection.cmd.ExecuteNonQuery();
@@ -182,6 +223,5 @@ namespace TelcoSystemCore.Infrastructure
 
 
     }
-
-
 }
+
