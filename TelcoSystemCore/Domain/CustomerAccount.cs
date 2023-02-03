@@ -181,44 +181,7 @@ namespace TelcoSystemCore.Domain
         [DBField("top_customer_stat")]
         public string topcustomerStat { get; set; }
 
-        [DBField("reminder_pd")]
-        public string reminderPd { get; set; }
 
-        [DBField("rental_category")]
-        public string rentalCategory { get; set; }
-
-        [DBField("pre_paid")]
-        public string prePaid { get; set; }
-
-        [DBField("switch_type")]
-        public string switchType { get; set; }
-
-        [DBField("credit_limit")]
-        public int creditLimit { get; set; }
-
-        [DBField("disconnect_stat")]
-        public string disconnectStat { get; set; }
-
-        [DBField("stat_after_days")]
-        public string statAfterDays { get; set; }
-
-        [DBField("grace_period")]
-        public DateTime gracePeriod { get; set; }
-
-        [DBField("allocated_sales_person")]
-        public string allocatedSalesPersona { get; set; }
-
-        [DBField("revenue_region")]
-        public string revenueRegion { get; set; }
-
-        [DBField("email")]
-        public string email { get; set; }
-
-        [DBField("indirect_br")]
-        public string indirectBr { get; set; }
-
-        [DBField("mobile_number")]
-        public string mobileNumber { get; set; }
 
         [DBField("policy_apply_date")]
         public DateTime posicyApplyDate { get; set; }

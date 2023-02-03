@@ -32,12 +32,7 @@ namespace TelcoSystemCore.Common
             return (IBankBillPaymentController)bankBillPaymentController;
         }
 
-        //PnbsUsers
-        public static IPnbsUsersController CreatePnbsUsersController()
-        {
-            IPnbsUsersController PnbsUsersController = new PnbsUsersControllerSqlImpl();
-            return (IPnbsUsersController)PnbsUsersController;
-        }
+  
         
         //cmLogComplains
         public static ICmLogComplainsController CreateCmLogComplainsDAO()
@@ -149,11 +144,18 @@ namespace TelcoSystemCore.Common
             return (IPaymentTypeController)paymentTypeController;
         }
 
+        //public static IPnbsUsersController CreatePnbsUsersController()
+        //{
+        //    IPnbsUsersController pnbsUsersController = new PnbsUsersControllerImpl();
+        //    return (IPnbsUsersController)pnbsUsersController;
+        //}
         public static IPnbsUsersController CreatePnbsUsersController()
         {
-            IPnbsUsersController pnbsUsersController = new PnbsUsersControllerImpl();
-            return (IPnbsUsersController)pnbsUsersController;
+            IPnbsUsersController PnbsUsersController = new PnbsUsersControllerSqlImpl();
+            return (IPnbsUsersController)PnbsUsersController;
         }
+
+
 
         public static IPaymentModeController CreatePaymentModeController()
         {

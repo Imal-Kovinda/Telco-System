@@ -156,11 +156,7 @@ namespace TelcoSystemCore.Common
             return (IPaymentModeDAO)paymentModeDAO;
         }
 
-        public static ICustomerAccountDAO CreateCustomerAccountDAO()
-        {
-            ICustomerAccountDAO customerAccountDAO = new CustomerAccountSqlDAOImpl();
-            return (ICustomerAccountDAO)customerAccountDAO;
-        }
+     
 
         public static ICusAccountDNDAO CreateCusAccountDNDAO()
         {

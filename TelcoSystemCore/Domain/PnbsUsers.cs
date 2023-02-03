@@ -10,18 +10,14 @@ namespace TelcoSystemCore.Domain
     [Serializable()]
     public class PnbsUsers
     {
-        [DBField("EMP_ID ")]
-        public string empId { get; set; }
 
         [DBField("EMP_ID")]
         public int EmpId { get; set; }
 
-        [DBField("PNBS_ID ")]
-        public string pnbsId { get; set; }
 
         [DBField("NAME")]
         public string Name { get; set; }
-      
+
 
         [DBField("PNBS_ID")]
         public string PnbsId { get; set; }
@@ -29,14 +25,10 @@ namespace TelcoSystemCore.Domain
         [DBField("NW_USERID")]
         public int NwUserid { get; set; }
 
-        [DBField("LOCATION ")]
-        public string location { get; set; }
 
         [DBField("LOCATION")]
         public string Location { get; set; }
 
-        [DBField("DEPARTMENT ")]
-        public string department { get; set; }
 
         [DBField("NIC_ID ")]
         public string NicId { get; set; }
@@ -85,5 +77,5 @@ namespace TelcoSystemCore.Domain
 
     }
 
-    
+
 }
